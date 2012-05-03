@@ -17,11 +17,11 @@ pickle-email-*.html
 /tmp/**/*
 /config/database.yml
 /config/mongrel_cluster.yml
-/public/category/**/*
-/public/categorylist/**/*
-/public/download/**/*
-/public/en_category/**/*
-/public/en_categorylist/**/*
+/public/category/*
+/public/categorylist/*
+/public/download/*
+/public/en_category/*
+/public/en_categorylist/*
 /public/flash/*
 /public/sharefile/*
 /public/stores/*
