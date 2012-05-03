@@ -1,0 +1,64 @@
+<div id="firstmiddle">
+
+    <div id="company">
+    <span id="blueHead">关于我们</span><br />
+    <% for companyinfo in @company %>
+    <p id="aboutbioer">上海申和热磁电子有限公司是由日本磁性流体技术株式会社投资于上海宝山城市工业园区的全资公司。公司创立于1995年5月，下设太阳能硅片事业部、半导体硅片事业部、TE和表面处理四个事业部。</p>
+    <p id="aboutbioer">主要产品包括8英寸(含8英寸)以下各种规格的太阳能级单、多晶硅锭和单、多晶硅片，4“－6”MOS、微波电路、存储器电路、半导体热电材料...</p>
+
+
+    <p id="more"><a href="/companyintro/index?id=001&&company=<%=@menutype%>">More&nbsp;&raquo;</a></p>
+    <p id="dahe">
+      <% if companyinfo.summarypic != "" and companyinfo.summarypic != nil %>
+      <% @company = companyinfo %>
+      <%=image_tag url_for_file_column(:company,:summarypic),:height => '117',:width => '304' %>
+      <% end %>
+      <br />
+    </p>
+    <% end %>
+  </div>
+
+  <div id="productinfo">
+    <span id="blueHead">主要产品</span><br />
+    <p id="warning">
+      <% for menu2 in @menu2 %>
+        <a href="/mostlyproduct/index?id=<%=menu2.categoryid%>">
+        <span id="abc">&raquo;</span>&nbsp;<%=h(menu2.categoryname) %>&nbsp;</a><br />
+      <% end %>
+    </p>
+    <br/>
+    <p>
+      <% if @menutype.to_i ==2  %>
+      <a href="/mostlyproduct/index?id=002005"><img src="http://www.ferrotec.com/images/buttonSlimControllers.jpg" alt="product" border="0" height="65" width="166" /></a>
+      <% else %>
+      <a href="/mostlyproduct/index?id=002012"><img src="/images/shimg.jpg" alt="product" border="0" height="65" width="166" /></a>
+      <% end %>
+    </p>
+  </div>
+
+  <div id="news">
+    <p id ="topimg">
+      <span id="blueHead">&nbsp;&nbsp;&nbsp;&nbsp;最新消息</span>
+      <% if @menutype.to_i ==2  %>
+      <span id="news1"><a href="/newscenter/index?id=005&&company=2">More&nbsp;&raquo;&nbsp;&nbsp;</a></span>
+      <% else %>
+      <span id="news1"><a href="/newscenter/index?id=005&&company=3">More&nbsp;&raquo;&nbsp;&nbsp;</a></span>
+      <% end %>
+    </p>
+     <% for new in @news %>
+    <div id="middleimg">
+      <a onmousemove="this.style['color']='#ff0000'" onmouseout="this.style['color']='#3B6F9F'" style="cursor:pointer;color:#3B6F9F" onClick='window.open("/content/newsdetail?id=<%=new.id%>","","scrollbars=yes,width=600,height=360,top=200,resizable=yes")'>
+        <!--<p><%=new.created_at.strftime("%Y年%m月%d日")%><p>-->
+        <!--<p id="detail"><%=new.title%><p>-->
+        <%=new.title%>
+      </a>
+    </div>
+    <% end %>
+
+
+    <div class="clear"></div>
+    <div><p id="bottomimg">&nbsp;</p></div>
+  </div>
+
+
+</div>

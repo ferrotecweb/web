@@ -1,0 +1,66 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"> 
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>主要产品</title>
+<%= stylesheet_link_tag 'content' %>
+</head>
+
+<body onload="parent.document.getElementById('frame1').style.height=this.document.body.scrollHeight">
+  <% for mostlyproduct in @mostlyproduct %>
+  <div id="yylybanner">
+    <% 
+    case mostlyproduct.company_id.to_s
+    when "2"
+    %>
+    <a href="http://www.ferrotec.com.cn/mostlyproduct/index?id=<%=mostlyproduct.categoryid%>" target="_parent"><%=mostlyproduct.categoryname%></a>
+    <% when "3" %>
+    <a href="http://www.ferrotec.sh.cn/mostlyproduct/index?id=<%=mostlyproduct.categoryid%>" target="_parent"><%=mostlyproduct.categoryname%></a>
+    <% when "5" %>
+    <a href="http://www.aqmhz.com/mostlyproduct/index?id=<%=mostlyproduct.categoryid%>" target="_parent"><%=mostlyproduct.categoryname%></a>
+    <% when "6" %>
+    <a href="http://www.wagen.cc/mostlyproduct/index?id=<%=mostlyproduct.categoryid%>" target="_parent"><%=mostlyproduct.categoryname%></a>
+    <% end %>
+  </div>
+
+  <div id="cpjj">
+  <span id="productdetail">  
+  <% if mostlyproduct.summarypic != "" and mostlyproduct.summarypic != nil %>
+  <% @category = mostlyproduct %>
+  <%=image_tag url_for_file_column(:category,:summarypic),:height => '130', 
+    :width => '260',:style=> 'float:right;padding-left:15px;' %>
+  <% end %>
+  <pre ><%=mostlyproduct.summary%></pre>
+  </span> 
+  </div>
+  <% if mostlyproduct.summarydetail != "" and mostlyproduct.summarydetail != nil %>
+    <br />
+    <div id="cpjj10" >
+      <p id="cpjj11"><%=mostlyproduct.summarydetail%></p>
+    </div>
+  <% end %>
+
+  <% end %>
+
+  <% if @mostlyproductdetail.size > 0 %>
+  <div id="cpdl3"></div>
+  <% end %>
+ 
+  <% for mostlyproductdetail in @mostlyproductdetail  %>
+
+  <div id="cpjjdetail">
+  <div id="cpjjdetailimg">
+    <% if mostlyproductdetail.summarypic != "" and mostlyproductdetail.summarypic != nil %>
+    <% @categorylist = mostlyproductdetail %>
+    <%=image_tag url_for_file_column(:categorylist,:summarypic),:height => '88', 
+      :width => '104',:border => 0,:style=>'cursor:pointer' %>
+    <% end %>
+  </div>
+  <div id="cpjjdetailcontent">
+  <span id="titledetail"><%=mostlyproductdetail.title%></span><br />
+  <p id="cpjjsummary"><%=truncate(mostlyproductdetail.summary,120)%></p>
+  </div> 
+  </div>  
+  <% end %>
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"> 
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+  <title>Standard Feedthroughs</title>
+  <%= stylesheet_link_tag 'content' %>
+</head>
+  
+<body onload="parent.document.getElementById('frame1').style.height=this.document.body.scrollHeight">
+    
+<div id="yylybanner">Standard Feedthroughs</div>
+
+<div id ="div0">
+  <p>Click the graphic that best represents the type of feedthrough or seal you&rsquo;re
+    looking for. A text description of each product will display if you simply
+  roll your mouse over the graphic.</p>
+</div>
+
+<div id="vf1">
+  <span>  
+    <img src="/images/1.jpg" onClick="jQuery('shaftType','1');jQuery('mount','1');jQuery('temperature','0');" title="Solid Shaft, Nose Mount" height ="100" width ="100"  />
+  </span>
+
+  <span>  
+    <img src="/images/2.jpg" onClick="jQuery('shaftType','1');jQuery('mount','1');jQuery('temperature','1');" title="Solid Shaft, Nose Mount, Water Cooled" height ="100" width ="100"  />
+  </span>
+
+  <span>  
+    <img src="/images/3.jpg" onClick="jQuery('shaftType','1');jQuery('mount','2');jQuery('temperature','0');" title="Nut Mount (threaded body)" height ="100" width ="100"  />
+  </span>
+
+  <span>  
+    <img src="/images/4.jpg" onClick="jQuery('shaftType','1');jQuery('temperature','0');" title="Solid Shaft, Flange Mount" height ="100" width ="100"  />
+  </span>
+  <p></p>
+  <span>  
+    <img src="/images/5.jpg" onClick="jQuery('shaftType','2');jQuery('mount','1');jQuery('temperature','0');" title="Hollow Shaft, Cartridge Mount" height ="100" width ="100"  />
+  </span> 
+
+  <span>  
+    <img src="/images/6.jpg" onClick="jQuery('shaftType','2');jQuery('temperature','0');" title="Hollow Shaft, Flange Mount" height ="100" width ="100"  />
+  </span> 
+
+  <span>  
+    <img src="/images/7.jpg" onClick="jQuery('shaftType','2');jQuery('temperature','1');" title="Standard Hollow Shaft, Flange Mount, Water Cooled" height ="100" width ="100"  />
+  </span> 
+
+  <span>  
+    <img src="/images/8.jpg" onClick="jQuery('shaftType','all');jQuery('mount','all');jQuery('temperature','all');jQuery('environment','all');jQuery('shaftDim','all');" title="All Standard Configurations" height ="100" width ="100"  />
+  </span> 
+</div>
+
+<div id="vf3">
+<% form_tag :action => 'querysetparam' do %> 
+ 
+<input type=hidden name=id value=feedthrough> 
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody>
+<tr>
+<td class="formText" width="50%">Shaft Type:</td>
+<td class="formText" width="50%">Shaft Dimension:</td>
+</tr>
+
+<tr>
+<td class="formText">
+  <select name="shaftType" class="formElement" id="shaftType"> 
+  <option value="all">Select Shaft Type...</option> 
+  <option value="Solid">Solid Shaft</option> 
+  <option value="Hollow">Hollow Shaft</option> 
+  <option value="all">Show Solid and Hollow options</option> 
+  </select> &nbsp;
+</td>
+<td class="formText">
+  <select name="shaftDim" class="formElement" id="shaftDim"> 
+  <option value="all-in" selected="selected">Select Shaft Dimension...</option> 
+  <option value="0.1875-in">3/16 inch diameter</option> 
+  <option value="0.25-in">1/4 inch diameter</option> 
+  <option value="0.375-in">3/8 inch diameter</option> 
+  <option value="0.5-in">1/2 inch diameter</option> 
+  <option value="0.75-in">3/4 inch diameter</option> 
+  <option value="1-in">1 inch diameter</option> 
+  <option value="1.5-in">1 1/2 inch diameter</option> 
+  <option value="2-in">2 inch diameter</option> 
+  <option value="3-in">3 inch diameter</option> 
+  <option value="all-in">All inch sizes</option> 
+  <option value="all-in">---------</option> 
+  <option value="4-mm">4mm diameter</option> 
+  <option value="5-mm">5mm diameter</option> 
+  <option value="6-mm">6mm diameter</option> 
+  <option value="10-mm">10mm diameter</option> 
+  <option value="12-mm">12mm diameter</option> 
+  <option value="20-mm">20mm diameter</option> 
+  <option value="25-mm">25mm diameter</option> 
+  <option value="30-mm">30mm diameter</option> 
+  <option value="40-mm">40mm diameter</option> 
+  <option value="50-mm">50mm diameter</option> 
+  <option value="75-mm">75mm diameter</option> 
+  <option value="all-mm">All metric sizes</option> 
+  <option value="all-all">All</option> 
+  </select> &nbsp;
+  </td>
+</tr>
+
+<tr>
+<td class="formText">Mount:</td>
+<td class="formText">Environment:</td>
+</tr>
+
+<tr>
+<td class="formText">
+  <select name="mount" id="mount" class="formElement"> 
+  <option value="all">Select Mounting Type...</option> 
+  <option value="Cartridge">Cartridge mount</option> 
+  <option value="Other">Flange mount</option> 
+  <option value="Nose">Nose mount</option> 
+  <option value="Nut">Nut mount</option> 
+  <option value="all">All mount options</option> 
+  </select>
+</td>
+<td class="formText">
+  <select name="environment" class="formElement" id="environment"> 
+  <option value="Standard">Standard</option> 
+  <option value="Reactive Gas">Reactive Gas</option> 
+  <option value="all">All</option>
+  </select>
+</td>
+</tr>
+
+<tr>
+<td class="formText">Temperature:</td>
+<td class="formText">&nbsp;</td>
+</tr>
+
+<tr>
+<td class="formText">
+<select name="temperature" id="temperature" class="formElement"> 
+<option value="0" selected="selected">Standard</option> 
+<option value="1">High-Temperature</option> 
+<option value="all">All</option> 
+</select>
+</td>
+<td class="formText"><br type="_moz" /></td>
+</tr>
+<tr>
+<td colspan="2" class="formText">
+<div align="center">
+  <%= submit_tag "Submit" %>
+  <!--<input name="submit" value="Submit" type="submit" />-->
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<% end %>
+</div>
+<script language="JavaScript" type="text/JavaScript"> 
+    function jQuery(objSelect, objIndex) 
+    {               
+        var from = document.getElementById(objSelect);   
+        if (objIndex == "all")
+            {
+            from[from.options.length-1].selected = true
+            }
+         else{
+          from[objIndex].selected  = true    
+         }
+                   
+    }  
+  </script>   
+  </body>
+</html>

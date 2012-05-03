@@ -1,0 +1,63 @@
+<div id="menuA">
+    <%= link_to "管理首页", :controller => '/back_manager/category', :action => 'index' %> | <%= link_to "退出", :controller => '/back_manager/user', :action => 'logout' %> | <%= link_to "菜单", :controller => '/back_manager/menu', :action => 'list_menu' %>
+</div>
+<div style="float: left" id="my_menu" class="sdmenu">
+<!--根据用户名来显示不同的菜单，目前只处理各子公司的招聘信息菜单-->
+<% if session[:user_id] == 1 %>
+<div>
+  <span>集团公司管理</span>
+  <%= link_to "集团公司列表", :controller => '/back_manager/company', :action => 'list_company' %>
+  <%= link_to "参数列表", :controller => '/back_manager/setparam', :action => 'list_setparam' %>
+  <%= link_to "日志查询", :controller => '/back_manager/recordlist', :action => 'log_query' %>
+  <%= link_to "文件上传", :controller => '/back_manager/upfile', :action => 'list_file' %>
+</div>
+<div>
+  <span>中文页面管理</span>
+  <%= link_to "集团栏目管理", :controller => '/back_manager/category', :action => 'list_category',:company_id => '1' %>
+  <%= link_to "大和栏目管理", :controller => '/back_manager/category', :action => 'list_category',:company_id => '2' %>
+  <%= link_to "申和栏目管理", :controller => '/back_manager/category', :action => 'list_category',:company_id => '3' %>
+  <%= link_to "汉虹栏目管理", :controller => '/back_manager/category', :action => 'list_category',:company_id => '4' %>
+  <%= link_to "AQM栏目管理", :controller => '/back_manager/category', :action => 'list_category',:company_id => '5' %>
+  <%= link_to "和源栏目管理", :controller => '/back_manager/category', :action => 'list_category',:company_id => '6' %>
+  <%= link_to "集团栏目内容管理", :controller => '/back_manager/categorylist', :action => 'list_categorylist',:company_id => '1' %>
+  <%= link_to "大和栏目内容管理", :controller => '/back_manager/categorylist', :action => 'list_categorylist',:company_id => '2' %>
+  <%= link_to "申和栏目内容管理", :controller => '/back_manager/categorylist', :action => 'list_categorylist',:company_id => '3' %>
+  <%= link_to "汉虹栏目内容管理", :controller => '/back_manager/categorylist', :action => 'list_categorylist',:company_id => '4' %>
+  <%= link_to "AQM栏目内容管理", :controller => '/back_manager/categorylist', :action => 'list_categorylist',:company_id => '5' %>
+  <%= link_to "和源栏目内容管理", :controller => '/back_manager/categorylist', :action => 'list_categorylist',:company_id => '6' %>
+  <%= link_to "求职管理", :controller => '/back_manager/order', :action => 'list_order' %>
+  <%= link_to "留言管理", :controller => '/back_manager/contact', :action => 'list_contact' %>
+</div>
+<div>
+  <span>英文集团公司管理</span>
+  <%= link_to "集团公司列表", :controller => '/back_manager/en_company', :action => 'list_company' %>
+</div>
+<div>
+  <span>英文页面管理</span>
+  <%= link_to "集团栏目管理", :controller => '/back_manager/en_category', :action => 'list_category',:company_id => '1' %>
+  <%= link_to "大和栏目管理", :controller => '/back_manager/en_category', :action => 'list_category',:company_id => '2' %>
+  <%= link_to "申和栏目管理", :controller => '/back_manager/en_category', :action => 'list_category',:company_id => '3' %>
+  <%= link_to "汉虹栏目管理", :controller => '/back_manager/en_category', :action => 'list_category',:company_id => '4' %>
+  <%= link_to "AQM栏目管理", :controller => '/back_manager/en_category', :action => 'list_category',:company_id => '5' %>
+  <%= link_to "和源栏目管理", :controller => '/back_manager/en_category', :action => 'list_category',:company_id => '6' %>
+  <%= link_to "集团栏目内容管理", :controller => '/back_manager/en_categorylist', :action => 'list_categorylist',:company_id => '1' %>
+  <%= link_to "大和栏目内容管理", :controller => '/back_manager/en_categorylist', :action => 'list_categorylist',:company_id => '2' %>
+  <%= link_to "申和栏目内容管理", :controller => '/back_manager/en_categorylist', :action => 'list_categorylist',:company_id => '3' %>
+  <%= link_to "汉虹栏目内容管理", :controller => '/back_manager/en_categorylist', :action => 'list_categorylist',:company_id => '4' %>
+  <%= link_to "AQM栏目内容管理", :controller => '/back_manager/en_categorylist', :action => 'list_categorylist',:company_id => '5' %>
+  <%= link_to "和源栏目内容管理", :controller => '/back_manager/en_categorylist', :action => 'list_categorylist',:company_id => '6' %>
+  <%= link_to "求职管理", :controller => '/back_manager/order', :action => 'list_order' %>
+  <%= link_to "留言管理", :controller => '/back_manager/contact', :action => 'list_contact' %>
+</div>
+<div>
+  <span>用户管理</span>
+  <%= link_to "管理员列表", :controller => '/back_manager/user', :action => 'list_users' %>
+  <%= link_to "添加管理员", :controller => '/back_manager/user', :action => 'add_user' %>
+</div>
+<% else %>
+<div>
+  <span>招聘管理</span>
+  <%= link_to "求职管理", :controller => '/back_manager/order', :action => 'list_order' %>
+</div>
+<% end %>
+</div>

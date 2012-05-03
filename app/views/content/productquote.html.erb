@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>和源产品报价</title>
+<%= stylesheet_link_tag 'content' %>
+
+<style  type="text/css">
+form{padding:10px;margin:auto;}
+fieldset{display:block;padding:5px 10px 5px 10px;line-height:20px;margin-bottom:10px;border:1px solid #c3d7db;}
+legend{font-size:12px;font-weight:bold;margin-bottom:5px;padding:3px;width:254px;border:1px solid #c3d7db;color:#294145}
+label{clear:left;display:block;float:left;width:80px;text-align:right;padding-right:10px;margin-bottom:5px;}
+input{padding:3px;margin-bottom:5px;width:300px;text-align:left;}
+select{margin-bottom:5px;}
+option{background:#FFF}
+optgroup{}
+</style>
+</head>
+<body>
+<% if flash[:notice] %>
+  <h3>
+  <table>
+    <tr><td width='80'>齿数：</td><td><%= h @t %></td></tr>
+    <tr><td>刃厚：</td><td><%= h @w %></td></tr>
+    <tr><td>外径：</td><td><%= h @d %></td></tr>
+    <tr><td>内径：</td><td><%= h @n %></td></tr>
+    <tr><td>段付：</td><td><%=  @df == 'none' ? '不需要' : @df == 'single' ? '单面' : '双面'   %></td></tr>
+    <tr><td>多片锯：</td><td><%= @dp == 'n' ? '不是' : '是'  %></td></tr>
+    <tr><td>刮刀：</td><td><%= @gd == 'n' ? '不需要' : '需要'  %></td></tr>
+    <tr><td>镀镍：</td><td><%= @dn == 'n' ? '不需要' : '需要' %></td></tr>
+  </table>
+  </h3>
+  <h1><%= flash[:notice] %></h1>
+<% end %>
+<% form_tag :action => 'productquote' do %>
+  <fieldset>
+    <legend>和源精工刀具报价 (当前用户：<%= @current_agent.name %>[<%= link_to '注销', session_path(@current_agent), :method=>:delete %>]）</legend>
+    <table>
+      <tr>
+        <td><label>齿数:</label></td>
+        <td><%= text_field_tag 't', @t, :tabindex=>1 %></td>
+      </tr>
+      <tr>
+        <td><label>刃厚:</label></td>
+        <td><%= text_field_tag 'w', @w, :tabindex=>2 %></td>
+      </tr>
+      <tr>
+        <td><label>外径:</label></td>
+        <td><%= text_field_tag 'd', @d, :tabindex=>3 %></td>
+      </tr>
+      <tr>
+        <td><label>内径:</label></td>
+        <td><%= text_field_tag 'n', @n, :tabindex=>3 %></td>
+      </tr>
+      <tr>
+        <td><label>段付:</label></td>
+        <td>
+          <%= radio_button_tag 'df', 'none', true %>不需要
+          <%= radio_button_tag 'df', 'single', false %>单面
+          <%= radio_button_tag 'df', 'double', false %>双面
+        </td>
+      </tr>
+      <tr>
+        <td><label>多片锯:</label></td>
+        <td>
+          <%= radio_button_tag 'dp', 'n', true %>不是
+          <%= radio_button_tag 'dp', 'y', false %>是
+        </td>
+      </tr>
+      <tr>
+        <td><label>刮刀:</label></td>
+        <td>
+          <%= radio_button_tag 'gd', 'n', true %>不需要
+          <%= radio_button_tag 'gd', 'y', false %>需要
+        </td>
+      </tr>
+      <tr>
+        <td><label>镀镍:</label></td>
+        <td>
+          <%= radio_button_tag 'dn', 'n', true %>不需要
+          <%= radio_button_tag 'dn', 'y', false %>需要
+        </td>
+      </tr>
+    </table>
+    <%= submit_tag '计算价格', :tabindex=>4 %>
+  </fieldset>
+<% end %>
+
+</body>
+</html>

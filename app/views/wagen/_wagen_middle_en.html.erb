@@ -1,0 +1,48 @@
+<div id="firstmiddle">
+  <div id="newscenter">
+    <p id="title">News</p>
+
+    <% for new in @news %>
+    <a onmousemove="this.style['color']='#ff0000'" onmouseout="this.style['color']='#3B6F9F'" style="cursor:pointer;color:#3B6F9F" onClick='window.open("/content/newsdetail_en?id=<%=new.id%>","","scrollbars=yes,width=600,height=360,top=200")'>
+    <p id="newsdetail"><span id="datetime"><%=h(new.created_at.strftime("%Y-%m-%d"))%></span><br />
+    <span id="newstitle"><U><%=new.title%></U></span></p>
+    </a>
+    
+    <% end %>  
+    <p id="en_more1"><a href="/newscenter/index_en?id=005&&company=6" onmousemove="this.style['color']='#ff0000'" onmouseout="this.style['color']='#009ACD'" style="cursor:pointer;color:#009ACD"><u>Read more</u></a></p>
+  </div>
+  <div id="indexline1"><img src="/images/wagen/index_r1_c2.jpg" alt="line" border="0" height="412" width="18" /></div>
+  <div id="product">
+    <p id="title">Company</p>
+    <% for company in @company %>
+      <div id ="introduce"><%=h(truncate(company.summary,120))%></div>
+      <p id="more"><a href="/companyintro/index_en?id=001&&company=6" onmousemove="this.style['color']='#ff0000'" onmouseout="this.style['color']='#009ACD'" style="cursor:pointer;color:#009ACD"><u>Read more</u></a></p>
+    <% end %>
+    <!--
+    <p><img src="/images/wagen/index_r2_c3.jpg" alt="product" border="0" height="205" width="458" /></p>
+    -->
+    <div id="img1">
+      <img src="/images/wagen/001_r6_c5.jpg" width="453" height="52" />
+    </div>
+    
+    <div id="img">     
+      <div id="img2">
+        <img src="/images/wagen/001_r7_c5.jpg" width="34" height="144" />
+      </div>
+      <div id="img3">       
+        <p id = "p1" >Products</p>
+        <p id = "p2" >T.C.T saw blades mainly used in wood-working, furniture-producing, non-ferrous metal and organic glass industry.We mainly produce PCD saw blades and Routers，which mainly used in furniture and flooring...</p> 
+        <img src="/images/wagen/001_r8_c6.jpg" width="257" height="20" />
+      </div>
+      <div id="img4">
+        <img src="/images/wagen/001_r7_c8.jpg" width="162" height="144" />
+      </div>     
+    </div>
+    <p id="more"><a href="/mostlyproduct/index_en?id=002&&company=6" onmousemove="this.style['color']='#ff0000'" onmouseout="this.style['color']='#009ACD'" style="cursor:pointer;color:#009ACD"><u>Read more</u></a></p>
+    <br />
+  </div>
+ </div>
+  
+
+
+  

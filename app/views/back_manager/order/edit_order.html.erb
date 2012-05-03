@@ -1,0 +1,13 @@
+<div id="main">
+ <fieldset>
+    <legend>编辑招聘信息</legend>
+ 
+    <% form_tag :action => 'update_order', :id => @order do %>
+      <%= render :partial => 'form',:object => @order %>
+      <br/>
+      <%= submit_tag '保存' %>
+      <br/>
+    <% end %>
+    <%= link_to '返回', :action => 'list_order' %>
+ </fieldset>
+</div>

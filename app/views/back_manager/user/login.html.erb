@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf8" />
+<title>后台</title>
+
+<%= stylesheet_link_tag 'backmenu' %>
+
+</head>
+<body id="login">
+<center>
+<% if flash[:notice] -%>
+<div id="notice"><%= flash[:notice] %></div>
+<% end -%>
+<div id="user">
+  <fieldset>
+    <legend>请先登陆</legend>
+    <% form_tag do %>
+      <div id="login">
+      <p>
+        <label for="name">用户名:</label>
+        <%= text_field_tag :name, params[:name] , :id => "username"%>
+      </p>
+      </div>
+      <div id="login">
+      <p>
+        <label for="password">密码:</label>
+        <%= password_field_tag :password, params[:password], :id => "password" %>
+      </p>
+      </div>
+      <div id="login">
+      <p>
+        <%= submit_tag "管理员登陆" %>
+      </p>
+      </div>
+    <% end %>
+  </fieldset>
+</div>
+</center>
+</body>
+</html>

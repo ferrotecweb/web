@@ -1,0 +1,19 @@
+
+<%= error_messages_for 'file' %>
+<br/>
+<br/>
+<p><label for="file_filename">原文件名</label><br/>
+<%= text_field 'file', 'filename', :id => 'text', :size => 40  %>
+</p>
+<br/>
+<br/>
+<br/>
+<br/>
+<!--&nbsp;&nbsp;<strong><font color="red">(注：上传的文件名不能包含汉字和空格)</font></strong>-->
+<p>
+  <label for="upfile">文件上传</label><br/>
+  <%=file_field 'file','upfile',:id => 'image'%>   
+</p>
+<br/>
+<br/>
+<br/>

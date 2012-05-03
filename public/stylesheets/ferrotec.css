@@ -1,0 +1,921 @@
+*{
+    margin:0;
+    padding:0;  
+}
+#p{
+    color:#000000;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    
+}
+#container { clear:both; text-decoration:none; }
+body {
+    margin:0 auto; 
+    text-align: center; 
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+}
+#all {
+    background-color: #ffffff;
+    height: 600px;
+    width: 780px;
+    position:relative;
+    margin:0 auto;
+
+    /*border: 1px solid red;*/
+}
+#top {
+    min-height:60px;
+    height: 60px;
+    width: 780px;
+
+}
+#buttom {
+    width: 25%;
+    height: 50px;
+    float: left;
+    /*border: 1px solid red;*/
+    
+}
+#content {  
+    width: 25%;
+    float: left;
+    border: 1px solid red;
+}
+#all #flash {
+    margin:0;
+    padding:0;  
+    height: 250px;
+    width: 780px;
+    
+}
+
+#flash {
+    height: 250px;
+    width: 780px;
+    padding-top:5px;
+}
+#aboutbioer{
+    margin:0;
+    padding:0; 
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    text-indent:2em;
+    line-height:20px;
+    
+}
+#more{
+    float:right;
+    text-align:right;
+    padding-right:10px;
+}
+#dahe{
+    width:304;
+    padding-top:10px;
+    text-align: center; 
+    vertical-align:middle;    
+}
+#dl{
+    text-indent:2em; 
+}
+
+#blueHead {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight:bold;
+    font-size: 12px;
+    color: #000000;
+    text-align: left;
+    line-height:2em;
+    /*vertical-align: middle;*/
+}
+#all #company {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    height: 350px;
+    width: 354px;
+    float: left;
+    text-align: left;
+    border-right-width: 1px;
+    border-right-color: #CCCCCC;
+    border-right-style: solid;
+    
+}
+#all #productinfo {
+    text-align: left;
+    height: 350px;
+    width: 148px;
+    float: left;
+    text-indent: 3px;
+    padding-left: 2%;
+}
+#aboutfooter {
+    font-family: Arial, Helvetica, sans-serif;
+    height: 20px;
+    width: 780px;
+    padding-top: 170px !important;
+    padding-left: 200px !important;
+    padding-left: 0;
+    padding-top: 20px;
+}
+#aboutfooter1 {
+    font-family: Arial, Helvetica, sans-serif;
+    height: 20px;
+    width: 780px;
+    padding-top: 130px !important;
+
+    padding-left: 0;
+    padding-top: 20px;
+}
+#aboutfooter p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    height: 20px;
+    vertical-align: bottom;      
+  
+    padding-left: 150px !important;    
+    padding-left:0;
+}
+#aboutfooter #p1 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    height: 20px;
+    vertical-align: bottom;
+    padding-left:0;
+}
+#all #allright {
+    height: auto;
+    width: 222px;
+    float: left;
+    padding-left: 20px !important;
+    padding-left: 10px;
+    padding-right: 10px;
+
+}
+#all #news {   
+    height: 200px;
+    width: 222px;
+    float: left;
+    padding-left: 20px !important;
+    padding-left: 0;
+    padding-right: 10px;
+
+}
+/*
+#all #technology {
+    height: 250px;
+    width: 222px;
+    float: left;
+    padding-left: 30px !important;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+*/
+#all #middle {
+    text-align: center;
+    
+    width: 780px;
+    padding-top: 24px;
+    /*border:1px solid red;*/    
+    height:auto;
+    
+}
+
+#all #firstmiddle {
+    text-align: center;
+    height: auto;
+    width: 802px;
+    padding-top: 20px;
+}
+#firstmiddle #news p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    padding-top: 0.8%;
+}
+#news #news1 {
+    text-align: right;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    float: right;
+    line-height:2em;
+}
+
+#middle #news p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    padding-top: 0.8%;
+}
+
+#news #blueHead {
+    float: left;
+}
+
+#company p {
+    width: 350px;
+}
+/*#productinfo #news {
+width: 250px;
+}*/
+
+/*
+#nav ul ul{
+border:1px solid #ccc;
+border-top:0px;
+}
+#nav a {
+width:100px;
+display:block;
+color:#FFFFFF;
+text-decoration:none;
+text-align:center;
+border-right:1px;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 11px;
+
+}
+#nav a:hover{color:#000;} 
+#nav a.selected{background:url(images/arrow.gif) no-repeat right 50%;}
+#nav li {float:left;}
+#nav li ul { 
+position:absolute;
+margin:0px 0px 0px -1px;
+padding:0;
+left:-9999em;
+width:120px;
+font-weight:normal;
+}
+#nav li li {width:120px;} 
+#nav li ul a {
+width:120px; 
+padding:0px 12px;
+line-height:24px; 
+border-top:1px solid #CCC;
+text-align:left;
+color: #000000;
+}
+#nav li ul ul {margin:-25px 0px 0px 85px;} 
+#nav li:hover ul ul,#nav li.sfhover ul ul{left:-9999em;}
+#nav li:hover ul,#nav li li:hover ul,#nav li.sfhover ul, #nav li li.sfhover ul{left:auto;}
+#nav li:hover, #nav li.sfhover {background:#ccc;} 
+
+
+a:hover {
+color: #FF0000;
+}
+a{
+text-decoration:none;
+color:#0000FF;
+}
+*/
+
+#warning{
+    font-size: 10pt;
+    color: #0000FF;
+}
+#warning #a_size {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+}
+
+#abc{
+    font-size:16pt;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align:left;
+}
+
+a:hover {
+    color: #FF0000;
+    font-size: 12px;
+}
+a{
+    text-decoration:none;
+    color:#000000;
+    font-size: 12px;
+}
+/*左侧菜单*/
+
+#menunav{ 
+    margin-left:0;
+    padding:0;
+    width:180px; 
+    
+    line-height: 20px;  
+    list-style-type: none; 
+    text-align:left; 
+    /* border: 1px solid #cbcbcb;*/
+    /*定义整个ul菜单的行高和背景色*/ 
+} 
+
+/*==================一级目录===================*/ 
+#menunav a { 
+    width: 190px;  
+    display: block; 
+    padding-left:10px;
+    height:20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    border-top-width: 1px;
+    border-top-style: solid;
+    border-top-color: #999999;
+    font-weight:bold;
+    /*Width(一定要)，否则下面的Li会变形*/ 
+} 
+
+#menunav li { 
+    /*background:#CCC; /*一级目录的背景色*/ 
+    /*border-bottom:#FFF 1px solid; /*下面的一条白边*/ 
+    float:left; 
+    /*float：left,本不应该设置，但由于在Firefox不能正常显示 
+    继承menunav的width,限制宽度，li自动向下延伸*/ 
+    padding:0;
+    margin: 0px;
+    height:20px;
+    width:200px;
+    line-height:20px;
+    background-image: url(../images/memu_r9_c1.jpg);
+    
+} 
+#menunav li a:hover{ 
+    /*background:#CC0000;    /*一级目录onMouseOver显示的背景色*/ 
+    background-image: url(../images/memu_r6_c1.jpg);
+} 
+
+#menunav a:link  { 
+    color:#666; 
+    text-decoration:none; 
+    /*background-image: url(../images/memu_r2_c1.jpg);*/
+    
+} 
+#menunav a:visited  { 
+    color:#666;
+    text-decoration:none; 
+    
+} 
+#menunav a:hover{ 
+    color:#FFF;
+    text-decoration:none;
+    font-weight:bold; 
+    
+} 
+
+/*==================二级目录===================*/ 
+#menunav li ul { 
+    margin-left:0;
+    padding:0;
+    list-style:none; 
+    text-align:left; 
+} 
+#menunav li ul li{         
+    background: #EBEBEB; /*二级目录的背景色*/ 
+    background-image: url(../images/memu_r3_c1.jpg);
+    height:20px;
+} 
+
+#menunav li ul a{ 
+    padding-left:20px; 
+    width:180px;
+    height:20px;
+    /* padding-left二级目录中文字向右移动，但Width必须重新设置=(总宽度-padding-left)*/ 
+} 
+
+/*下面是二级目录的链接样式*/ 
+
+#menunav li ul a:link  { 
+    color:#666; 
+    text-decoration:none; 
+    /*background-image: url(../images/memu_r5_c1.jpg);*/
+} 
+#menunav li ul a:visited  { 
+    color:#666;
+    text-decoration:none; 
+    
+} 
+#menunav li ul a:hover { 
+    color:#F3F3F3; 
+    text-decoration:none; 
+    font-weight:normal; 
+    background-image: url(../images/memu_r7_c1.jpg);
+    /* 二级onmouseover的字体颜色、背景色*/ 
+} 
+
+/*==============================*/ 
+#menunav li.sfhover { 
+    left: auto; 
+    color: #FFFFFF;
+    /*background-image: url(../images/memu_r2_c1.jpg);*/
+} 
+
+#menunav li:hover ul { 
+    left: auto; 
+} 
+#menunav li.sfhover ul { 
+    left: auto; 
+} 
+#content { 
+    clear: left;  
+} 
+#menunav ul.collapsed { 
+    display: none; 
+    background-image: url(../images/memu_r5_c1.jpg)
+} 
+--> 
+#leftmenu{
+    font-family: arial, sans-serif;
+    width:180px;
+    padding-left:2px;
+    float: left;
+    font-size:12px;
+}
+#PARENT{ 
+    margin:0;
+    padding:0;
+    width:180px;
+    padding-left:2px;
+    float: left;
+    line-height:20px;
+    
+} 
+#menutop{
+    margin:0;
+    padding:0;
+    padding-left:2px;
+    width:200px;
+    height:8px;
+    
+}
+#menubuttom{
+    margin: 0px;
+    padding: 0px;
+    border-top-width: 0px;
+    border-right-width: 0px;
+    border-bottom-width: 0px;
+    border-left-width: 0px;
+    border-top-style: none;
+    border-right-style: none;
+    border-bottom-style: none;
+    border-left-style: none;
+    padding-left:2px;
+    width:200px;
+    height:8px;
+    
+}
+
+
+#productcontent{ 
+    width:550px;
+    padding-left:20px;
+    height: auto;
+    float:right;
+    
+    /*height: auto !important;
+    height:700px;*/
+} 
+
+#menunav ul 
+{ 
+    list-style:none;
+    margin:0;
+    padding:0;
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 10%;
+} 
+#menunav li 
+{
+    list-style-type:none;
+    list-style:none;
+}
+
+/*
+
+垂直居中对表格来说是小菜一碟，只需指定单元格为vertical-align: middle即可，
+但这在css布局中不管用。假设你将一个导航菜单的高度设为2em，
+然后在css中指定垂直对齐的规则，文字还是会被排到盒的顶部，根本没有什么区别。
+要解决这一问题，只需将盒的行高设为与盒的高度相同即可，
+以这个例子来说，盒高2em,那么只需在css中再加入一条：line-height: 2em 就可实现垂直居中了!
+*/
+#news #middleimg
+{
+    vertical-align: middle;
+    background-image: url(../images/caiying.jpg);
+    height:40px;
+    width:210px;
+    padding:0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    margin: 0px;
+    float:left;
+    padding-left: 10px;	
+    border-right-width: 1px;
+    border-left-width: 1px;
+    border-top-width: 1px;
+    border-top-style: solid;
+    border-top-color: #999999;
+    border-right-style: solid;
+    
+    border-left-style: solid;
+    
+    border-right-color: #999999;
+    border-left-color: #999999;
+    border-bottom-style: solid;
+    border-bottom-width: 0px;
+    border-bottom-color: #FFFFFF;
+    overflow:hidden;   
+    padding-top:5px;
+    text-align: left;
+    /*border: 1px solid #cbcbcb;*/
+    
+}
+#detail{
+    text-indent:2em;
+    line-height:10px; 
+}
+#news #topimg
+{
+    background-image: url(../images/a1.jpg);
+    height:26px;
+    width:222px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    margin: 0px;
+    padding: 0px;
+    
+    /*white-space: nowrap;*/
+}
+
+#news #bottomimg
+{
+    margin: 0px;
+    padding: 0px;
+    background-image: url(/images/a4.jpg);
+    height:22px;
+    width:222px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    
+    
+    /*white-space: nowrap;*/
+}
+
+/*菜单变化*/
+.r{background-image: url(../images/memu_r9_c1.jpg)}
+
+.aa{background-image: url(../images/memu_r5_c1.jpg)}
+.bb{background-image: url(../images/memu_r2_c1.jpg)}
+
+/*admin模板*/
+#side {
+    float: left;
+    padding-top: 1em;
+    padding-left: 1em;
+    padding-bottom: 1em;
+    width: 14em;
+}
+#notice{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px; 
+    color: red;
+}
+/*用户*/
+#user{
+    width:300px;
+    height:150px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+}
+#user #username{
+    width:150px;
+    height:15px;
+}
+#user #password{
+    width:150px;
+    height:15px;
+}
+#user fieldset {
+    background: #efe;
+}
+#user legend {
+    color: #dfd;
+    background: #141;
+    font-family: sans-serif;
+    padding: 0.2em 1em;
+}
+
+#user label {
+    width: 60px;
+    float: left;
+    text-align: right;
+    margin-right: 30px;
+    margin-top: 5px;
+    display: block;
+    height:15px;
+}
+#user #login{
+    margin:0;
+    padding:0;   
+    height:20px;
+    padding-top:10px;
+}
+#user #submit {
+    margin-left: 5.5em;
+}
+
+/*新菜单css样式*/
+#middle a:link {
+    color: #000000;
+    font-size: 12px;
+    text-decoration: none;
+    line-height: 14px;
+}
+#middle a:visited {
+    font-size: 12px;
+    color: #000000;
+    text-decoration: none;
+}
+#middle a:hover {
+    font-size: 12px;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+/*********************导航菜单css样式*******************/
+#submit{
+    width:51px;
+    height:15px;
+}
+#img{
+    margin:0;
+    padding:0;  
+    width:780px;
+    height:60px;
+    
+}
+
+#footer {
+    width:780; 
+    height:10px;
+    clear:both;
+    text-align:center;
+    /*padding-bottom:0; 
+    padding-top: 40px !important; */       
+    position:relative;
+}
+
+#footer p {
+    
+    bottom:0px;  
+    padding:0px;  
+    margin:0px; 
+    text-align: center; 
+    width:780; 
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    height: 20px;
+    vertical-align: bottom;      
+} 
+#yqlj{
+    margin:0;
+    padding:0;  
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight:bold;
+    text-align: left;   
+    padding-left: 10px;
+    padding-top: 35px !important;
+    padding-top: 25px;
+}
+
+/*********************错误css*******************/
+.fieldWithErrors {
+    padding: 2px;
+    background-color: red;
+    display: table;
+}
+
+#errorExplanation {
+    width: 400px;
+    border: 2px solid red;
+    padding: 7px;
+    padding-bottom: 12px;
+    margin-bottom: 20px;
+    background-color: #f0f0f0;
+}
+
+#errorExplanation h2 {
+    text-align: left;
+    font-weight: bold;
+    padding: 5px 5px 5px 15px;
+    font-size: 12px;
+    margin: -7px;
+    background-color: #c00;
+    color: #fff;
+}
+
+#errorExplanation p {
+    color: #333;
+    margin-bottom: 0;
+    padding: 5px;
+    padding-top: 20px;
+}
+
+#errorExplanation ul li {
+    font-size: 12px;
+    list-style: square;
+    padding: 5px;
+}
+
+.bottom{
+    border:none;background:url(/images/a5.jpg) left top no-repeat;
+    width:51px; 
+    height:15px; 
+    display:block;
+    cursor:pointer; 
+}
+
+
+.bottom_en{
+    border:none;background:url(/images/a5_en.gif) left top no-repeat;
+    width:51px; 
+    height:15px; 
+    display:block;
+    cursor:pointer; 
+}
+
+pre { 
+    white-space: pre-wrap; /* css-3 */ 
+    white-space: -moz-pre-wrap; /* Mozilla, since 1999 */ 
+    white-space: -pre-wrap; /* Opera 4-6 */ 
+    white-space: -o-pre-wrap; /* Opera 7 */ 
+    word-wrap: break-word; /* Internet Explorer 5.5+ */
+    
+}
+#newsmore{
+    float:right;
+    text-align:right;
+    padding-right:20px;
+}
+
+#productdetail{
+    clear:both; 
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align:left;
+    line-height:18px; 
+    
+}
+
+
+#jtall a:link{
+    color:#3B6F9F;
+    text-decoration:none;
+}
+
+#jtall  a:visited {
+    color: #3B6F9F;
+    text-decoration:none;
+}
+#jtall  a:hover {
+    color: #FF0000;
+    cursor:pointer;
+}
+#jtall {
+    width:780px;
+    height:auto;
+    color:#3A6E9E;
+    font-size:12px;
+    font: arial;
+    padding-top:20px;
+}
+#left { 
+    margin:0; 
+    width:490px; 
+    height:auto; 
+    text-align:left;  
+    float:left;  
+    clear:left; 
+    overflow:hidden;
+    
+} 
+#title1,#title3,#title4{
+    font-size:16px;
+    font-weight: bold;
+}
+#title3,#title4{
+    padding-left:63px;
+}
+#title1{
+    padding-left:12px;
+}
+#title2{
+        font-size:16px;
+    font-weight: bold;
+     padding-left:12px;
+
+    height:20px;
+    overflow:hidden;
+    padding-top:80px !important;
+}
+#subsidiary { 
+    margin:0; 
+    width:450px; 
+    height:auto; 
+    text-align:left;  
+    float:left;  
+    clear:left; 
+    overflow:hidden;
+    padding-left:10px;
+    padding-top:10px;
+    
+    
+}
+#subsidiary p{
+    margin:0; 
+    padding:0;
+    float:left;
+    width:150px;
+    height:20px; 
+}
+#right {
+    margin:0;
+    width:290px;
+    height:auto;
+    text-align:left;
+    float:right;
+    clear:right;
+    overflow:hidden;
+    
+} 
+#left #p1{
+    margin:10px; 
+    font-size:12px; 
+    line-height:1.5; 
+    height:auto;
+}
+#jtcpjj{
+    margin:0;
+
+    top:0; 
+    left:0; 
+    float:left; 
+    width:490px; 
+    height:80px; 
+    padding-top:10px;
+    padding-bottom:50px;
+}
+
+#global
+{
+
+    margin:0;
+    padding:0;
+    float:left;
+    padding-top:10px;
+    padding-left:63px;
+    /*border: 1px solid red;*/
+    width:226px;
+    height:121px;
+    
+}
+
+#global img
+{
+    margin:0;
+    padding:0;
+
+}
+#howto
+{
+    margin:0;
+    padding:0;
+    float:left;
+    width:226px;
+    padding-left:63px;
+}
+#link
+{
+    margin:0;
+    padding:0;
+    float:left;
+    width:230px;
+    padding-left:60px;
+}
+#howto
+{
+    padding-top:10px;
+    padding-bottom:10px;
+}
+#link
+{
+    padding-top: 10px;
+}
+#jtmore
+{
+    margin:0;
+    float:right;
+    
+}
+#imgshow2
+{
+  padding-top:40px;
+    
+}

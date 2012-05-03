@@ -1,0 +1,191 @@
+
+<%= error_messages_for 'category' %>
+<br/>
+<% 
+    if @flag == 1 then 
+     @category.categoryid = @getmaxcategoryid
+%>
+<p><label for="category_id">栏目编号</label><br/>
+<%= text_field 'category', 'categoryid',:readonly => true, :id => 'text'   %></p>
+<% else %>
+<p><label for="category_id">栏目编号</label><br/>
+<%= text_field 'category', 'categoryid',:readonly => true, :id => 'text'   %></p>
+<% end %>
+<br/>
+<p><label for="category_name">栏目名称</label><br/>
+<%= text_field 'category', 'categoryname', :id => 'text'  %>&nbsp;&nbsp;&nbsp;&nbsp;
+</p>
+<br/>
+<p><label for="category_categoryorder">排列序号</label><br/>
+<%= text_field 'category', 'categoryorder', :id => 'text'  %>&nbsp;&nbsp;&nbsp;&nbsp;
+</p>
+<br/>
+<% 
+    if @flag == 1 then 
+    case  @getmaxcategoryid.slice(0,3) 
+    when "001"
+          if @companyid.to_i == 4
+            @category.url = "/hanhong/en_about?id=" + @getmaxcategoryid
+          else
+            @category.url = "/content/companycontactus_en?id=" + @getmaxcategoryid
+          end
+          
+    when "002"
+      if @companyid.to_i == 4
+        @category.url = "/hanhong/en_product?id=" + @getmaxcategoryid
+      end
+      if $company_id  == 6 or $company_id  == 5
+        if @getmaxcategoryid.length == 6
+          @category.url = "/content/wagenmostlyproductdetail?id=" + @getmaxcategoryid
+        else
+          @category.url = "/content/wagenmostlyproductdetailinfo?id=" + @getmaxcategoryid
+        end   
+      else
+        if @getmaxcategoryid.length == 6
+          @category.url = "/content/mostlyproduct_en?id=" + @getmaxcategoryid
+       else
+          @category.url = "/content/mostlyproductdetail_en?id=" + @getmaxcategoryid
+        end
+      end
+    when "003"
+        if @companyid.to_i == 4
+          @category.url = "/hanhong/en_market?id=" + @getmaxcategoryid
+        else
+          @category.url = "/content/marketapplydetail_en?id=" + @getmaxcategoryid          
+        end
+        
+    when "004"
+      if @companyid.to_i == 4
+        @category.url = "/hanhong/en_technology?id=" + @getmaxcategoryid
+      else
+        if @getmaxcategoryid.length == 6
+          @category.url = "/content/technologydetail_en?id=" + @getmaxcategoryid
+        else
+          @category.url = "/content/technologyguide_en?id=" + @getmaxcategoryid
+        end
+      end
+    when "005"
+        @category.url = ""
+    when "006"
+        if @companyid.to_i == 4
+        @category.url = "/hanhong/en_service?id=" + @getmaxcategoryid  
+        else
+        @category.url = "/content/serverareadetail_en?id=" + @getmaxcategoryid
+        end
+    else
+        @category.url = ""
+    end
+%>
+<p><label for="category_url">栏目链接</label><br/>
+<%= text_field 'category', 'url', :readonly => true,:id => 'text1'  %></p>
+<% else %>
+<p><label for="category_url">栏目链接</label><br/>
+<%= text_field 'category', 'url',:readonly => true, :id => 'text1'   %></p>
+<% end %>
+<br/>
+<% 
+    if @flag == 1 then 
+     @category.company_id = @companyid
+%>
+<p><label for="category_company_id">菜单规类</label><br/>
+    <%= select 'category', 'company_id', 
+                EnCompany.find(:all).collect{ |p| [p.companyname, p.id] },
+                { :include_blank => true } %>
+</p>
+<% else %>
+<p><label for="category_company_id">菜单规类</label><br/>
+    <%= select 'category', 'company_id', 
+                EnCompany.find(:all).collect{ |p| [p.companyname, p.id] },
+                { :include_blank => true } %>
+</p>
+<% end %>
+<br/>
+<!--对产品进行规类 新增状态-->
+<% if @flag == 1 %>
+<% if @getmaxcategoryid.slice(0,3) == "002" and @getmaxcategoryid.length == 6 %>
+<p><label for="category_productsort">产品归类</label><br/>
+    <%= select 'category', 'productsort', 
+                EnCategory.find(:all,
+              :conditions => " substring(categoryid,1,3) = '003' and length(categoryid) = 6  and company_id ='" + @companyid.to_s + "'").collect{ |p| [p.categoryname, p.categoryid] },
+                { :include_blank => true } %>
+</p>
+<br/>
+<% end %>
+<% end %>
+<!--对产品进行规类 编辑状态-->
+<% if  @flag == 0 %>
+<% if @categoryid.slice(0,3) == "002" and @categoryid.length == 6  %>
+<p><label for="category_productsort">产品归类</label><br/>
+    <%= select 'category', 'productsort', 
+                EnCategory.find(:all,
+              :conditions => " substring(categoryid,1,3) = '003' and length(categoryid) = 6  and company_id ='" + @companyid.to_s + "'").collect{ 
+|p| [p.categoryname, p.categoryid] },
+                { :include_blank => true } %>
+</p>
+<br/>
+<% end %>
+<% end %>
+
+<!--对子公司市场应用菜单规类-->
+<% if @flag == 1 %>
+<% if @getmaxcategoryid.slice(0,3) == "003"  and @getmaxcategoryid.length == 6 %>
+<p><label for="category_productsort">行业归类</label><br/>
+    <%= select 'category', 'productsort', 
+                EnCategory.find(:all,
+              :conditions => " substring(categoryid,1,3) = '003' and length(categoryid) = 6  and company_id = 1").collect{ |p| [p.categoryname, p.categoryid] },
+                { :include_blank => true } %>
+</p>
+<br/>
+<% end %>
+<% end %>
+
+<% if @flag == 0 %>
+<% if @categoryid.slice(0,3) == "003"  and @categoryid.length == 6 %>
+<p><label for="category_productsort">行业归类</label><br/>
+    <%= select 'category', 'productsort', 
+                EnCategory.find(:all,
+              :conditions => " substring(categoryid,1,3) = '003' and length(categoryid) = 6  and company_id = 1").collect{ |p| [p.categoryname, p.categoryid] },
+                { :include_blank => true } %>
+</p>
+<br/>
+<% end %>
+<% end %>
+
+<p><label for="category_productspec">产品型号（只针对上海汉虹）</label><br/>
+<%= text_field 'category', 'productspec', :id => 'text1' %></p>
+<br/>
+
+<p><label for="category_summary">栏目内容</label><br/>
+<%= text_area 'category', 'summary', :id => 'textarea',:size => 255 %></p>
+<br/>
+
+<p><label for="category_summarydetail">产品说明</label><br/>
+<%= fckeditor_textarea('category', 'summarydetail',:toolbarSet => 'Simple', :width => '550px', :height => '200px') %></p>
+<br/>
+
+
+<p><label for="category_picturename">小图片路径</label><br/>
+<%= file_column_field 'category', 'picturename' ,:id => 'image'  %>
+<% if @flag == 0 %>
+<% if !@category.picturename.blank? %>
+<%= check_box 'category', 'deletesmallsummarypic' %>
+<label for="category_picturename">删除图片</label>
+<% end %>
+<% end %>
+</p>
+<br/>
+<p><label for="category_summarypic">大图片路径</label><br/>
+<%= file_column_field 'category', 'summarypic' ,:id => 'image'  %>
+<% if @flag == 0 %>
+<% if !@category.summarypic.blank? %>
+<%= check_box 'category', 'deletesummarypic' %>
+<label for="category_summary">删除图片</label>
+<% end %>
+<% end %>
+</p>
+<br/>
+
+
+<p><label for="category_particularcontent">详细内容</label><br/>
+<%= fckeditor_textarea('category', 'content',:toolbarSet => 'Simple', :width => '550px', :height => '300px') %>
+</p>  

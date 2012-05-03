@@ -1,0 +1,71 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"> 
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title><%=@title%></title>
+<%= stylesheet_link_tag 'content' %>
+</head>
+
+<body id="body1" onload="parent.document.getElementById('frame1').style.height=this.document.body.scrollHeight">
+<!--产品明细-->
+ <div id="yylybanner"><%=@title%></div>
+ <% for mostlyproduct in @mostlyproduct %>
+ <% if !mostlyproduct.summary.blank? %>
+ <div  style="text-align:justify;text-justify:distribute-all-lines;text-align-last:justify;width:544px;">
+   <pre><p id="productdetail"><%=mostlyproduct.summary%></p></pre>
+ </div>
+ <% end %>
+
+ <% if @mostlyproductdetail.size > 0 %>
+  <div id="cpdl3"></div>
+
+ <div id="cpdl2">
+   <% for mostlyproductdetail in @mostlyproductdetail %>  
+     <% if mostlyproductdetail.summarypic != "" and mostlyproductdetail.summarypic != nil %>
+        <% @categorylist = mostlyproductdetail %>
+        <span id="imageheight">
+        <a href="/content/temostlyproductdetail_en?id=<%=mostlyproductdetail.id%>" style="cursor:pointer">
+        <%=image_tag url_for_file_column(:categorylist,:summarypic),:height => '100', 
+          :width => '163',:border => 0,:class=>'image' %>
+        </a>
+        </span>
+    <% end %>
+   <% end %>
+ </div>
+ <% end %>
+
+  <div id="shuoming">
+    <%=mostlyproduct.summarydetail%>
+  </div>
+  <!--注意：如果对热电半导体的代码进行修改，下述写法将会有问题-->
+  <% if @menu.slice(0,6) == "002005" %>
+  <div id="cpdl3"></div>
+  
+  <div id ="pp"><p>Other options and information:</p></div>
+  
+  <div id="cpjjdetail2">
+  <div id="cpjjdetailimg2">
+    <a onClick='window.parent.location.href("/technology/index_en?id=004003001")' onmousemove="this.style['color']='#ff0000'" onmouseout="this.style['color']='#3B6F9F'" style="cursor:pointer" >
+  <img src="/images/jszn_en.jpg" alt="product" border="0" height="102" width="166" />
+    </a>
+  </div>
+  <div id="cpjjdetailcontent2">
+    <p id="cpjjsummary">Do you have questions about thermoelectrics, thermoelectric technology, Peltier cooling, or the Seebeck effect? Are you trying to calculate your thermal system requirements？</p><a onClick='window.parent.location.href("/technology/index_en?id=004003001")' onmousemove="this.style['color']='#ff0000'" onmouseout="this.style['color']='#3B6F9F'" style="cursor:pointer" ><p id="readmore">Read more&raquo;</p></a>
+
+  </div>  
+  </div>
+  
+  <div id="cpjjdetail2">
+  <div id="cpjjdetailimg2">
+    <a href="/content/rohs" style="cursor:pointer"><img src="/images/rohs.jpg" alt="product" border="0" height="102" width="168" /></a>
+  </div>
+  <div id="cpjjdetailcontent2">
+    <p id="titledetail"><a href="/content/rohs">RoHS Compliance&raquo;</a></p>
+  <p id="cpjjsummary">Ferrotec's thermoelectric modules are compliant with the RoHS standard.  <span><a href="/content/rohs">Read more&raquo;</a></span></p>
+  </div> 
+  </div> 
+  <% end %>
+<% end %>
+
+</body>
+</html>

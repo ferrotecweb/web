@@ -1,0 +1,2 @@
+module BackManager::CompanyHelper
+end

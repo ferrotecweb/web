@@ -1,0 +1,41 @@
+<div id="order">
+<br/>
+<h3>集团公司信息一览(英文)</h3>
+<br/>
+<!--cellpadding="0" cellspacing="0"-->
+<table id="table" cellpadding="0" cellspacing="0" >
+  <tr id="tabletr">
+  <td width="60px" >公司简称</td>
+  <td width="140px">公司全称</td>
+  <td width="100px" >公司电话</td>
+  <td width="100px" >公司传真</td> 
+  <td width="200px" >公司地址</td>
+  <td colspan="2" width="80" align="center"><%= link_to "增加新公司", :controller => 'en_company', :action => 'add_company' %></td>
+  </tr>
+  <% for company in @all_companys %>
+  <tr>
+    <td ><%= h(company.companyname) %>&nbsp;</td>
+    <td ><%= h(company.fullname) %>&nbsp;</td>
+    <td ><%= h(company.telephone) %>&nbsp;</td>
+    <td ><%= h(company.fax) %>&nbsp;</td>
+    <td ><%= h(company.address) %>&nbsp;</td>
+    <td align="center"><%= link_to "编辑", { # link_to options
+                           :controller => 'en_company', 
+                           :action => 'edit_company',
+                           :id => company} %>
+
+  </td>
+  <td align="center"><%= link_to "删除", { # link_to options
+                           :controller => 'en_company', 
+                           :action => 'delete_company',
+                           :id => company},
+                         { # html options
+                           :method  => :post,
+                           :confirm => "确定要删除?"
+                         } %>
+
+  </td>  
+  </tr>
+  <% end %>
+</table>
+</div>

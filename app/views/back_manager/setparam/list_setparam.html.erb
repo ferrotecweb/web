@@ -1,0 +1,55 @@
+<div id="order">
+<br/>
+<h3>参数信息一览</h3>
+<br/>
+<!--cellpadding="0" cellspacing="0"-->
+<table id="table" cellpadding="0" cellspacing="0" >
+  <tr id="tabletr">
+  <td width="110px" >ModelNumber</td>
+  <td width="60px" >PartNumber</td>
+  <td width="50px">ShaftType</td>
+  <td width="50px" >ShaftDimension</td>
+  <td width="30px" >Unit</td> 
+  <td width="60px" >MountingType</td>
+  <td width="60px" >Fluid</td>
+  <td colspan="2" width="120" align="center"><%= link_to "添加新记录", :controller => 'setparam', :action => 'add_setparam' %></td>
+  
+  </tr>
+  <% for setparam in @all_setparams %>
+
+  <tr>
+    <td ><%= h(setparam.modelnumber) %>&nbsp;</td>
+    <td ><%= h(setparam.partnumber) %>&nbsp;</td>
+    <td ><%= h(setparam.shafttype) %>&nbsp;</td>
+    <td ><%= h(setparam.shaftdimension) %>&nbsp;</td>
+    <td ><%= h(setparam.shaftdimensioncondition) %>&nbsp;</td>
+    <td ><%= h(setparam.mountingtype) %>&nbsp;</td>
+    <td ><%= h(setparam.fluid) %>&nbsp;</td>
+    <td align="center"><%= link_to "编辑", { # link_to options
+                           :controller => 'setparam', 
+                           :action => 'edit_setparam',
+                           :id => setparam} %>
+
+  </td>
+  <td align="center"><%= link_to "删除", { # link_to options
+                           :controller => 'setparam', 
+                           :action => 'delete_setparam',
+                           :id => setparam},
+                         { # html options
+                           :method  => :post,
+                           :confirm => "确定要删除?"
+                         } %>
+
+  </td>  
+  </tr>
+  <% end %>
+</table>
+</div>
+<div id="fy">
+<%= will_paginate @all_setparams,
+:inner_window => 1,
+:outer_window => 1,
+:prev_label => '上一页',
+:next_label => '下一页'
+%>
+</div>

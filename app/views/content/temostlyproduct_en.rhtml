@@ -1,0 +1,98 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"> 
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title></title>
+<%= stylesheet_link_tag 'content' %>
+</head>
+
+<body onload="parent.document.getElementById('frame1').style.height=this.document.body.scrollHeight">
+  <% for mostlyproduct in @mostlyproduct %>
+  <div id="yylybanner"><%=mostlyproduct.categoryname%></div>
+
+  <div id="cpjj">
+  <span>  
+  <% if !mostlyproduct.summarypic.blank? %>
+  <% @category = mostlyproduct %>
+  <%=image_tag url_for_file_column(:category,:summarypic),:height => '137', 
+    :width => '264',:style=> 'float:right;padding-left:15px;' %>
+  <% end %>
+  <pre><%=mostlyproduct.summary%></pre>
+  </span> 
+  </div>
+  
+
+  <% if @mostlyproductdetail.size > 0 %>
+  <div id="cpdl3"></div>
+  <% end %>
+ 
+  <% for mostlyproductdetail in @mostlyproductdetail  %>
+
+  <div id="cpjjdetail">
+  <div id="cpjjdetailimg">
+    <% if mostlyproductdetail.picturename != "" and mostlyproductdetail.picturename != nil %>
+    <% @categorylist = mostlyproductdetail %>
+    <a onclick="showmenu('<%=mostlyproductdetail.categoryid%>','<%=mostlyproductdetail.url%>')" style="cursor:pointer">
+    <%=image_tag url_for_file_column(:categorylist,:picturename),:height => '88', 
+      :width => '104',:border => 0,:style=>'cursor:pointer' %>
+    <% end %>
+    </a>
+  </div>
+  <div id="cpjjdetailcontent">
+  <span id="titledetail"><%=mostlyproductdetail.categoryname%></span><br />
+  <p id="cpjjsummary"><%=truncate(mostlyproductdetail.summary,120)%></p>
+  </div> 
+  </div>  
+  <% end %>
+
+  <% if mostlyproduct.categoryid == "002005005" or mostlyproduct.categoryid == "002005" %>
+  <div id="cpdl3"></div>
+  
+  <div id ="pp"><p>Other options and information:</p></div>
+  
+  <div id="cpjjdetail2">
+  <div id="cpjjdetailimg2">
+    <a onClick='window.parent.location.href("/technology/index_en?id=004003001")' onmousemove="this.style['color']='#ff0000'" onmouseout="this.style['color']='#3B6F9F'" style="cursor:pointer" >
+  <img src="/images/jszn_en.jpg" alt="product" border="0" height="102" width="166" />
+    </a>
+  </div>
+  <div id="cpjjdetailcontent2">
+    <p id="cpjjsummary">Do you have questions about thermoelectrics, thermoelectric technology, Peltier cooling, or the Seebeck effect? Are you trying to calculate your thermal system requirements？</p><a onClick='window.parent.location.href("/technology/index_en?id=004003001")' onmousemove="this.style['color']='#ff0000'" onmouseout="this.style['color']='#3B6F9F'" style="cursor:pointer" ><p id="readmore">Read more&raquo;</p></a>
+  </div>  
+  </div>
+
+  <% end %>
+<% end %>
+<script language="JavaScript" type="text/JavaScript">
+//主菜单单击事件
+function showmenu(paremenuID,url)
+{ 
+    //主菜单变色
+    parent.document.getElementById("menutop2").style.color='#000000';
+    parent.document.getElementById("menutop2").style.backgroundImage='url(/images/memu_r9_c1.jpg)';
+   
+    if (paremenuID.length > 6)
+    {
+        parent.init2(); 
+        //菜单变色
+        parent.document.getElementById(paremenuID).style.backgroundImage='url(/images/memu_r5_c1.jpg)';
+        parent.clickCID = paremenuID;    
+    }
+    else
+    {
+        //展开菜单并更换颜色
+        parent.document.getElementById(paremenuID).style.backgroundImage='url(/images/memu_r2_c1.jpg)';
+        parent.document.getElementById("child"+paremenuID).style.display = "";
+        parent.clickPID = paremenuID;
+    }
+    
+    //转到链接
+    parent.document.getElementById(paremenuID).style.color='#FFFFFF';
+    parent.document.getElementById("frame1").src = url;
+}
+</script>
+<br />
+<br />
+
+</body>
+</html>

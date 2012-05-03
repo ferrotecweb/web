@@ -1,0 +1,43 @@
+*{ margin:0; padding:0; font-family:Arial, Helvetica, sans-serif; }
+body { margin:0 auto; padding:0;  background:#FFF; text-align:center; color:#666; font-size:11px; }
+div,ul,li,dt,dl,dd,form,span,img{ margin:0; padding:0; border:0;}
+li{ list-style:none;}
+p{ text-indent:2em;}
+/* 链接颜色 */
+a{color: #666; text-decoration:none;}
+a:hover {color:#000; text-decoration:none;}
+/* 字体属性 [定义规则，小写f加属性名称] */
+.fB {font-weight: bold;}
+.fI {font-style: italic;}
+/* 颜色属性 [定义规则，小写c加颜色名称] */
+.cVisited{ color:#A4D0BB; }
+.cRed,a.cRed:link,a.cRed:visited{ color:Red; }
+.cBlue,a.cBlue:link,a.cBlue:visited{color:#426c91;}
+.cBlue2,a.cBlue2:link,a.cBlue2:visited{ color:#6699cc;}
+.cDRed,a.cDRed:link,a.cDRed:visited{ color:#bc2931;}
+.cGray,a.cGray:link,a.cGray:visited{ color: #4F544D;}/*灰色*/
+.cDGray,a.cDGray:link,a.cDGray:visited{ color: #666;}/*深灰色*/
+.cWhite,a.cWhite:link,a.cWhite:visited{ color:#fff;}
+.cBlack,a.cBlack:link,a.cBlack:visited{color:#000;}
+a.cBlack:hover{color:#bc2931;}
+.cYellow,a.cYellow:link,a.cYellow:visited{color:#D85C01;}
+.cGreen,a.cGreen:link,a.cGreen:visited{color:#008000;}
+.cPrice{color:#f30; font-weight:bold; }
+.cViprice{ color:#FF9900; text-decoration:underline;}
+/* 字体大小*/
+.f12px{ font-size:12px;}
+.f14px{ font-size:14px;}
+/* 其他属性 */
+.left{ float: left;}
+.right{ float: right;}
+.Tleft{text-align:left;}
+.Tcenter{ text-align:center;}
+.Tright{ text-align:right;}
+.clear{ clear: both; font-size:1px; width:1px; height:1px; overflow:hidden; visibility: hidden; }
+.hidden {display: none;}
+.unLine ,.unLine a{text-decoration: none;}
+.noBorder{border:none;	}
+.img_valign_center{position:static;vertical-align:middle }
+.p_valign_center{ position:static; vertical-align:middle }
+.nothing{font-size:0px; line-height :0px; margin :0px; padding :0;}
+

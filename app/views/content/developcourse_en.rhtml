@@ -1,0 +1,75 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"> 
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>History of Development</title>
+<%= stylesheet_link_tag 'content' %>
+
+</head>
+
+<body>
+  <div id="yylybanner">Milestones</div>
+  <div id="developcourse">  
+    <% 
+        @count = 0
+        for developcourse  in @developcourses 
+          @count = @count + 1         
+    %>
+    <% if @count == 1  %>
+    <p>
+    <span id="developcourse1"><%=developcourse.title %></span>
+    <span id="developcourse3"><img src="/images/point.jpg" width="11" height="10" border="0" style="float:left;" /></span>
+    <% if $company_id ==5 or $company_id ==6 %>
+    <span id="developcourseother">
+        <%=developcourse.summary %>
+    </span>  
+    <% else %>
+    <span id="developcourse2">
+        <%=developcourse.summary %>
+    </span>
+    <% end %>
+    </p>
+    <% 
+        @title = developcourse.title
+        else  
+    %>
+        <% if developcourse.title != @title %>
+          <br />
+          <br />
+          <p>
+            <span id="developcourse1"><%=developcourse.title %></span>
+            <span id="developcourse3"><img src="/images/point.jpg" width="11" height="10" border="0" style="float:left;" /></span>
+            <% if $company_id ==5 or $company_id ==6 %>
+                <span id="developcourseother">
+                    <%=developcourse.summary %>
+                </span>  
+            <% else %>
+                <span id="developcourse2">
+                    <%=developcourse.summary %>
+                </span>
+            <% end %>
+          </p>
+        <% else %>
+          <p>
+            <span id="developcourse1">&nbsp;</span>
+            <span id="developcourse3"><img src="/images/point.jpg" width="11" height="10" border="0" style="float:left;" /></span>
+            <% if $company_id ==5 or $company_id ==6 %>
+                <span id="developcourseother">
+                    <%=developcourse.summary %>
+                </span>  
+            <% else %>
+                <span id="developcourse2">
+                    <%=developcourse.summary %>
+                </span>
+            <% end %>
+          </p>
+        <% end %>
+    <% 
+        @title = developcourse.title
+        end 
+    %>
+  <% end %>
+  </div>
+  
+</body>
+</html>

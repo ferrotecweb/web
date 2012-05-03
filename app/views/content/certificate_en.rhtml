@@ -1,0 +1,44 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"> 
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>Quality Assurance</title>
+<%= stylesheet_link_tag 'content' %>
+<script>
+function show(src)
+  {var nw=window.open("","","scrollbars=yes,width=400,height=400");
+    nw.document.write("<img src="+src+" onclick=window.close()>")
+    nw.document.close();
+  }
+</script>
+</head>
+<body style="overflow-x:hidden">
+  <div id="yylybanner"><%=@title%></div>
+  <!--点击大图自动关闭的代码-->
+  <!--window.open("url","name","width=,height=")-->
+  <div id="zzzsshow">
+  <% 
+    @count = 0
+    for zzzh in  @zzzh
+    @count = @count + 1
+    
+  %>
+  <% if zzzh.summarypic != "" and zzzh.summarypic != nil %>
+  <div id="certificate">
+     <div id="phone">
+      <br>
+      <% @categorylist = zzzh %>
+      <a  style="cursor:pointer"  onClick='window.open("/content/pictureview_en?id=<%=zzzh.id%>","","scrollbars=yes,width=500,height=400,top=(window.screen.availHeight-30-400)/2"),left= (window.screen.availWidth-10-600)/2' >
+      <%=image_tag url_for_file_column(:categorylist,:summarypic),:height => '82',:width => '124',:border=>'1px'  %>
+     </a>
+     </div>     
+      <p id ="zztitle">
+          <%= zzzh.title %>
+      </p>
+    
+  </div>
+  <% end %>
+  <% end %>
+  </div>
+</body>
+</html>

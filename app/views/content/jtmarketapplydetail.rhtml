@@ -1,0 +1,49 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"> 
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>集团市场应用明细</title>
+<%= stylesheet_link_tag 'content' %>
+</head>
+
+<body id="body" onload="parent.document.getElementById('frame1').style.height=this.document.body.scrollHeight">
+<!--集团市场应用明细-->
+ <% for marketapply in @marketapply %>
+ <div id="yylybanner"><%=marketapply.categoryname%></div>
+ 
+ <% 
+    for marketapplydetail in @marketapplydetail 
+ %>
+  <!--<% if marketapplydetail.summarydetail != "" and marketapplydetail.summarydetail != nil %>
+  <div id="companyname"><%=getcompanyname(marketapplydetail.company_id)%></div>
+  <% end %>-->
+  <div id="marketapplydetail">
+    <%=marketapplydetail.summarydetail%>
+  </div>
+ <% end %>
+<!--
+ <div  style="text-align:justify;text-justify:distribute-all-lines;text-align-last:justify">
+    <pre><%=marketapply.summary%></pre>
+ </div>
+ 
+ <% if @marketapplydetail.size > 0 %>
+  <div id="cpdl3"></div>
+  <% end %>
+ 
+ <% for marketapplydetail in @marketapplydetail %>
+   <div id="marketapplydetail">
+     <p id="marketapplydetail1">
+     <% $company_id = marketapplydetail.company_id %>
+    <a onClick='window.parent.location.href("/mostlyproduct/index?id=<%=marketapplydetail.categoryid%>")' onmousemove="this.style['color']='#ff0000'" onmouseout="this.style['color']='#3B6F9F'" style="cursor:pointer" >
+    <%=marketapplydetail.categoryname%>
+    </a>
+    </p>
+    <p id="marketapplydetail2"><%=marketapplydetail.summary%></p>
+   </div>
+ <% end %>
+
+ <% end %>
+-->
+
+</body>
+</html>

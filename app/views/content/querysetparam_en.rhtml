@@ -1,0 +1,47 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>磁流体数据查询</title>
+<%= stylesheet_link_tag 'content' %>
+
+</head>
+
+<body id="body2" onload="parent.document.getElementById('frame1').style.height=this.document.body.scrollHeight">
+<!--磁流体数据查询-->
+<div id="yylybanner">FerroFluidic Feedthroughs matching your request</div>
+<div id="divparam">
+<table id=listing class=tablesorter width="100%" border="0" cellpadding="0" cellspacing="0">
+<thead>
+<tr id="prodTableHead">
+  <th>Model Number</th>
+  <th>Part Number</th>
+  <th>Shaft Type</th>
+  <th>Shaft Dimension</th>
+  <th>Mounting Type</th>
+  <th>Fluid</th>
+</tr>
+</thead>
+<tbody>
+<% for setparam in @setparams %>
+  <tr class="<%= cycle('list-line-odd','list-line-even') %>">
+    <td><%=setparam.modelnumber%></td>
+
+    <td><%=setparam.partnumber%></td>
+
+    <td><%=setparam.shafttype%></td>
+
+    <td><%=setparam.shaftdimension%></td>
+
+    <td><%=setparam.mountingtype%></td>
+
+    <td><%=setparam.fluid%></td>
+  </tr>
+<% end %>
+</tbody>
+</table>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"> 
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>Request For Quote</title>
+<%= stylesheet_link_tag 'content' %>
+<%= javascript_include_tag 'WebCalendar'%> 
+
+<style type="text/css">
+<!--
+.style1 {color: #999999}
+.style22 {font-size: 12px}
+.style14 {font-size: 12px; color: #003559; }
+.style2 {
+  font-size: 12px; color: #FFFFFF;text-align:center; 
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: #ffffff;
+}
+-->
+</style>
+</head>
+
+<body onload="parent.document.getElementById('frame1').style.height=this.document.body.scrollHeight">
+
+<% if flash[:notice] -%>
+<br/>
+<br/>
+<div id="notice"><%= flash[:notice] %></div>
+<br/>
+<br/>
+<% end -%>
+
+
+<div id="yylybanner"><span>Request For Quote</span></div>
+
+<div id="communion4">
+  <p>Please complete the form below. When you submit the form our sales support team will be in contact with you generally within two business days. </p>
+</div>
+
+
+<% form_tag :action => 'add_vfresolvent_en',:object => @contact do %>
+<div id="communion3" align="left">
+      <table id="communiontable" width="530" border="0" align="left" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+        <tr>
+          <td colspan="3"  height="30"><span><font style="font-weight:bold"><h6>* Indicates a required field</h6></font></span></td>
+        </tr>      
+        <tr valign="baseline">
+          <td width="1"></td>
+          <td width="140" bgcolor="#999999" class="style2"><div align="left">Your Name&nbsp;&nbsp;*</div></td>
+          <td height="25"><div align="left">
+              <% @contact.categoryid = @menu %>
+              <%= hidden_field 'contact', 'categoryid'  %>
+              <%= text_field 'contact', 'person' ,:size=> 40  %>
+          </div></td>
+        </tr>
+        
+        <tr valign="baseline">
+          <td width="1"></td>
+          <td width="140" bgcolor="#999999" class="style2"><div align="left">Title&nbsp;&nbsp;*</div></td>
+          <td height="25"><div align="left">
+              <%= text_field 'contact', 'tecasked' ,:size=> 40  %>
+          </div></td>
+        </tr>
+        
+        <tr valign="baseline">
+          <td width="1"></td>
+          <td width="140" bgcolor="#999999" class="style2"><div align="left">Company&nbsp;&nbsp;*</div></td>
+          <td width="354" height="25"><div align="left">
+
+              <%= text_field 'contact', 'company' ,:size=> 40  %>
+          </div></td>
+        </tr>
+        
+        <tr valign="baseline">
+          <td width="1"></td>
+          <td width="140" bgcolor="#999999" class="style2"><div align="left" class="style22">Email Address&nbsp;&nbsp;*</div></td>
+          <td height="25"><div align="left" class="style14">
+              <div align="left">
+                <%= text_field 'contact', 'email' ,:size=> 40  %>
+              </div>
+          </div></td>
+        </tr>
+
+        <tr>
+          <td width="1"></td>
+          <td width="140" height="100" align="right" valign="top" nowrap bgcolor="#999999" class="style2">
+          <div align="left" class="style22">Mailing Address&nbsp;&nbsp;*</div>
+          </td>
+          <td valign="baseline" height="25"><div align="left">
+            <%= text_area 'contact', 'addr' ,:cols => 40, :rows => 6  %>
+          </div></td>
+        </tr>
+        
+        <tr valign="baseline">
+          <td width="1"></td>
+          <td width="140" bgcolor="#999999" class="style2"><div align="left" class="style22">City&nbsp;&nbsp;*</div></td>
+          <td height="25"><div align="left" class="style14">
+              <div align="left">
+                <%= text_field 'contact', 'city' ,:size=> 40  %>
+              </div>
+          </div></td>
+        </tr>
+        
+        <tr>
+          <td width="1"></td>
+          <td width="140" height="20" align="right" nowrap bgcolor="#999999" class="style2">
+            <div align="left" class="style22">State/Province&nbsp;&nbsp;*</div>
+          </td>
+          <td valign="baseline" height="25"><div align="left">
+            <%= text_field 'contact', 'area' ,:size=> 40  %>
+          </div></td>
+        </tr>
+        
+        <tr valign="baseline">
+          <td width="1"></td>
+          <td width="140" bgcolor="#999999" class="style2"><div align="left" class="style22">Zip/Postal Code</div></td>
+          <td height="25"><div align="left" class="style14">
+              <div align="left">
+                <%= text_field 'contact', 'zipcode' ,:size=> 40  %>
+              </div>
+          </div></td>
+        </tr>
+        
+        <tr valign="baseline">
+          <td width="1"></td>
+          <td width="140" bgcolor="#999999" class="style2"><div align="left" class="style22">Country&nbsp;&nbsp;*</div></td>
+          <td height="25" height="25"><div align="left" class="style14">
+              <div align="left">
+                <%= text_field 'contact', 'country' ,:size=> 40  %>
+              </div>
+          </div></td>
+        </tr>
+        
+        <tr valign="baseline">
+          <td width="1"></td>
+          <td width="140" bgcolor="#999999" class="style2"><div align="left" class="style22">Phone&nbsp;&nbsp;*</div></td>
+          <td height="25" height="25"><div align="left" class="style14">
+              <div align="left">
+                <%= text_field 'contact', 'phone' ,:size=> 40  %>
+              </div>
+          </div></td>
+        </tr>
+        
+        <tr valign="baseline">
+          <td width="1"></td>
+          <td width="140" bgcolor="#999999" class="style2"><div align="left" class="style22">Fax</div></td>
+          <td height="25"><div align="left" class="style14">
+              <div align="left">
+                <%= text_field 'contact', 'fax' ,:size=> 40  %>
+              </div>
+          </div></td>
+        </tr>
+        
+        <tr valign="baseline">
+          <td width="1"></td>
+          <td width="140" bgcolor="#999999" class="style2"><div align="left" class="style22">Your Request  
+Number of Pieces You Need:</div></td>
+          <td height="25"><div align="left" class="style14">
+              <div align="left">
+                <%= text_field 'contact', 'quantity' ,:size=> 20  %>
+              </div>
+          </div></td>
+        </tr>
+        
+        <tr valign="baseline">
+          <td width="1"></td>
+          <td width="140" bgcolor="#999999" class="style2"><div align="left" class="style22">Delivery Date</div></td>
+          <td height="25"><div align="left" class="style14">
+              <div align="left">
+                <%= text_field 'contact', 'getdate', :id => 'text',:onclick=> "SelectDate(this,'yyyy-MM-dd')",:size=>"10"  %>
+              </div>
+          </div></td>
+        </tr>
+        
+        <tr valign="baseline">
+          <td width="1"></td>
+          <td width="140" bgcolor="#999999" class="style2">
+            <p>&nbsp;</p>
+            <p align="left">Is this request based on an existing Ferrotec seal? If so, what is the model number?</p>
+          </td>
+          <td height="25"><div align="left" class="style14">
+              <div align="left">
+                <%= text_field 'contact', 'tecsize' ,:size=> 40  %>
+              </div>
+          </div></td>
+        </tr>
+
+        <tr>
+          <td width="1"></td>
+          <td width="140" height="137" align="right" valign="top" nowrap bgcolor="#999999" class="style2">
+          <div align="left" class="style22">Please describe your request</div>
+          </td>
+          <td valign="baseline"><div align="left">
+            <%= text_area 'contact', 'description' ,:cols => 40, :rows => 13  %>
+          </div></td>
+        </tr>
+      
+    </table>
+</div>
+
+
+<div class ="clear"></div>
+<div align="center" id="buttom"><%= submit_tag "submit" %>&nbsp;&nbsp;&nbsp;&nbsp;<%= submit_tag "reset" %>
+</div>
+<% end %>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<div id="contactlist">
+<div id="contact">
+<br/>
+<h3>留言一览</h3>
+<br/>
+<table id="table" cellpadding="0" cellspacing="0">
+  <tr id="tabletr">
+    <td width="140px">公司</td>
+    <td width="50px">姓名</td>
+    <td width="90px">联系电话</td>
+    <td width="120px">Email</td>
+    <td width="100px">所属部门</td>
+    <td width="70px">更新日期</td>
+    <td width="70px"></td>
+  </tr>
+  <% for contact in @contacts %> 
+  <tr>
+    <td><%=h(truncate(contact.company,10))%>&nbsp;</td>
+    <td><%=contact.person%>&nbsp;</td>
+    <td><%=contact.phone%>&nbsp;</td>
+    <td><%=contact.email%>&nbsp;</td>
+    
+    <% 
+        case contact.categoryid.slice(0,2)
+        when "TE"
+          @department = "热电事业部"
+        when "VF"
+          @department = "真空事业部"
+        end
+    %>
+    <td><%=@department%>&nbsp;</td>
+    <td ><%= h(contact.created_at.strftime("%Y-%m-%d")) %>&nbsp;</td>
+    <% if contact.categoryid.slice(0,2) == "TE" %>
+    <td><%= link_to '查看详细', :action => 'te_detail_contact', :id => contact %></td>
+    <% else %>
+    <td><%= link_to '查看详细', :action => 'vf_detail_contact', :id => contact %></td>
+    <% end %>
+  </tr>
+  <% end %>
+</table>
+</div>
+
+<div id="fy">
+<%= will_paginate @contacts,
+:inner_window => 1,
+:outer_window => 1,
+:prev_label => '上一页',
+:next_label => '下一页'
+%>
+</div>
+</div>

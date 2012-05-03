@@ -1,0 +1,204 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"> 
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>Thermal Solutions</title>
+<%= stylesheet_link_tag 'content' %>
+<%= javascript_include_tag 'WebCalendar'%> 
+
+<style type="text/css">
+<!--
+.style1 {color: #999999}
+.style22 {font-size: 12px}
+.style14 {font-size: 12px; color: #003559; }
+.style2 {
+  font-size: 12px; color: #FFFFFF;text-align:center; 
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: #ffffff;
+}
+-->
+</style>
+</head>
+
+<body onload="parent.document.getElementById('frame1').style.height=this.document.body.scrollHeight">
+
+<% if flash[:notice] -%>
+<br/>
+<br/>
+<div id="notice"><%= flash[:notice] %></div>
+<br/>
+<br/>
+<% end -%>
+
+
+<div id="yylybanner"><span>I Need More Information About Ferrotec’s Thermal Solutions!！</span></div>
+
+<div id="communion4">
+  <p>Thank you for your interest in Ferrotec’s thermal solutions. For more information about a specific module, to request a thermal solution quote, or to start the order process, please submit your contact information and any application information using the form below.</p>
+</div>
+
+
+<% form_tag :action => 'add_teresolvent_en',:object => @contact do %>
+<div id="communion3" align="left">
+      <table id="communiontable" width="550" border="0" align="left" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+        <tr><td colspan="2" height="30">
+            <span width="150"><h6><font style="font-weight:bold">Section 1: Contact Information </font></h6></span>
+        </td>
+        <td><h6><font style="font-weight:bold">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This information is important for processing your request<br /><span>* Indicates a required field</span></font></h6></td>
+        </tr>
+        
+        <tr valign="baseline">
+          <td width="1"></td>
+          <td width="140" bgcolor="#999999" class="style2"><div align="left">Name&nbsp;&nbsp;*</div></td>
+          <td><div align="left">
+              <% @contact.categoryid = @menu %>
+              <%= hidden_field 'contact', 'categoryid'  %>
+              <%= text_field 'contact', 'person' ,:size=> 40  %>
+          </div></td>
+        </tr>
+        
+        <tr valign="baseline">
+          <td width="1"></td>
+          <td width="140" bgcolor="#999999" class="style2"><div align="left">Company&nbsp;&nbsp;*</div></td>
+          <td width="354"><div align="left">
+
+              <%= text_field 'contact', 'company' ,:size=> 40  %>
+          </div></td>
+        </tr>
+        
+        <tr valign="baseline">
+          <td width="1"></td>
+          <td width="140" bgcolor="#999999" class="style2"><div align="left" class="style22">Email&nbsp;&nbsp;*</div></td>
+          <td><div align="left" class="style14">
+              <div align="left">
+                <%= text_field 'contact', 'email' ,:size=> 40  %>
+              </div>
+          </div></td>
+        </tr>
+        
+
+        <tr valign="baseline">
+          <td width="1"></td>
+          <td width="140" bgcolor="#999999" class="style2"><div align="left" class="style22">Phone&nbsp;&nbsp;*</div></td>
+          <td><div align="left" class="style14">
+              <div align="left">
+                <%= text_field 'contact', 'phone' ,:size=> 40  %>
+              </div>
+          </div></td>
+        </tr>
+
+        <tr>
+          <td width="1"></td>
+          <td width="140" height="137" align="right" valign="top" nowrap bgcolor="#999999" class="style2"><p>&nbsp;</p>
+              <p align="left">Description: Please specify the peltier cooler or thermal solution that you are interested in, including part numbers and any special requirements. A brief description of your application is also helpful.</p></td>
+          <td valign="baseline"><div align="left">
+            <%= text_area 'contact', 'description' ,:cols => 40, :rows => 13  %>
+          </div></td>
+        </tr>
+        
+        <tr valign="baseline">
+          <td width="1"></td>
+          <td width="140" bgcolor="#999999" class="style2"><div align="left" class="style22">Expected Quantities:&nbsp;&nbsp;*</div></td>
+          <td><div align="left" class="style14">
+              <div align="left">
+                <%= text_field 'contact', 'quantity' ,:size=> 40  %>
+              </div>
+          </div></td>
+        </tr>
+        
+        <tr valign="baseline">
+          <td width="1"></td>
+          <td width="140" bgcolor="#999999" class="style2"><div align="left" class="style22">When do you need your 
+Ferrotec thermal solution by</div></td>
+          <td><div align="left" class="style14">
+              <div align="left">
+                <%= text_field 'contact', 'getdate', :id => 'text',:onclick=> "SelectDate(this,'yyyy-MM-dd')",:size=>"10"  %>
+              </div>
+          </div></td>
+        </tr>
+        
+        <tr><td colspan="3" height="30">
+            <span width="350"><h5>Section 2: Important Information about your TEC Application Requirements</h5> </span>
+        </td>
+        </tr>
+        
+        <tr valign="baseline">
+          <td width="1"></td>
+          <td width="140" bgcolor="#999999" class="style2"><div align="left" class="style22">Are you currently using Thermoelectric Coolers:</div></td>
+          <td><div align="left" class="style14">
+              <div align="left">
+                  <%= check_box 'contact', 'isused'  %>Yes</div>
+          </div></td>
+        </tr>
+        
+        <tr>
+          <td width="1"></td>
+          <td width="140" height="40" align="right" valign="top" nowrap bgcolor="#999999" class="style2"><p>&nbsp;</p>
+              <p align="left">If yes, what company's Module 
+and what's the Model Number:</p></td>
+          <td valign="baseline"><div align="left">
+            <%= text_area 'contact', 'asked' ,:cols => 40, :rows => 4  %>
+          </div></td>
+        </tr>
+        
+        <tr valign="baseline">
+          <td width="1"></td>
+          <td width="140" bgcolor="#999999" class="style2"><div align="left" class="style22">TEC Size:(Width mm x Length mm)</div></td>
+          <td><div align="left" class="style14">
+              <div align="left">
+                <%= text_field 'contact', 'tecsize' ,:size=> 40  %>
+              </div>
+          </div></td>
+        </tr>
+        
+        <tr valign="baseline">
+          <td width="1"></td>
+          <td width="140" bgcolor="#999999" class="style2"><div align="left" class="style22">TEC Thot:(℃)</div></td>
+          <td><div align="left" class="style14">
+              <div align="left">
+                <%= text_field 'contact', 'tecthot' ,:size=> 40  %>
+              </div>
+          </div></td>
+        </tr>
+        
+        <tr valign="baseline">
+          <td width="1"></td>
+          <td width="140" bgcolor="#999999" class="style2"><div align="left" class="style22">TEC Tcold:(℃)</div></td>
+          <td><div align="left" class="style14">
+              <div align="left">
+                <%= text_field 'contact', 'tectcold' ,:size=> 40  %>
+              </div>
+          </div></td>
+        </tr>
+        
+        <tr valign="baseline">
+          <td width="1"></td>
+          <td width="140" bgcolor="#999999" class="style2"><div align="left" class="style22">TEC Cooling Load:</div></td>
+          <td><div align="left" class="style14">
+              <div align="left">
+                <%= text_field 'contact', 'teccoolingload' ,:size=> 40  %>
+              </div>
+          </div></td>
+        </tr>
+        
+        <tr valign="baseline">
+          <td width="1"></td>
+          <td width="140" bgcolor="#999999" class="style2"><div align="left" class="style22">TEC Electrical 
+Power Requirements::</div></td>
+          <td><div align="left" class="style14">
+              <div align="left">
+                <%= text_field 'contact', 'tecasked' ,:size=> 40  %>
+              </div>
+          </div></td>
+        </tr>
+    </table>
+</div>
+
+
+<div class ="clear"></div>
+<div align="center" id="buttom"><%= submit_tag "submit" %>&nbsp;&nbsp;&nbsp;&nbsp;<%= submit_tag "reset" %>
+</div>
+<% end %>
+</body>
+</html>

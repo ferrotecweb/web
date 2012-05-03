@@ -1,0 +1,13 @@
+<div id="main">
+  <fieldset>
+    <legend>添加新公司(英文)</legend>
+    
+<% form_tag({:action=>'add_company'}, {:multipart=>true}) do%>
+  <%= render :partial => 'form' %>
+<br/>
+  <%= submit_tag "添加" %>
+<% end %>
+<br/>
+<%= link_to '返回', :action => 'list_company' %>
+ </fieldset>
+</div>

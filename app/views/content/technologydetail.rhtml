@@ -1,0 +1,50 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"> 
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title><%=@title%></title>
+<%= stylesheet_link_tag 'content' %>
+</head>
+
+<body onload="parent.document.getElementById('frame1').style.height=this.document.body.scrollHeight">
+  <% for technology in @technology %>
+  <div id="yylybanner"><%=technology.categoryname%></div>
+  
+  <div id="cpjj">
+  <span>
+  <!--
+  <% if technology.summarypic != "" and technology.summarypic != nil %>
+  <% @category = technology %>
+  <%=image_tag url_for_file_column(:category,:summarypic),:height => '101', 
+    :width => '163',:style=> 'float:right;padding-left:15px;' %>
+  <% end %>
+  -->
+  <pre ><p id="productdetail"><%=technology.summary%></p></pre>
+
+  </span> 
+  </div>
+  <% end %>
+
+  <%if technology.summarydetail != "" and technology.summarydetail != nil and technology.summary != "" and technology.summary != nil %>
+    <div id="cpdl3"></div>
+  <% end %>
+
+  <%if technology.summarydetail != "" and technology.summarydetail != nil %>
+
+  <div id="technologydetail"><%=technology.summarydetail%></div>
+ 
+  <% end %>
+
+  <% if @technologydetail.size > 0 %>
+  <div id="cpdl3"></div>
+  <% end %>
+ 
+  <% for technologydetail in @technologydetail  %>
+  <div id="cpjjdetail">
+  <p id="technologydetail1"><%=technologydetail.title%></p>
+  <p id="technologydetail2"><%=technologydetail.summary%></p>
+  </div>
+
+  <% end %>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"> 
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <title>交通位置</title>
+    <%= stylesheet_link_tag 'content' %>
+    
+    <script>
+        <!--
+        function setTab(m,n){
+            var tli=document.getElementById("menu"+m).getElementsByTagName("li");
+            var mli=document.getElementById("dt"+m).getElementsByTagName("ul");
+            for(i=0;i<tli.length;i++){
+                tli[i].className=i==n?"hover":"";
+                mli[i].style.display=i==n?"block":"none";
+            }
+        }
+        //-->
+    </script>
+  </head>
+  
+  <body onload="setTab(0,0)" id="body" onload="parent.document.getElementById('frame1').style.height=this.document.body.scrollHeight">
+    <!--产品明细-->
+    <div id="yylybanner">交通位置</div>
+    <% for company in @companies %>
+      <div id="dlnr1"><%=company.fullname%></div>
+      <div class="clear"></div>
+      <div id="dlnr2">
+        <p>地 址：<%=company.address%></p>
+        <p>公 交：<%=company.bus%></p>
+        <p>电 话：<%=company.telephone%></p>
+        <p>传 真：<%=company.fax%></p>
+        <p>邮 编：<%=company.zipcode%></p>
+        <p>Email：<a href="mailto:'<%=company.email%>'"><%=company.email%></a></p>
+      </div>
+    <% end %>
+    <br />
+    <div id="dldt">
+      <ul id="menu0">
+        <li onclick="setTab(0,0)" class="hover">二维地图</li>
+        <li onclick="setTab(0,1)" class="hover">三维地图</li>
+      </ul>
+      <div id="dt0">
+        <ul id="block"><li>
+            <div id="dlwz">
+              <% if @menutype.to_i == 6  %>
+                <a href="http://ditu.google.cn/maps?f=q&source=s_q&hl=zh-CN&geocode=&q=%E6%B5%99%E6%B1%9F%E7%9C%81%E6%9D%AD%E5%B7%9E%E5%B8%82%E6%8B%B1%E5%A2%85%E5%8C%BA%E6%9D%AD%E5%B7%9E%E5%92%8C%E6%BA%90%E7%B2%BE%E5%AF%86%E5%B7%A5%E5%85%B7%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8&sll=31.306128,121.353607&sspn=0.423577,0.619354&brcurrent=3,0x344bb629439aaa99:0xa7bfd183824de83a,0%3B5,0,0&ie=UTF8&hq=%E6%9D%AD%E5%B7%9E%E5%92%8C%E6%BA%90%E7%B2%BE%E5%AF%86%E5%B7%A5%E5%85%B7%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8&hnear=%E6%B5%99%E6%B1%9F%E7%9C%81%E6%9D%AD%E5%B7%9E%E5%B8%82%E6%8B%B1%E5%A2%85%E5%8C%BA&z=13&iwloc=A" target="_blank">
+                  <img src="/images/index/wagen_2.jpg" alt="二维地图" border="0"   align="bottom"  height="394" width="540" />
+                </a>
+              <% end %>
+              <% if @menutype.to_i == 3  %>
+                <a href="http://ditu.google.cn/maps?f=q&source=s_q&hl=zh-CN&geocode=&q=%E4%B8%8A%E6%B5%B7%E5%B8%82%E5%AE%9D%E5%B1%B1%E5%8C%BA%E4%B8%8A%E6%B5%B7%E7%94%B3%E5%92%8C%E7%83%AD%E7%A3%81%E7%94%B5%E5%AD%90%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8&sll=30.181193,120.16571&sspn=0.103428,0.154839&brcurrent=3,0x35b27040b1f53c33:0x295129423c364a1,1%3B5,0,0&ie=UTF8&hq=%E4%B8%8A%E6%B5%B7%E7%94%B3%E5%92%8C%E7%83%AD%E7%A3%81%E7%94%B5%E5%AD%90%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8&hnear=%E4%B8%8A%E6%B5%B7%E5%B8%82%E5%AE%9D%E5%B1%B1%E5%8C%BA&ll=31.298501,121.353607&spn=0.423611,0.619354&z=11&iwloc=A" target="_blank">
+                  <img src="/images/index/shenhe_2.jpg" alt="二维地图" border="0"   align="bottom"  height="394" width="540" />
+                </a>
+              <% end %>
+              <% if @menutype.to_i == 5  %>
+                <a href="http://ditu.google.cn/maps?f=q&source=s_q&hl=zh-CN&geocode=&q=%E6%B5%99%E6%B1%9F%E7%9C%81%E6%9D%AD%E5%B7%9E%E5%B8%82%E6%BB%A8%E6%B1%9F%E5%8C%BA%E6%9D%AD%E5%B7%9E%E5%A4%A7%E5%92%8C%E7%83%AD%E7%A3%81%E7%94%B5%E5%AD%90%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8&sll=30.182973,120.16571&sspn=0.103427,0.154839&brcurrent=3,0x344bb629439aaa99:0xa7bfd183824de83a,0%3B5,0,0&ie=UTF8&hq=%E6%9D%AD%E5%B7%9E%E5%A4%A7%E5%92%8C%E7%83%AD%E7%A3%81%E7%94%B5%E5%AD%90%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8&hnear=%E6%B5%99%E6%B1%9F%E7%9C%81%E6%9D%AD%E5%B7%9E%E5%B8%82%E6%BB%A8%E6%B1%9F%E5%8C%BA&ll=30.181193,120.16571&spn=0.103428,0.154839&z=13" target="_blank">
+                  <img src="/images/index/aqm_2.jpg" alt="二维地图" border="0"   align="bottom"  height="394" width="540" />
+                </a>
+              <% end %>         
+            </div>
+        </li></ul>
+        <ul id="block"><li>
+            <div id="dlwz">
+              <% if @menutype.to_i == 6  %>
+                <a href="http://www.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=%E6%B5%99%E6%B1%9F%E7%9C%81%E6%9D%AD%E5%B7%9E%E5%B8%82%E6%8B%B1%E5%A2%85%E5%8C%BA%E6%9D%AD%E5%B7%9E%E5%92%8C%E6%BA%90%E7%B2%BE%E5%AF%86%E5%B7%A5%E5%85%B7%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8&sll=31.305835,121.353264&sspn=0.211496,0.309677&ie=UTF8&hq=%E6%9D%AD%E5%B7%9E%E5%92%8C%E6%BA%90%E7%B2%BE%E5%AF%86%E5%B7%A5%E5%85%B7%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8&hnear=Gongshu,+Hangzhou,+Zhejiang,+China&ll=30.342658,120.181675&spn=0.109925,0.154324&t=h&z=13&iwloc=A " target="_blank">
+                  <img src="/images/index/wagen_3.jpg" alt="三维地图" border="0"   align="bottom"  height="394" width="540" />
+                </a>
+              <% end %>
+              <% if @menutype.to_i == 3  %>
+                <a href="http://ditu.google.cn/maps?f=q&source=s_q&hl=zh-CN&geocode=&q=%E6%B5%99%E6%B1%9F%E7%9C%81%E6%9D%AD%E5%B7%9E%E5%B8%82%E6%BB%A8%E6%B1%9F%E5%8C%BA%E6%9D%AD%E5%B7%9E%E5%A4%A7%E5%92%8C%E7%83%AD%E7%A3%81%E7%94%B5%E5%AD%90%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8&sll=30.182973,120.16571&sspn=0.103427,0.154839&brcurrent=3,0x344bb629439aaa99:0xa7bfd183824de83a,0%3B5,0,0&ie=UTF8&hq=%E6%9D%AD%E5%B7%9E%E5%A4%A7%E5%92%8C%E7%83%AD%E7%A3%81%E7%94%B5%E5%AD%90%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8&hnear=%E6%B5%99%E6%B1%9F%E7%9C%81%E6%9D%AD%E5%B7%9E%E5%B8%82%E6%BB%A8%E6%B1%9F%E5%8C%BA&ll=30.182825,120.16571&spn=0.103427,0.154839&t=h&z=13" target="_blank">
+                  <img src="/images/index/shenhe_3.jpg" alt="三维地图" border="0"   align="bottom"  height="394" width="540" />
+                </a>
+              <% end %>
+              <% if @menutype.to_i == 5  %>
+                <a href="http://ditu.google.cn/maps?f=q&source=s_q&hl=zh-CN&geocode=&q=%E6%B5%99%E6%B1%9F%E7%9C%81%E6%9D%AD%E5%B7%9E%E5%B8%82%E6%BB%A8%E6%B1%9F%E5%8C%BA%E6%9D%AD%E5%B7%9E%E5%A4%A7%E5%92%8C%E7%83%AD%E7%A3%81%E7%94%B5%E5%AD%90%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8&sll=30.182973,120.16571&sspn=0.103427,0.154839&brcurrent=3,0x344bb629439aaa99:0xa7bfd183824de83a,0%3B5,0,0&ie=UTF8&hq=%E6%9D%AD%E5%B7%9E%E5%A4%A7%E5%92%8C%E7%83%AD%E7%A3%81%E7%94%B5%E5%AD%90%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8&hnear=%E6%B5%99%E6%B1%9F%E7%9C%81%E6%9D%AD%E5%B7%9E%E5%B8%82%E6%BB%A8%E6%B1%9F%E5%8C%BA&ll=30.182825,120.16571&spn=0.103427,0.154839&t=h&z=13" target="_blank">
+                  <img src="/images/index/aqm_3.jpg" alt="三维地图" border="0"   align="bottom"  height="394" width="540" />
+                </a>
+              <% end %>  
+            </div>
+        </li></ul>
+      </div>
+    </div>
+  </body>
+</html>

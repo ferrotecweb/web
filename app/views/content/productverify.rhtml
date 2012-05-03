@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>和源产品验证</title>
+<%= stylesheet_link_tag 'content' %>
+
+<style  type="text/css">
+.test{
+font-size:12px;
+color:#666666;
+height:12px;
+float:left;
+padding-top:6px;
+line-height:20px !important;
+line-height:8px
+}
+td{
+  height:30px;
+}
+</style>
+</head>
+<body>
+
+<% form_tag :action => 'productverify' do %>
+  <table width="301"  border="0" align="center" cellspacing="0"  cellpadding="0">
+      <% if flash[:notice] -%>
+    <tr><td width="250" colspan="2"><div id="notice"><%= flash[:notice] %></div></td></tr>
+      <% end -%>
+
+      <tr>
+        <td width="90"  align="left" valign="bottom">&nbsp;&nbsp;&nbsp;&nbsp;产品Lot号:&nbsp;&nbsp;</td><td align="left" valign="bottom"><%= text_field 'machinecode', 'lot' ,:size=> 25,:class=>'test' %></td>
+      </tr>
+      <tr>
+        <td width="90"  align="left" valign="bottom">&nbsp;&nbsp;&nbsp;&nbsp;校验码:&nbsp;&nbsp;</td><td align="left" valign="bottom"><%= text_field 'machinecode', 'productno' ,:size=> 25,:class=>'test' %></td>
+      </tr>
+      <tr><td></td></tr>
+      <tr><td  valign="center" align="center" colspan="2"><%= submit_tag "提交" %>&nbsp;&nbsp;<%= submit_tag "重置" %></td></tr>
+  </table>
+<% end %>
+
+</body>
+</html>

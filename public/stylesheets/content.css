@@ -1,0 +1,2017 @@
+*{
+    margin:0;
+    padding:0;  
+}
+#banner {
+    border-bottom-width: 0px;
+    border-bottom-style: solid;
+    border-bottom-color: #CCCCCC;
+    height: 20px;
+    width: 535px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    float: left;
+}
+body,div,ul,li{
+    margin:0 auto;
+    padding:0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body{
+    font:12px Arial, Helvetica, sans-serif;;
+    text-align:center;
+}
+#titleimg{
+    width:300px;
+}
+#titlecontent{
+    text-align:left;
+    line-height:15px;
+    /*text-indent:15px;*/
+}
+
+a:link{
+    color:#000000;
+    text-decoration:none;
+}
+
+a:visited {
+    color: #000000;
+    text-decoration:none;
+}
+a:hover {
+    color: #FF0000;
+    cursor:pointer;
+}
+ul{
+    list-style:none;
+}
+/*产品内容*/
+#menu0{
+    clear:both;
+    padding-left:2px;
+    text-align:center;
+    width: 535px;
+    margin: 0px;
+    height: 22px;
+}
+#menu1{
+    clear:both;
+    padding-left:2px;
+    text-align:center;
+    width: 535px;
+    margin: 0px;
+    height: 22px;
+}
+#main0{
+    clear:both;
+    padding:2px;
+    text-align:center;
+    width: 530px;
+    border: 1px solid #cbcbcb;
+    margin: 0px; 
+    height:auto;
+}
+#main1{
+    clear:both;
+    padding:2px;
+    text-align:center;
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-top-color: #cbcbcb;
+    width: 530px;
+    margin: 0px; 
+    height:auto;
+}
+/*第一种形式*/
+#tabs0 {
+    width: 540px;
+    height:auto;
+    clear:both;
+}
+
+#menu0 li{
+    display:block;
+    float: left;
+    padding: 4px 0;
+    width:100px;
+    text-align: center;
+    cursor:pointer;
+    background: #FFFFff;
+    
+}
+#menu1 li{
+    display:block;
+    float: left;
+    padding: 4px 0;
+    width:100px;
+    text-align: center;
+    cursor:pointer;
+    background: #FFFFff;
+    
+}
+/*
+#menu0 li.hover{
+width:88px;
+height:22px;
+background-image: url(../images/cpjj.jpg);
+margin: 0px;
+padding: 0px;
+text-align: center;
+vertical-align: middle;
+line-height:22px;
+
+}
+*/
+#menu0 li.hover{
+    width:88px;
+    height:23px;
+    background-image: url(../images/tab.jpg);
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+    vertical-align: middle;
+    line-height:22px;    
+}
+
+#menu1 li.hover{
+    width:88px;
+    height:23px;
+    background-image: url(../images/tab.jpg);
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+    vertical-align: middle;
+    line-height:22px;    
+}
+#main0 ul{
+    display: none;
+    background: #f5f5f5;
+}
+#main0 ul.block{
+    display: block;
+}
+
+#main1 ul{
+    display: none;
+    /*background: #f5f5f5;*/
+}
+#main1 ul.block{
+    display: block;
+}
+
+
+#titlecontent{
+    height:200px
+}
+
+
+/*地理位置*/
+#dlnr{
+    width:544px;
+    height:145px;
+    margin: 0px;
+    padding: 0px;
+    
+}
+#dlnr1{
+    width:544px;
+    height:30px;
+    /*background-image: url(/images/dlwz2.jpg);*/
+    margin: 0px;
+    padding: 0px;
+    
+    line-height:25px;  
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    text-align: left;
+    
+}
+#newslm{
+    width:544px;
+    height:24px;
+    /*background-image: url(/images/dlwz2.jpg);*/
+    margin: 0px;
+    padding: 0px;
+    
+    line-height:25px;  
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    text-align: left;
+    
+}
+#dlnr2{
+    width:544px;
+    height:130px;
+    margin: 0px;
+    padding: 0px;
+    padding-top:5px;
+}
+#dlnr2 p{
+    width:544px;
+    font-size: 13px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-top: 5px;
+    text-align: left;
+}
+#dldt{
+    width:544px;
+    height:450px;
+    padding-top: 5%;
+    
+}
+#dt0{
+    width:536px;
+    height:420px;
+    border-top-width: 0px;
+    border: 1px solid #999999;
+    clear:both;
+    padding:2px;
+    text-align:center;
+    margin: 0px;
+}
+#dt0 ul{
+    display: none;
+}
+#dt0 ul.block{
+    display: block;
+}
+
+#dz {
+    margin: 0px;
+    padding: 0px;
+    line-height: normal;
+    font-size: 13px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-top: 0.5%;
+    text-align: left;
+    /*text-indent: 15px;*/
+    line-height:16px;
+    
+}
+
+/*联系我们*/
+#banner{
+    height: 30px;
+    width: 544px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    float: left;  
+    font-weight: bold; 
+    text-align: left;
+    padding-left: 10px;        
+}
+#lxwm{
+    margin: 0px;
+    padding: 0px; 
+    width:540px; 
+    text-align: left;
+    float: left;       
+}
+#depttop{
+    margin: 0px;
+    padding: 0px;
+    width:540px;
+    float: left;
+    text-align: left;
+}
+#deptdetail{
+    margin: 0px;
+    padding: 0px;
+    width:540px;
+}
+#dept{
+    margin: 0px;
+    padding: 0px;
+    width:540px;
+    height:19px;
+    padding-top: 4%;
+    padding-left: 12px;
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    float: left;
+    text-align: left;
+}
+#deptcontent{
+    padding-left: 30px;
+}
+#dz1{
+    font-weight: bold; 
+    margin: 0px;
+    padding: 0px;
+    line-height: normal;
+    font-size: 13px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: left;
+    /*text-indent: 15px;*/
+    line-height:22px;
+    padding-top: 0.5%;
+}
+
+/*按应用领域分类*/
+#yylybanner{
+    margin: 0px;
+    padding: 0px;
+    height: 40px;
+    width: 544px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    float: left;  
+    font-weight: bold; 
+    text-align: left;   
+
+    
+}
+#yyly{
+    padding-top: 20px;
+    width:520px; 
+    float:left;
+    
+    /* border: 1px solid #cbcbcb;*/
+}
+#yylyimg{
+    width:175px;
+    height:110px;
+    
+    float: left; 
+}
+#yylycontent{
+    width:300px;
+    height:110px;        
+    
+    float:right;
+}
+#yylyhead{
+    height:30px;
+    width:300px;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    float: left;   
+    text-align: left;  
+    line-height:30px; 
+    
+}
+#yylydetail{
+    width:300px;
+    height:70px;
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: left;
+    /*text-indent: 2px;
+    text-indent:2em;*/
+    line-height: 20px;
+    
+}
+#yylyp{
+    height:20px;
+    width:300px;
+    text-align: right;
+    float: right;   
+    line-height:20px;  
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+
+
+#bottomimg{
+    width:530px; 
+    height:20px;
+    background-image: url(../images/yyly4.jpg);
+    background-repeat: no-repeat;
+    background-position: bottom;
+}
+#fy{
+    font-size: 13px;
+    font-family: Arial, Helvetica, sans-serif;
+    float: right; 
+    text-align: right;
+    padding-top:10px;
+}
+
+#fy1{
+    font-size: 13px;
+    font-family: Arial, Helvetica, sans-serif;
+    float: right; 
+    text-align: right;
+    padding-top:20px;
+}
+
+/*新闻中心*/
+#bestnew{
+    width:540px;
+}
+#newcontent{
+    margin: 0px;
+    padding:0;
+    width:544px;
+    padding-top: 10px;  
+    float:left;
+    /*padding-left:0 !important;
+    padding-left:10px;*/
+}
+
+#bestnewstitle{
+    width:525px;
+    height:30px;
+    padding-left: 10px;
+    line-height:30px;  
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    text-align: left;
+    float: left;
+}
+#bestnewcontent{
+    width:531px;
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: left;
+    /*
+    text-indent: 2px;
+    text-indent:2em;*/
+    border: 1px solid #999999;
+    
+    line-height: 25px;
+    padding-left: 10px;
+    padding-right:5px;
+    padding-top:0px;        
+    background-color: #ffffff;
+    margin: 0px;
+    
+    /*border-top-style: solid;
+    border-top-width: 0px;
+    border-top-color: #fffff; */
+}
+#newstitle {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    line-height: 30px;
+    text-align: left;
+    float: left;
+    width: 544px;
+    padding-left: 10px; 
+    margin: 0px;
+    /*border: 1px solid #999999;*/
+}
+
+#newstitle #title {
+    width:400px;
+    text-align: rigth;
+    float: rigth;
+}
+#newstitle #date {
+    width:70px;
+    text-align: left;
+    padding-right:0px;
+}
+#newstitle #company {
+    width:70px;
+    text-align: rigth;
+    float: rigth;
+}
+
+
+/*博日简介*/
+#brjj{
+    width:550px;
+    height:auto;
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: left;
+    /*text-indent:2em;*/
+    float: left;    
+    
+}
+#brjj2 {
+    padding-top: 10px;       
+}
+
+#brjj3{
+    padding-top: 10px;
+    height:129px;
+}
+#brjj3left{
+    width:30%;
+    float: left; 
+    padding-top: 20px;
+    height:129px;
+}
+#brjj3right{
+    float: right;
+    width: 64%;
+    height:129px;
+    padding-top: 10px;
+}
+#brjj4{
+    padding-top: 10px;
+    height:50px;
+}
+
+#block1{
+    margin: 0px;
+    padding:0px; 
+    height:auto;  
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;        
+}
+/*产品中心*/
+#cpjj{
+    clear:both;    
+    width:535px;
+    height:auto;
+    margin: 0px;
+    padding: 2px;
+    float:left;
+    padding-top: 0px; 
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align:left;
+    /*text-indent:25px; */
+    line-height: 18px;
+    
+}
+#cpjj1{
+    clear:both;    
+    width:525px;
+    height:auto;
+    margin: 0px;
+    padding: 2px;
+    float:left;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: #cbcbcb; 
+    padding-top: 15px; 
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    /*text-indent:2em;
+    text-indent:18px;  */      
+    text-align:left;
+     
+    line-height: 18px;
+}
+#cpjjspan{
+    float:right;
+    text-align:right;
+    padding-right:5px;
+}
+#block{
+    margin: 0px;
+    padding: 0px;  
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;   
+    float:left;
+    text-align:left; 
+    height:auto;        
+}
+#cpjjdetail{
+    margin: 0px;
+    padding: 0px;  
+    width:520px;
+ 
+    line-height: 15px;
+    float:left;
+    clear:both;
+    padding-top: 30px;
+    overflow:hidden;
+    /*border: 1px solid red;*/
+}
+
+
+#cpjjdetailimg{
+    float: left; 
+    padding-left:10px;
+    width:28%;
+
+}
+#cpjjdetailimg1{
+    float: left; 
+    padding-left:10px;
+    width:40%;
+    
+}
+#cpjjdetailcontent{
+    width:70%;
+    float: left; 
+    text-align: left;  
+    padding-left: 20x;
+    padding-top: 5px;
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;  
+       
+}
+#cpjjdetailcontent1{
+    width:57%;
+    float: left; 
+    text-align: left;  
+    padding-left: 30px;
+    padding-top: 5px;
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;   
+}
+#cpjjsummary{
+    /*text-indent:2em;*/
+    text-align: left;
+    width:338px;
+
+}       
+#readmore{
+    /*text-indent:2em;*/
+    margin-right:0;       
+}         
+       
+       
+       
+
+#cpjjsummary1{
+    /*text-indent:2em;*/
+    width:280px;
+}
+#cssz{
+    margin: 0px;
+    padding: 0px;
+    width:530px;
+    height:auto;
+    float: left; 
+    text-align: left; 
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;   
+}
+
+#titledetail{
+    font-weight: bold;      
+}
+
+#technologydetail1{
+    width:520px;
+    float: left; 
+    text-align: left; 
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif; 
+    color:#3B6F9F;
+}
+#technologydetail2{
+    width:520px;
+    padding-top:4px;
+    float: left; 
+    text-align: left; 
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif; 
+    /*text-indent: 2px;
+    text-indent:2em;*/
+    line-height: 20px;
+}
+/*产品大类*/
+#cpdl1{   
+    width:540px;
+    padding-top: 20px;
+    font-size: 13px;
+    font-family: Arial, Helvetica, sans-serif; 
+    float: left;    
+    text-align: left;  
+    /*text-indent: 2px;
+    text-indent:2em;*/
+    line-height: 20px;
+}
+#cpdl2{ 
+    width:550px;        
+    float: left;
+    text-align: left; 
+    height:auto;
+    padding-top: 20px;
+    margin-right: 250px;   
+    margin-bottom: 25px; 
+    top:20px !important;/*提升优先权*/ 
+    
+}
+#cpdl2 a{ 
+    border: 1px solid #ffffff; 
+    cursor:pointer;
+}
+#cpdl2 .image{
+    padding-left:5px;
+    padding-top:10px;
+}
+#cpdl2 #imageheight{
+    height:115px;
+    width:176px;
+}
+#cpdl3{
+    margin:0;
+    padding:0;
+    float:left;
+ 
+    height:20px;
+
+    padding-top: 30px;
+    padding-bottom: 10px;
+    background: url(../images/line.jpg) no-repeat left middle;
+    /*border: 1px solid red;*/
+    width:430px !important;/*提升优先权*/ 
+    width:540px;
+    
+}
+
+/*留言版*/
+#communion1{
+    color: #177C9D;
+    font-size: 14px;
+    font-weight:bold; 
+    float: left;
+    text-align: left; 
+}
+#communion2{
+    float: left;
+    text-align: left;
+    height:30px;
+    line-height: 30px;
+    width:550px;
+    padding-top: 10px;
+}
+#communion3{
+    width:540px;
+    padding-top: 15px;  
+    float: left;
+    text-align: left;
+}
+#communiontable{  
+    float: left;
+    border: 0px solid #cccccc; 
+}
+#buttom{    
+    padding-top: 30px;
+}
+#notice{
+    padding-top:20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    color:red;
+    font-weight:bold; 
+    
+}
+
+
+.clear{
+    clear:both; 
+}
+
+
+
+pre { 
+    white-space: pre-wrap; /* css-3 */ 
+    white-space: -moz-pre-wrap; /* Mozilla, since 1999 */ 
+    white-space: -pre-wrap; /* Opera 4-6 */ 
+    white-space: -o-pre-wrap; /* Opera 7 */ 
+    word-wrap: break-word; /* Internet Explorer 5.5+ */
+        font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+}
+
+/*QA*/
+#fzlc1{
+    padding:0;
+    width:540px;
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif; 
+    font-weight:bold;
+    text-align:left;
+    height:16px;
+    
+}    
+.divss1{
+    margin:0;
+    padding:0;
+    padding-top:4px; 
+    padding-left:0px;
+    display:none; 
+    width:540px;      
+}
+
+#fzlccontent1{
+    width:500px;
+    float: left; 
+    text-align: left;  
+    padding-left: 20px;
+    padding-top: 0px;
+    height:auto;
+}
+
+#ewdt{
+    padding-left: 16px;
+}
+
+#cpjj10{
+    width:525px;
+    height:auto;
+    padding-top:10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    float: left;  
+    text-align: left;     
+}
+#cpjj12{
+    font-weight: bold;    
+}
+#cpjj11{
+    clear:both;    
+    margin: 0px;
+    padding: 2px;
+    padding-top: 5px; 
+    text-align:left;
+    /*text-indent:18px;*/ 
+    line-height: 18px;       
+}
+
+/*市场应用明细*/
+
+#marketapplydetailbody{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    float: left; 
+    text-align: left; 
+}
+
+#marketapplydetail{
+    text-align: left;
+    float: left;      
+    width: 544px;
+    padding-top:10px;
+}
+#marketapplydetail1{
+    /*font-weight: bold;*/
+    color:#3B6F9F;
+}
+#marketapplydetail2{
+    height: auto;
+    /*text-indent:18px;*/ 
+    line-height: 18px; 
+}
+#marketapplydetail3{
+    text-align: left;
+    float: left; 
+    width: 544px; 
+    padding-top:20px;
+}
+#marketapplydetail3 p{
+    padding-top:10px;
+}
+
+/*ferrotec全球*/
+#locations{
+    width:540px;
+    height:40px;
+    padding-top:20px;
+    float:left;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    text-align: left;
+} 
+#left{
+    width:200px;
+    height:40px;
+    margin:0;
+    float:left;  
+    clear:left; 
+    overflow:hidden;
+    padding-top:2px;
+    /*border: 1px solid red; */       
+} 
+#middle{
+    width:230px;
+    height:40px;
+    margin:0;
+    float:left;  
+    clear:right;
+    overflow:hidden; 
+    padding-top:2px;
+    
+} 
+#right{
+    width:100px;
+    height:40px;
+    margin:0;
+    float:right;  
+    clear:right; ; 
+    overflow:hidden; 
+    
+} 
+/*发展历程*/
+#developcourse{
+    margin:0;
+    padding:0;
+    padding-top:10px; 
+    padding-left:0px; 
+    width:550px;
+    height:auto;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+}
+#developcourse p{
+    margin:0;
+    padding:0;
+}
+#developcourse1{ 
+    float:left;
+    display:bolck;
+    clear:left;
+    width:100px;
+    color:#3B6F9F;
+    text-align: left;
+    
+}
+#developcourse2{ 
+    float:rigth;
+    display:bolck;
+    clear:rigth;
+    width:420px;
+    overflow:hidden; 
+    text-align: left;
+}
+#developcourseother{ 
+    float:rigth;
+    display:bolck;
+    clear:rigth;
+    width:400px;
+    overflow:hidden; 
+    text-align: left;
+}
+#developcourse3{ 
+    float:left;  
+    clear:right;
+    overflow:hidden; 
+    width:15px;
+}
+
+/*网站地图*/
+#ferrotecmap{
+    margin:0;
+    padding:0;
+    padding-top:10px; 
+    padding-left:0px; 
+    width:550px;
+    height:auto;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;  
+    float:left;
+    text-align: left;
+}
+#ferrotecmap #p1{
+    background-color: #CCCCCC;
+}
+#ferrotecmap #p2{
+    background-color: #E5E5E5;
+}
+#ferrotecmap #p3{
+    background-color: #F2F2F2;
+}
+#ferrotecmap #spanwidth{
+    width:60px; 
+}
+#ferrotecmap #spanwidth0{
+    width:10px; 
+}
+
+/*资质证书*/
+#zzzs{
+    width:120px;
+    height:100px;
+    float: left; 
+    padding-top: 10px;
+    padding-left: 10px;
+}
+#zztitle{
+
+    width: 143px;
+    height:100px;
+    padding-top: 2px;
+    float: left;
+    text-align: center;          
+    
+}
+#certificate{
+     width: 183px;
+    height:auto;
+    padding-top: 2px;
+    float: left;
+    text-align: center;    
+}
+#phone{
+    float: left;
+    width: 143px;
+    height: 105px;
+    background-image: url(../images/kuang.jpg);  
+    
+}
+#figure{
+    float: left;
+    width: 175px;
+    height: 165px;
+    
+}
+#figure p {
+    text-align: center;
+    margin: 2px 0 0 0;
+    height: 3em;
+}
+#zztitle{
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif; 
+    text-align: center;        
+}
+
+/*工作机会*/
+#work1{
+    margin:0;
+    padding:0;
+    font-size: 13px;
+    font-family: Arial, Helvetica, sans-serif;
+    float: left;
+    text-align: left;        
+}
+#work1 span{
+    font-size: 14px;
+    font-weight: bold;
+}
+#work1 td{
+    height:22px;
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif; 
+}
+#work2 {
+    margin:0;
+    padding:0;
+    font-size: 13px;
+    font-family: Arial, Helvetica, sans-serif;
+    float: left;
+    text-align: left;      
+}
+#work2 td{
+    height:40px;
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#work2 span{
+    margin:0;
+    padding:0;
+    
+    text-align:left;
+    line-height: 20px;
+    
+    font-weight: bold;
+    
+}
+#work2 work2font1{
+    font-weight: bold;
+}
+#work2 work2font2{
+    margin:0;
+    padding:0;
+    float:left;
+    text-align:left;
+    font-weight:normal;
+    
+}
+
+#work3{
+    margin:0;
+    padding:0;
+    font-size: 13px;
+    font-family: Arial, Helvetica, sans-serif;
+    float: left;
+    text-align: left; 
+    padding-top:20px;        
+}
+#work3table{
+    float: left;
+    text-align:left;
+    
+}
+#work3 td {
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: #cccccc;         
+    padding: 3px 5px 2px 5px;
+    font-size: .8em;
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#work3tabletr{
+    background-color:#cccccc;
+}
+#workfy{
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    float: right; 
+    text-align: right;
+    padding-top:10px;
+    padding-right:10px;
+    
+}
+/*招聘明细信息*/
+#info{
+    margin:0;
+    padding:0;
+    padding-top:20px; 
+    padding-left:30px; 
+}
+#workinfo{
+    margin:0;
+    padding:0;
+    font-size: 13px;
+    font-family: Arial, Helvetica, sans-serif;
+    float: left;
+    text-align: left; 
+}
+#workinfo td {
+    font-size: .8em;
+}
+#workinfo #left{
+    font-size: 13px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight:bold;
+    height:20px;
+}
+
+#te1{
+    margin: 0px;
+    padding: 0px;
+    width:530px;
+    height:auto;
+    float: left; 
+    text-align: left; 
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;   
+}
+#te2{
+    margin: 0px;
+    padding: 0px;
+    width:530px;
+    height:auto;
+    float: left;
+    text-align: left; 
+    clear:left; 
+    overflow:hidden; 
+    padding-top:20px;
+}
+/*服务专区*/
+#serverarea{
+    margin: 0px;
+    padding: 0px;
+    width:530px;
+    height:auto;
+    float: left; 
+    text-align: left; 
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;  
+       
+}
+
+/*新闻中心*/
+#news{
+    width:544px; 
+    margin: 0px;
+    padding: 0px;  
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    float:left;
+    text-align: left;          
+}
+#newscenter{
+    padding-top:20px;
+    font-weight: bold;
+    font-size: 14px;     
+}
+#news a{
+    color:#3B6F9F;
+}
+#newscenter1{
+    height:24px;
+    line-height:25px;  
+    font-weight: bold;
+    padding-left:20px;
+}
+#newscenter2{
+    height:auto;
+    line-height:25px;  
+    color:#3B6F9F;
+    padding-left:20px;
+    padding-top:10px;
+}
+#newscenter3{
+    line-height: 20px;
+    text-align: left;
+    float: left;
+    margin: 0px;
+}
+#newscenter4{
+    width:70px;
+}
+#newscenter5{
+    width:450px;
+}
+#newscenter6{
+    padding-top:20px;
+    /*text-indent:18px;*/ 
+    line-height: 18px; 
+    width:40px;
+}
+#newscenter6 p{
+  padding:0;
+  float:left;
+  width:450px;
+  height:20px;
+
+}
+#newscenter10{
+    padding:0;
+    margin: 0px;
+    padding-top:40px;
+    font-weight: bold;
+    font-size: 14px;
+    float:left;
+    width:500px !important;
+
+}
+
+/*联系我们*/
+#contactustitle{
+    width:530px;
+    float: left; 
+    text-align:left;
+    padding-top:10px;
+    font-weight: bold;
+}
+#contactus1{
+    font-weight: bold;
+    color:black;
+    padding-top:4px;
+}
+#contactus2{
+    color:black;
+    padding-top:2px;
+}
+#contactus{  
+    margin: 0px;
+    padding: 0px;
+    padding-top:20px;
+    float: left; 
+    text-align:left;  
+    width:530px;
+}
+
+/*主要产品*/
+#pp{
+    float: left; 
+    text-align:left;  
+    width:530px; 
+    font-weight: bold;
+    padding-top:20px; 
+    padding-bottom:20px;        
+}
+#cpjjdetailimg2{
+    float:left;  
+    clear:left; 
+    width:37%;
+
+}
+#cpjjdetailcontent2{
+    margin: 0px;
+    padding: 0px;
+    width:45%;
+    float:left;
+    clear:right;
+    text-align: left;  
+    padding-left: 10px;
+    padding-top: 5px;
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;       
+}
+#cpjjdetail2{
+    width:520px;
+    height:120px;
+    line-height: 15px;  
+    padding-top: 30px;
+    float:left;
+    margin: 0px;
+    padding: 0px;
+    /*border: 1px solid red;*/
+}
+#shuoming{
+      margin: 0px;
+    padding: 0px;
+    padding-top: 20px;
+  width:530px;
+  float:left;
+  text-align: left;
+      
+}
+
+/*解决方案*/
+#communion4{
+    float: left;
+    text-align: left;
+    line-height: 20px;
+    width:550px;
+    padding-top: 10px;
+}
+#jszn1{   
+    margin: 0px;
+    width:540px;
+    height:auto;
+    float:left;
+    padding-top: 20px; 
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align:left;
+    line-height: 18px;
+} 
+#jszn1 p{
+ width:550px;   
+}
+#jszn{   
+    margin: 0px;
+    width:540px;
+    height:auto;
+    float:left;
+    padding-top: 20px; 
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align:left;
+    line-height: 18px;
+} 
+
+#jszn ul{
+   list-style:circle;
+}
+#jszn ul li{
+    list-style-type:disc;
+    line-height:30px;
+}
+#jszn ul li ul li{
+    list-style-type:circle;
+    line-height:20px;
+}
+
+#technologydetail{   
+    margin: 0px;
+    width:540px;
+    height:auto;
+    float:left;
+    padding-top: 20px; 
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align:left;
+    line-height: 18px;
+}
+#technologydetail ul{
+
+   list-style:circle;
+}
+#technologydetail ul li{
+    margin: 0px;
+    padding:0;
+    list-style-type:disc;
+    line-height:30px;
+}
+#technologydetail ul li ul li{
+    list-style-type:circle;
+    line-height:20px;
+}
+#body1{
+    width:550px;        
+height:800px;
+}
+
+#vf1{
+    clear:both;    
+    width:525px;
+    height:auto;
+    margin: 0px;
+    padding-top: 10px;
+    float:left;
+    text-align:left;   
+}
+#vf3{
+    clear:both;
+    width:525px;
+    height:auto;
+    margin: 0px;
+    padding-top: 10px;
+    float:left;
+    text-align:left;
+}
+#vf1 img{
+    float:left;
+    padding-left:10px;
+    padding-top:10px;
+}
+#vf1 span{
+    width:110px;
+    height:110px;
+}
+
+/*设计定制产品*/
+#quote{
+        font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+     clear:both;    
+    width:525px;
+    height:auto;
+    margin: 0px;
+    padding-top: 10px;
+    float:left;
+    text-align:left;    
+}
+#vf2{
+    clear:both;    
+    width:525px;
+    height:auto;
+    margin: 0px;
+    padding-top: 20px;
+    float:left;
+    text-align:left;   
+}
+#vf2 img{
+    float:left;
+    padding-left:20px;
+    padding-top:10px;
+}
+#vf2 #span2{
+    width:130px;
+    height:80px;
+}
+#vf2 #span1{
+    display: inline-block;
+    
+    height:20px;
+    width:100px !important;
+    padding-left:20px !important;
+    width:130px;
+    padding-left:5px;
+}
+
+#vfline{
+ 
+    height:10px;
+    background-image: url(../images/line.jpg);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    padding-top: 0px;
+    float:left;
+    width:400px !important;/*提升优先权*/ 
+    width:530px;
+    
+}
+
+#vfcontent{
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    clear:both;    
+    width:525px;
+    height:auto;
+    margin: 0px;
+    padding-top: 30px;
+    float:left;
+    text-align:left;    
+}
+#vfcontent h2 {
+   font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif; 
+}
+#vfcontent p{
+    padding-top:10px;
+}
+#vfcontent #vful{
+    list-style:circle;
+}
+
+#vfcontent #vfli{
+
+    list-style-type:disc;
+}
+
+/*基本信息*/
+#div0 {
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    clear:both;    
+    width:525px;
+    height:auto;
+    margin: 0px;
+    float:left;
+    text-align:left;    
+}
+#div1 {
+    margin: 0px;
+    padding:0px;
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;   
+    width:540px;
+    height:auto;
+
+    float:left;
+    text-align:left;
+    padding-top:20px;
+}
+#div11 {
+    margin: 0px;
+    padding:0px;
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    width:540px;
+    height:auto;
+
+    float:left;
+    text-align:left;
+    padding-top:160px !important;/*提升优先权*/
+    padding-top:20px;
+}
+#cpjjdetail3{
+    width:520px;
+    height:100px;
+    line-height: 15px;  
+    padding-top: 10px;
+    float:left;
+    /*border: 1px solid red;*/
+}
+#cpjjdetailimg3{
+    float: left; 
+    padding-left:0px;
+    width:20%;
+
+}
+#cpjjdetailcontent3{
+    width:73%;
+    float: left; 
+    text-align: left;  
+    padding-left: 30px;
+    padding-top: 5px;
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;   
+}
+#div0 ul{
+   list-style:circle;
+}
+#div0 ul li{
+    list-style-type:disc;
+}
+#div0 ul li ul li{
+    list-style-type:circle;
+}
+
+#cpjjdetail4{
+    width:530px;
+    height:100px;
+    line-height: 15px;  
+    padding-top: 10px;
+    float:left;
+    /*border: 1px solid red;*/
+}
+#cpjjdetailimg4{
+    float: left; 
+    padding-left:0px;
+    width:50%;
+}
+#cpjjdetailcontent4{
+    width:43%;
+    float: left; 
+    text-align: left; 
+    vertical-align: middle;        
+    padding-left: 30px;
+    padding-top: 5px;
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;   
+}
+#cpjjdetailcontent4 ul{
+    list-style:circle;
+}
+#cpjjdetailcontent4 ul li{
+    list-style-type:disc;
+}
+
+/*专用磁流体密封产品*/
+#cpjjdetailimg5{
+    float: left; 
+    padding-left:0px;
+    width:30%;
+}
+#cpjjdetailcontent5{
+    width:63%;
+    float: left; 
+    text-align: left; 
+    vertical-align: middle;        
+    padding-left: 30px;
+    padding-top: 5px;
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;   
+}
+/*改装磁流体密封产品*/
+#cpjjdetail6{
+    width:530px;
+    height:auto;
+    line-height: 15px;  
+    padding-top: 10px;
+    float:left;
+    /*border: 1px solid red;*/
+
+}
+#cpjjdetailimg6{
+    float: left; 
+    padding-left:5px;
+    width:52%;
+}
+#cpjjdetailcontent6{
+    width:47%;
+    float: left; 
+    text-align: left; 
+    vertical-align: middle;        
+    padding-left: 0px;
+    padding-top: 5px;
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;   
+}
+
+/*气体和真空单元*/
+#cpjjdetailimg7{
+    float: left; 
+    padding-left:5px;
+    width:54%;
+}
+#cpjjdetailcontent7{
+    width:45%;
+    float: left; 
+    text-align: left; 
+    vertical-align: middle;        
+    padding-left: 0px;
+    padding-top: 5px;
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;   
+}
+#cpjjdetailcontent7 ul{
+    list-style:circle;
+}
+#cpjjdetailcontent7 ul li{
+    list-style-type:disc;
+    line-height:20px; 
+}
+
+/*基本参数*/
+#div1 td{
+     font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;     
+}
+/*如何订购*/
+#div1 p{
+    padding-top:10px;
+    vertical-align:top;
+}
+#div1 #span1{
+    width:20px;
+    vertical-align:top;
+}
+#div1 #span2{
+    width:500px;
+}
+#div1 #span3{
+    width:120px;
+    vertical-align:top;
+}
+#div1 #span4{
+    width:400px;
+}
+#div1 #span5{
+    width:300px;
+}
+#div1 #span6{
+    width:100px;
+}
+/*马达集成*/
+#cpjjdetailimg8{
+    float: left; 
+    padding-left:5px;
+    width:49%;
+}
+#cpjjdetailcontent8{
+    width:49%;
+    float: left; 
+    text-align: left; 
+    vertical-align: middle;        
+    padding-left: 0px;
+    padding-top: 5px;
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;   
+}
+/*密封子系统*/
+#cpjjdetailimg9{
+    float: left; 
+    padding-left:5px;
+    width:48%;
+}
+#cpjjdetailcontent9{
+    width:50%;
+    float: left; 
+    text-align: left; 
+    vertical-align: middle;        
+    padding-left: 0px;
+    padding-top: 5px;
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;   
+}
+#cpdl4{
+    float:left;
+    width:430px !important;/*提升优先权*/ 
+    width:530px; 
+    height:20px;
+    background-image: url(../images/line.jpg);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    padding-top: 10px;  
+}
+
+/*温控器*/
+#cpjjdetailimg10{
+    float: left; 
+    padding-left:0px;
+    width:19%;
+
+}
+#cpjjdetailcontent10{
+    width:75%;
+    float: left; 
+    text-align: left;  
+    padding-left: 20px;
+    padding-top: 5px;
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;   
+
+}
+
+/*ftc1000*/
+#cpjjdetailimg11{
+    float: right; 
+    clear:rigth;
+    padding-left:0px;
+    width:40%;
+
+}
+#cpjjdetailcontent11{
+    width:55%;
+    float: left; 
+    text-align: left;  
+    padding-left: 0px;
+    padding-top: 5px;
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;   
+    /*border: 1px solid red;*/
+}
+#cpjjdetailcontent11 #ftcp{
+    padding-left:10px;
+    height:20px;
+}
+#ftcp #span1{
+    float:left;
+    width:10px;
+}
+#ftcp #span2{
+    float:left;
+    width:250px;
+}
+#ftcp #span3{
+    float:left;
+    width:190px;
+}
+#cpjjdetailimg12{
+    float: right;
+    clear:right;
+    padding-left:0px;
+    width:60%;
+    /*border: 1px solid red;*/
+
+}
+#cpjjdetailcontent12{
+    width:40%;
+    float: left; 
+    text-align: left;  
+    padding-left: 0px;
+    padding-top: 5px;
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif; 
+       
+}
+
+#cpjjdetailimg13{
+    float: left;
+    clear:left;
+    padding-left:0px;
+    width:60%;
+    /*border: 1px solid red;*/
+
+}
+#cpjjdetailcontent13{
+    width:39%;
+    float: right; 
+    clear:right;
+    text-align: left;  
+    padding-left: 10px;
+    padding-top: 5px;
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;         
+}
+
+
+#ftc0{
+    margin: 0px;
+    width:536px;
+    height:auto;
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-top-color: #CCCCCC;
+    clear:both;
+    padding:2px;
+    float:left;    
+}
+/*te技术指南明细*/
+#divte{
+    margin: 0px;
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    width:540px;
+    padding-top:20px;
+    padding-left:0px;
+    height:auto;
+    float:left;
+    clear:left; 
+    text-align:left;  
+}
+#divte #ftcp_en{
+    width:540px;
+    height:20px;
+    float:left;
+    text-align:left;  
+}
+#ftcp #span4{
+    float:left;
+    width:30px;
+    text-align:left;  
+    vertical-align: top; 
+    
+}
+#ftcp #span5{
+    float:left;
+    width:150px;
+    text-align:left;  
+    vertical-align: top; 
+}
+#ftcp #span6{
+    float:left;
+    width:490px;
+    text-align:left;  
+    vertical-align: top; 
+}
+
+#divflash {
+    margin:0;
+    padding:0;  
+    height: 300px;
+    width: 550px; 
+    vertical-align: top;
+      
+}
+/*证书*/
+#zh{
+font-size: 14px;
+font-family: Arial, Helvetica, sans-serif;
+padding-top:20px;        
+}
+#zh2{
+width:400px;
+border-bottom-style: solid;
+border-bottom-width: 4px;
+border-bottom-color: #cccccc;   
+padding-top:10px; 
+}
+#zh3{
+padding-top:20px; 
+}
+/*地理位置*/
+#dlwz{
+width:540px;
+height:394px;
+border: 1px solid #cccccc;
+}
+/*全球据点*/
+#menu1{
+    clear:both;
+    padding:0;
+    text-align:center;
+    width: 550px;
+    margin: 0px;
+    height: 22px;
+}
+#menu1 li{
+    display:block;
+    float: left;
+
+    width:100px;
+    text-align: center;
+    cursor:pointer;
+    background: #FFFFFF;
+    vertical-align: middle;
+}
+#menu1 li.hover{
+    width:88px;
+    height:23px;
+    background-image: url(../images/tab.jpg);
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+    vertical-align: middle;
+    line-height:22px;  
+    padding-top:2px;        
+}
+
+/*磁流体参数查询*/
+#divparam {
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    clear:both;    
+    width:550px;
+    height:auto;
+    margin: 0px;
+    float:left;
+    text-align:left;    
+}
+.tablesorter {
+  background-color: #CDCDCD;
+  margin:10px 0pt 15px;
+  font-size: 8pt;
+  width: 100%;
+  font-family:Arial, Helvetica, sans-serif;
+  text-align: left;
+}
+.tablesorter thead tr th, #listing.tablesorter tfoot tr th {
+  background-color: #0077BB;
+  color: #FFFFFF;
+  border: 1px solid #FFF;
+  font-size: 8pt;
+  font-family:Arial, Helvetica, sans-serif;
+  padding: 4px;
+}
+.tablesorter thead tr .header {
+  background-image: url(images/bg_w.gif);
+  background-repeat: no-repeat;
+  background-position: center right;
+  cursor: pointer;
+}
+.tablesorter tbody td {
+  color: #3D3D3D;
+  padding: 4px;
+  background-color: #FFF;
+  vertical-align: top;
+}                                                    
+.tablesorter tbody tr.odd td {
+  background-color:#EEEEEE;
+}
+
+.tablesorter thead tr .headerSortDown, #listing.tablesorter thead tr .headerSortUp {
+  background-color: #0077FF;
+  color: #FFFFFF;
+}
+.tablesorter .list-line-odd{
+    background-color:#FFFFFF;
+}
+.tablesorter .list-line-even{
+    background-color:#CCCCCC;
+}
+
+#companyname{
+    padding-top:20px;
+    height: 20px;
+    
+    width: 544px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    float: left;  
+    font-weight: bold; 
+    text-align: left;   
+    
+}
+
+#productdetail{
+clear:both; 
+font-size: 12px;
+font-family: Arial, Helvetica, sans-serif;
+text-align:left;
+line-height:18px; 
+}
+
+/*机器码验证*/
+#verify{
+      margin: 0px;
+    padding: 0px;
+padding-top:20px;
+padding-left:50px;
+}

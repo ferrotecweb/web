@@ -1,0 +1,33 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"> 
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<% if $company_id == 1 %>
+<title>Company</title>
+<% else %>
+<title>Company</title>
+<% end %>
+<%= stylesheet_link_tag 'content' %>
+</head>
+
+<body id="body">
+  <% if $company_id.to_i == 1 %>
+  <div id="yylybanner">Ferrotec(CN)</div>
+  <% else %>
+  <div id="yylybanner">Company</div>
+  <% end %>
+  <% for companyinfo in @companyinfo %>
+  <div id="cpjj">
+  <span id="productdetail">  
+  <% if companyinfo.summarypic != "" and companyinfo.summarypic != nil %>
+  <% @company = companyinfo %>
+  <%=image_tag url_for_file_column(:company,:summarypic),:height => '117', 
+    :width => '304',:style=> 'float:right;clear:left;padding-left:25px;padding_bottom:15px;' %>
+  <% end %>
+  <pre > <%=companyinfo.summary%></pre>
+  </span> 
+  </div>
+  
+  <% end %>
+</body>
+</html>

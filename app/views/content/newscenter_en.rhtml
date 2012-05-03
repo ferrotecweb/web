@@ -1,0 +1,42 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"> 
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title></title>
+<%= stylesheet_link_tag 'content' %>
+</head>
+
+<body>
+  <div id="yylybanner">News</div>
+  <div class="clear"></div>
+  <div id="newcontent">
+    <ul id="newstitle">
+    <% if @newslist.size > 0 %>
+    <% for newslist in @newslist %>
+    <li>
+      <a onmousemove="this.style['color']='#ff0000'" onmouseout="this.style['color']='#3B6F9F'" style="cursor:pointer;color:#3B6F9F" onClick='window.open("newsdetail_en?id=<%=newslist.id%>","","scrollbars=yes,width=600,height=360,top=200")'>
+      <% if !newslist.issuedate.blank? %>
+      <span id="date"><%= h(newslist.issuedate.strftime("%Y-%m-%d")) %></span>
+      <% else %>
+        <span id="date"><%= h(Time.now.strftime("%Y-%m-%d")) %></span>
+      <% end %>
+      <span id="title"><%=newslist.title%></span>
+      <span id="comapny"><%=getcompanyname_en(newslist.company_id)%></span>
+      </a>
+    </li> 
+    <% end %>
+    <% else %>
+    <li><span id="title">Nothing</span></li>
+    <% end %>
+    </ul>
+  </div>
+  <div id="fy1">
+    <%= will_paginate @newslist,
+    :inner_window => 1,
+    :outer_window => 1,
+    :prev_label => 'Previous',
+    :next_label => 'Next'
+    %>
+  </div>
+</body>
+</html>

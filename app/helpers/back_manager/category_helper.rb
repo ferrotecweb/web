@@ -1,0 +1,2 @@
+module BackManager::CategoryHelper
+end

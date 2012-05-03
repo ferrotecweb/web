@@ -1,0 +1,83 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"> 
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>地理位置</title>
+<%= stylesheet_link_tag 'content' %>
+
+<script>
+<!--
+function setTab(m,n){
+ var tli=document.getElementById("menu"+m).getElementsByTagName("li");
+ var mli=document.getElementById("dt"+m).getElementsByTagName("ul");
+ for(i=0;i<tli.length;i++){
+  tli[i].className=i==n?"hover":"";
+  mli[i].style.display=i==n?"block":"none";
+ }
+}
+//-->
+</script>
+</head>
+
+<body onload="setTab(0,0)" style="overflow-x:hidden">
+  <!--
+  <div id="banner">
+  <%=@name %>
+  <%=@id%>
+  </div>
+  -->
+  <div id="yylybanner">交通位置</div>
+  <br />
+  <br />
+  <div id="dlnr">
+    <div id="dlnr1">杭州大和热磁电子有限公司 － 滨江一工厂</div>
+    <div class="clear"></div>
+    <div id="dlnr2">
+      <p>地 址：杭州市滨江区滨康路777号</p>
+      <p>公 交：317 K337 322公交滨康路西站 527伟业路滨康路站 K566南环路站</p>
+      <p>电 话：0571－86696868</p>
+      <p>传 真：0571－86697099</p>
+      <p>邮 编：310053</p>
+      <p>Email：<a href="mailto:'ferrotec@ferrotec.com.cn'">ferrotec@ferrotec.com.cn</a></p>
+      <p>网 址：www.ferrotec.com.cn</p>
+    </div>
+
+   <br />
+   <div id="dlnr1">杭州大和热磁电子有限公司 － 滨江二工厂</div>
+    <div class="clear"></div>
+    <div id="dlnr2">
+      <p>地 址：杭州市滨江区滨康路668号</p>
+      <p>公 交：317 K337 322公交滨康路西站 315 B支3联庄 527伟业路滨康路站 K566南环路站</p>
+      <p>电 话：0571－86696188</p>
+      <p>传 真：0571－86696199</p>
+      <p>邮 编：310053</p>
+    </div>
+ </div>
+ 
+  <div id="dldt">
+   <ul id="menu0">
+    <li onclick="setTab(0,0)" class="hover">二维地图</li>
+    <li onclick="setTab(0,1)" class="hover">三维地图</li>
+   </ul>
+   <div id="dt0">
+    <ul id="block"><li>
+        <div id="dlwz">
+        <a href="http://ditu.google.cn/maps?f=q&source=s_q&hl=zh-CN&geocode=&q=%E6%B5%99%E6%B1%9F%E7%9C%81%E6%9D%AD%E5%B7%9E%E5%B8%82%E6%BB%A8%E6%B1%9F%E5%8C%BA%E6%9D%AD%E5%B7%9E%E5%A4%A7%E5%92%8C%E7%83%AD%E7%A3%81%E7%94%B5%E5%AD%90%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8&sll=30.182973,120.16571&sspn=0.103427,0.154839&brcurrent=3,0x344bb629439aaa99:0xa7bfd183824de83a,0%3B5,0,0&ie=UTF8&hq=%E6%9D%AD%E5%B7%9E%E5%A4%A7%E5%92%8C%E7%83%AD%E7%A3%81%E7%94%B5%E5%AD%90%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8&hnear=%E6%B5%99%E6%B1%9F%E7%9C%81%E6%9D%AD%E5%B7%9E%E5%B8%82%E6%BB%A8%E6%B1%9F%E5%8C%BA&ll=30.181193,120.16571&spn=0.103428,0.154839&z=13" target="_blank">
+        <img src="/images/index/dahe_2.jpg" alt="二维地图" border="0"   align="bottom"  height="394" width="540" />
+        </a>
+        </div>
+    </li></ul>
+    <ul id="block"><li>
+        <div id="dlwz">
+        <a href="http://ditu.google.cn/maps?f=q&source=s_q&hl=zh-CN&geocode=&q=%E6%B5%99%E6%B1%9F%E7%9C%81%E6%9D%AD%E5%B7%9E%E5%B8%82%E6%BB%A8%E6%B1%9F%E5%8C%BA%E6%9D%AD%E5%B7%9E%E5%A4%A7%E5%92%8C%E7%83%AD%E7%A3%81%E7%94%B5%E5%AD%90%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8&sll=30.182973,120.16571&sspn=0.103427,0.154839&brcurrent=3,0x344bb629439aaa99:0xa7bfd183824de83a,0%3B5,0,0&ie=UTF8&hq=%E6%9D%AD%E5%B7%9E%E5%A4%A7%E5%92%8C%E7%83%AD%E7%A3%81%E7%94%B5%E5%AD%90%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8&hnear=%E6%B5%99%E6%B1%9F%E7%9C%81%E6%9D%AD%E5%B7%9E%E5%B8%82%E6%BB%A8%E6%B1%9F%E5%8C%BA&ll=30.182825,120.16571&spn=0.103427,0.154839&t=h&z=13" target="_blank">
+        <img src="/images/index/dahe_3.jpg" alt="三维地图" border="0"   align="bottom" height="394" width="540" />
+        </a>
+        </div>
+    </li></ul>
+   </div>
+  </div>
+  <br />
+  <br />
+  <br />
+</body>
+</html>

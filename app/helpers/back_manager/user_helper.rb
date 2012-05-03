@@ -1,0 +1,2 @@
+module BackManager::UserHelper
+end

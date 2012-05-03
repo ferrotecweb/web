@@ -1,0 +1,31 @@
+<br/>
+<h3>上传文件信息</h3>
+<br/>
+<div id="users">
+
+<table id="table" cellpadding="0" cellspacing="0">
+  <tr id="tabletr">
+    <td width="200">原文件名</td>
+    <td width="200">生成文件名</td>
+    <td width="200">上传时间</td>
+    <td width="100"><%= link_to '上传文件', :action => 'add_file',:object=>@file %></td>
+  </tr>
+  <% for file in @all_file %>
+  <tr>
+    <td><%= h(file.filename) %></td>
+    <td><%= h(file.upfile) %></td>
+    <td><%= h(file.upfile_at.strftime("%Y-%m-%d")) %></td>
+    <td align="center"><%= link_to "删除", { # link_to options
+                             :controller => 'upfile', 
+                             :action => 'delete_file',
+                             :id => file},
+                           { # html options
+                             :method  => :post,
+                             :confirm => "确定删除 #{file.filename}?"
+                           } %>
+                         
+     </td>
+  </tr>
+  <% end %>
+</table>
+</div>

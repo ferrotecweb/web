@@ -1,0 +1,60 @@
+﻿<!--#include file="../../asp/inc/conn.asp"-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+
+<title>招聘信息</title>
+<%= stylesheet_link_tag 'content' %>
+</head>
+<body>
+<div id="info">
+<table id ="workinfo" width="90%" height="280"  border="0" align="center" cellpadding="0" cellspacing="0">
+    <% if @order.size == 0  %>
+    <tr><td  style="WORD-BREAK: break-all">无符合记录</td></tr>
+    <%  else %>
+        <% for order in @order %>
+        <tr>
+          <td width="80px" id="left" height="20">职位名称：</td><td style="WORD-BREAK: break-all" width="250"><font color="red"><%=order.depart %></font>&nbsp;</td>
+        </tr>
+        <tr>
+            <td id="left" height="20">职位类型：</td><td  style="WORD-BREAK: break-all"><%=order.poth %>&nbsp;</td>
+        </tr>
+        <tr>
+            <td id="left" height="20">工作地点：</td><td  style="WORD-BREAK: break-all"><%=order.workadd %>&nbsp;</td>
+        </tr>
+        <tr>
+            <td id="left" height="20">招聘人数：</td><td style="WORD-BREAK: break-all"><%=order.num %>&nbsp;</td>
+        </tr>
+        <tr>
+            <td id="left" height="20">发布时间：</td>
+            <% if order.created_at != "" and order.created_at != nil  %>
+              <td  style="word-break: break-all">
+                <%=h(order.created_at.strftime("%Y-%m-%d")) %>
+              </td>
+            <% else %>
+              <td  style="word-break: break-all">&nbsp;</td>
+            <% end %>
+        </tr>
+        <tr>
+            <td id="left" height="20">截止时间：</td>
+            <% if order.overdate != "" and order.overdate != nil  %>
+              <td  style="word-break: break-all">
+                <%=h(order.overdate.strftime("%Y-%m-%d")) %>
+              </td>
+            <% else %>
+              <td  style="word-break: break-all">&nbsp;</td>
+            <% end %>
+        </tr>
+
+        <tr>
+          <td valign="top" id="left" height="150">要求：</td><td valign="top" style="WORD-BREAK: break-all" width="280"><pre><font style="font-size:10px;font-family: Arial, Helvetica, sans-serif;"><%=h(order.info) %></font></pre>&nbsp;</td>
+        </tr>
+        <tr></tr>
+        <% end %>
+    <% end %>
+</table>
+</div>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<% for categorylist in @categorylist %>
+<div class="col2" >
+  <div class="Ptitle">
+      <h1 id="msg_title" runat="server" enableviewstate="false"><%=categorylist.title%></h1>
+  </div>
+  <div class="contentTxt">
+  <div>
+    <% if !categorylist.issuedate.blank? %>
+    Time：<%=h(categorylist.issuedate.strftime("%Y-%m-%d")) %>
+    <% end %>
+  </div>
+  <div>
+  <%=categorylist.content%>
+  </div>
+    <div class="pageDir"><a href="javascript:history.back();">Back</a></div>
+</div>
+</div>
+<% end %>
+<div class="clear"></div>

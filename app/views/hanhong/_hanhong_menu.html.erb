@@ -1,0 +1,25 @@
+
+<% for leftmenu in Category.hanhongmenu(@nid.slice(0,3)) %>
+  <% case @nid.slice(0,3).to_s
+    when "001" %>
+      <% if leftmenu.categoryid.to_s == "001036" %>
+        <li><%= link_to leftmenu.categoryname, {:controller => 'hanhong', :action => 'workchance',:id => leftmenu.categoryid }, :class => (@nid == leftmenu.categoryid ? "hover" : "") %></li>
+      <% else %>
+        <li><%= link_to leftmenu.categoryname, {:controller => 'hanhong', :action => 'about',:id => leftmenu.categoryid },:class => (@nid == leftmenu.categoryid ? "hover" : "") %></li>
+      <% end %>
+  <% when "002" %>
+    <li><%= link_to leftmenu.categoryname, {:controller => 'hanhong', :action => 'product',:id => leftmenu.categoryid },:class => (@nid == leftmenu.categoryid ? "hover" : "") %></li>
+  <% when "003" %>
+    <li><%= link_to leftmenu.categoryname, {:controller => 'hanhong', :action => 'market',:id => leftmenu.categoryid },:class => (@nid == leftmenu.categoryid ? "hover" : "") %></li>
+  <% when "004" %>
+    <li><%= link_to leftmenu.categoryname, {:controller => 'hanhong', :action => 'technology',:id => leftmenu.categoryid },:class => (@nid == leftmenu.categoryid ? "hover" : "") %></li>
+  <% when "005" %>
+    <li><%= link_to leftmenu.categoryname, {:controller => 'hanhong', :action => 'news',:id => leftmenu.categoryid },:class => (@nid == leftmenu.categoryid ? "hover" : "") %></li>
+  <% when "006" %>
+    <% if leftmenu.categoryid.to_s == "006009" %>
+      <li><%= link_to leftmenu.categoryname, {:controller => 'hanhong', :action => 'download',:id => leftmenu.categoryid },:class => (@nid == leftmenu.categoryid ? "hover" : "") %></li>
+    <% else %>
+      <li><%= link_to leftmenu.categoryname, {:controller => 'hanhong', :action => 'service',:id => leftmenu.categoryid },:class => (@nid == leftmenu.categoryid ? "hover" : "") %></li>
+    <% end %>
+  <% end %>
+<% end %>

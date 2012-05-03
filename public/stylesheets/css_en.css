@@ -1,0 +1,124 @@
+.mainBody{ width:1000px; margin:0 auto; text-align:left; }
+.top{height:36px; padding-top:50px; vertical-align:bottom;}
+.language{float:right; padding-top:20px; padding-right:70px;}
+.language a{ margin-right:10px;}
+.logo{ float:left; width:405px; padding-left:10px;}
+.main_menu{ float:right; padding:20px 0 0 0; width:555px;}
+.main_menu ul, .main_menu ul li{ padding:0; margin:0;}
+.main_menu ul li{ float:left; padding-right:16px; line-height:18px;}
+.main_menu ul li a{ line-height:18px;}
+.banner{ height:262px; padding-top:24px;}
+#btnHome{ border-top:1px solid #fff; height:19px; line-height:19px; background:#e6e6e6; padding-left:37px;}
+.content{margin-top:20px;}
+.content .col1{float:left; width:200px; background:url(/images/hanhong/left_bg.gif) bottom repeat-x; min-height:450px;}       
+* html .col1 {
+    height: 450px;
+}
+.content .col2{ float:left; width:490px; padding-left:50px; }
+.Ptitle{ height:24px; padding-bottom:20px;}
+.Ptitle h1{ font-size:24px; line-height:24px; font-weight:bold;}
+.contentTxt{ line-height:24px; color:#666; padding-bottom:20px;}
+.contentTxt *{ text-indent:0;}
+.contentImg{ float:right; padding:0 0 10px 10px;}
+.content .col3{float:right; width:180px; background:url(/images/hanhong/right_bg.gif) bottom no-repeat; min-height:450px;}
+* html .col3 {
+    height: 450px;
+}
+.newsList{border-bottom:1px solid #c4c4c4;}/*215*/
+h3{ color:#426c91; font-weight:bold; font-size:12px !important;}
+.newsList ul{ padding-top:16px; padding-right:20px;}
+.newsList ul li{ padding-bottom:10px;}
+.newsList ul li a{ color:#666666;}
+.newsList ul li a:hover{ text-decoration:underline;}
+.Newsdate{ font-family:Georgia, "Times New Roman", Times, serif !important; font-size:9px; color:#6699cc; font-weight:bold; line-height:20px;}
+
+.rContact{padding:33px 0 20px;}
+
+#footer{ border-top:1px solid #cccccc; height:72px; line-height:52px; text-align:right; }
+
+.leftMenu,ul.leftMenu{margin:0; padding:0;}
+.leftMenu li{ border-bottom:1px solid #e6e6e6;  height:22px; line-height:22px; over-flow:hidden;}
+.leftMenu li a{ padding-left:37px; display:block;}
+.leftMenu .hover{ font-weight:bold; background:#f5f5f5 url(/images/hanhong/arrow.gif) 22px 5px no-repeat; padding-left:37px; display:block;}
+.bottom_menu{ height:35px; line-height:35px; text-align:center; border:1px solid #bbb;}
+.page_content{ background:url(../images/hanhong/page_content_bg.gif) repeat-y; border:1px solid #bbb; border-top:0px; min-height:500px; }
+
+.nlist{padding-top:10px;}
+.nlist li{
+	display:block;
+	border-bottom:1px solid #e1e1e1;
+	line-height:35px;
+	list-style: none;
+	background:url(../images/news_dotted.gif)  5px no-repeat;
+}
+.nlist li a{	
+	padding-left:15px;
+	zoom:1;
+	
+}
+.nlist li img{ padding-left:20px; vertical-align:middle;}
+.nDate{ float:right; font-size:10px; color:#666666; padding-right:15px;}
+.pageDir{ padding:10px; text-align:right;}
+
+
+/* Plist */
+.plist{
+clear:both;
+}t
+
+.plist ul{
+	padding:0;
+	margin:0;
+}
+.plist li{
+	
+	width:100%;
+	height:170px;
+	display:block;
+	text-align:left;
+}
+.plist .colImg{ float:left; width:130px;}
+.plist .colInfo{ float:right; width:200px;}
+
+.imgbox{
+	width:160px;
+	height:97px;
+	text-align:center;
+	line-height:97px;
+	overflow:hidden;
+	position:relative;
+	display:table-cell;
+	vertical-align:middle;
+	padding:4px;
+	border:1px solid #d7d7d7;
+	
+}
+.imgbox p {
+	position:static;
+	+position:absolute;
+	top:50%;left:50%;
+	vertical-align:middle;
+	text-indent:0;
+}
+.proLink,a.proLink{ color:#669933; font-weight:bold;}
+a.proLink:hover{ color:#333; text-decoration:underline;}
+.imgbox img {
+	position:static;
+	+position:relative;
+	top:-50%;left:-50%;
+	vertical-align:middle;
+	max-width:160px;
+	max-height:97px;
+}
+* html .imgbox img{
+    width: expression(this.width > 160 && this.width > this.height ? 160 : true);
+	height: expression(this.height > 97 ? 97: true);
+}
+.bigImg{ width:500px; height:330px; text-align:center; line-height:330px; margin:0 auto; over-flow:hidden;}
+.bigImg p{ }
+.bigImg img{max-width:300px;}
+* html .bigImg img{
+	width: expression(this.width > 500 && this.width > this.height ? 500 : true);
+	height: expression(this.height > 330 && this.height > this.width ? 330 : true);
+}
+

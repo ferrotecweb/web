@@ -1,0 +1,2 @@
+module BackManager::RecordlistHelper
+end

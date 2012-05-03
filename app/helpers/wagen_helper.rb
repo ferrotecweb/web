@@ -1,0 +1,2 @@
+module WagenHelper
+end

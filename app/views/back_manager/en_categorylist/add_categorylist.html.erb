@@ -1,0 +1,12 @@
+<div id="main">
+ <fieldset>
+    <legend>添加新标题(英文)</legend>
+<% form_tag({:action=>'add_categorylist',:company_id =>@companyid}, {:multipart=>true}) do%> 
+  <%= render :partial => 'form',:object => @categorylist %>
+  <br/>
+  <%= submit_tag "添加" %>
+<% end %>
+<br/>
+<%= link_to '返回', :action => 'list_categorylist' %>
+ </fieldset>
+</div>

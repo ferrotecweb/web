@@ -1,0 +1,70 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"> 
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>Sitemap</title>
+<%= stylesheet_link_tag 'content' %>
+
+</head>
+
+<body>
+  <div id="yylybanner">Sitemap</div>
+  <div id="ferrotecmap">
+    <% 
+        $company_id = 8
+        for ferrotecmap  in @ferrotecmaps      
+    %>
+      <% if ferrotecmap.categoryid.length == 3 %>
+        <% if @companyid == 1 and ferrotecmap.company_id == 1 %>
+        <p id="p1">    
+        <span id="spanwidth0">&nbsp;</span>|－－<%=ferrotecmap.categoryname  %>
+        </p>
+        <% else %>
+          <p id="p2">
+            <span id="spanwidth0">&nbsp;</span>|
+            <span id="spanwidth">&nbsp;</span>|－－
+            <a onClick='window.parent.location.href("<%=company_link(EnCompany,ferrotecmap.categoryid,ferrotecmap.company_id) %>")' style="cursor:pointer" onmousemove="this.style['color']='#ff0000'" onmouseout="this.style['color']='#000000'" >
+            <%=ferrotecmap.categoryname%>
+            </a>
+          </p>
+        <% end %>
+
+      <% end %>
+
+      <% if ferrotecmap.categoryid.length == 6 %>
+        <% if ferrotecmap.company_id.to_i == 4  %>
+        <p id="p2">
+          <span id="spanwidth0">&nbsp;</span>|
+          <span id="spanwidth">&nbsp;</span>|－－
+          <a  onClick='window.parent.location.href("<%=ferrotecmap.url %>")' style="cursor:pointer" onmousemove="this.style['color']='#ff0000'" onmouseout="this.style['color']='#000000'" > 
+          <%=ferrotecmap.categoryname%>
+          </a>
+        </p>
+        <% else %>
+        <p id="p2">
+          <span id="spanwidth0">&nbsp;</span>|
+          <span id="spanwidth">&nbsp;</span>|－－
+          <a  onClick='window.parent.location.href("<%=nav_link_en(ferrotecmap.categoryid) %>")' style="cursor:pointer" onmousemove="this.style['color']='#ff0000'" onmouseout="this.style['color']='#000000'" >
+          <%=ferrotecmap.categoryname%>
+          </a>
+        </p>
+        <% end %>
+      <% end %>
+
+      <% if ferrotecmap.categoryid.length == 9 %>
+      <p id="p3">
+        <span id="spanwidth0">&nbsp;</span>|
+        <span id="spanwidth">&nbsp;</span>|
+        <span id="spanwidth">&nbsp;</span>|－－
+        <a onClick='window.parent.location.href("<%=nav_link_en(ferrotecmap.categoryid) %>")' style="cursor:pointer" onmousemove="this.style['color']='#ff0000'" onmouseout="this.style['color']='#000000'" >
+        <%=ferrotecmap.categoryname  %>
+        </a>
+      </p>
+      <% end %>
+
+      <p id="p4"><img src="/images/whiteline.jpg" width="534" height="2"></p>
+    <% end %>
+   </div>
+   
+</body>
+</html>

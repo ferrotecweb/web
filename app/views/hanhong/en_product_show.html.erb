@@ -1,0 +1,21 @@
+<div class="col2">
+  <% for category in @categorydetail %>
+    <div class="Ptitle">
+        <h1 id="msg_subject" runat="server" enableviewstate="false"><%=category.categoryname%></h1>
+    </div>
+  
+    <div class="contentTxt">
+      <div class="plist">
+      <div class="bigImg">
+        <% if !category.summarypic.blank? %>
+        <% @category = category %>
+        <%=image_tag url_for_file_column(:category,:summarypic),:width=>"500px",:height=>"500px" %>
+        <% end %>
+      </div>
+      <br />
+      <%=category.content%><br />
+      <div class="pageDir"><a href="javascript:history.back()">back</a></div>
+      </div>
+    </div>
+  <% end %>
+</div>

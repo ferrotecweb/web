@@ -1,0 +1,12 @@
+<% for category in @category %>
+<div class="Ptitle">
+<h1><%=category.categoryname%></h1>
+</div>
+<div class="contentTxt">
+  <% if !category.content.blank? %>
+  <%=category.content  %>
+  <% else %>
+  资料正在整理中...
+  <% end %>
+</div>
+<% end %>

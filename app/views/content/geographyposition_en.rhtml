@@ -1,0 +1,81 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"> 
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>地理位置</title>
+<%= stylesheet_link_tag 'content' %>
+
+<script>
+<!--
+function setTab(m,n){
+ var tli=document.getElementById("menu"+m).getElementsByTagName("li");
+ var mli=document.getElementById("dt"+m).getElementsByTagName("ul");
+ for(i=0;i<tli.length;i++){
+  tli[i].className=i==n?"hover":"";
+  mli[i].style.display=i==n?"block":"none";
+ }
+}
+//-->
+</script>
+</head>
+
+<body onload="setTab(0,0)" style="overflow-x:hidden">
+  <!--
+  <div id="banner">
+  <%=@name %>
+  <%=@id%>
+  </div>
+  -->
+  <div id="yylybanner">Locations</div>
+  <br />
+  <br />
+  <div id="dlnr">
+    <div id="dlnr1">Hangzhou Dahe Thermo-magenrtics Co.,Ltd.(FactoryⅠ)</div>
+    <div class="clear"></div>
+    <div id="dlnr2">
+      <p>Add：777Bingkang Road,Bingjiang District,Hangzhou,Zhejiang Province  ,P.R.china</p>
+      <p>Tel：0571－86696868</p>
+      <p>Fax：0571－86697099</p>
+      <p>Zip：310053</p>
+      <p>Email：<a href="mailto:'ferrotec@ferrotec.com.cn'">ferrotec@ferrotec.com.cn</a></p>
+      <p>http：www.ferrotec.com.cn</p>
+    </div>
+
+   <br />
+   <div id="dlnr1">Hangzhou Dahe Thermo-magenrtics Co.,Ltd.(FactoryⅡ)</div>
+    <div class="clear"></div>
+    <div id="dlnr2">
+      <p>Add：668Bingkang Road,Bingjiang District,Hangzhou,Zhejiang Province  ,P.R.china</p>
+      <p>Tel：0571－86696188</p>
+      <p>Fax：0571－86696199</p>
+      <p>Zip：310053</p>
+    </div>
+ </div>
+ 
+  <div id="dldt">
+   <ul id="menu0">
+    <li onclick="setTab(0,0)" class="hover" >2D Map</li>
+    <li onclick="setTab(0,1)" class="hover" >3D Map</li>
+   </ul>
+   <div id="dt0">
+    <ul id="block"><li>
+        <div id="dlwz">
+        <a href="http://www.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=%E6%B5%99%E6%B1%9F%E7%9C%81%E6%9D%AD%E5%B7%9E%E5%B8%82%E6%BB%A8%E6%B1%9F%E5%8C%BA%E6%9D%AD%E5%B7%9E%E5%A4%A7%E5%92%8C%E7%83%AD%E7%A3%81%E7%94%B5%E5%AD%90%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8&sll=42.960568,-71.496277&sspn=0.090576,0.154839&g=33+Constitution+Drive,+Bedford,+NH&ie=UTF8&hq=%E6%9D%AD%E5%B7%9E%E5%A4%A7%E5%92%8C%E7%83%AD%E7%A3%81%E7%94%B5%E5%AD%90%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8&hnear=Binjiang,+Hangzhou,+Zhejiang,+China&ll=30.185311,120.165195&spn=0.026746,0.03871&z=15" target="_blank">
+        <img src="/images//index/dahe_2_en.jpg" alt="2D Map" border="0"   align="bottom"  height="394" width="540" />
+        </a>
+        </div>
+    </li></ul>
+    <ul id="block"><li>
+        <div id="dlwz">
+        <a href="http://www.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=%E6%B5%99%E6%B1%9F%E7%9C%81%E6%9D%AD%E5%B7%9E%E5%B8%82%E6%BB%A8%E6%B1%9F%E5%8C%BA%E6%9D%AD%E5%B7%9E%E5%A4%A7%E5%92%8C%E7%83%AD%E7%A3%81%E7%94%B5%E5%AD%90%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8&sll=42.960568,-71.496277&sspn=0.090576,0.154839&g=33+Constitution+Drive,+Bedford,+NH&ie=UTF8&hq=%E6%9D%AD%E5%B7%9E%E5%A4%A7%E5%92%8C%E7%83%AD%E7%A3%81%E7%94%B5%E5%AD%90%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8&hnear=Binjiang,+Hangzhou,+Zhejiang,+China&z=13" target="_blank">
+        <img src="/images/index/dahe_3_en.jpg" alt="3D Map" border="0"   align="bottom" height="394" width="540" />
+        </a>
+        </div>
+    </li></ul>
+   </div>
+  </div>
+  <br />
+  <br />
+  <br />
+</body>
+</html>

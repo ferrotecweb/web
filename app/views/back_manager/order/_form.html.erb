@@ -1,0 +1,59 @@
+
+<%= error_messages_for 'order' %>
+<br/>
+<%
+  username = Order.getusername(session[:user_id])
+  case username.to_s
+  when "shenhe"
+    @order.company_id = 3
+%>
+
+<%
+  when "hanhong"
+  @order.company_id = 4
+%>
+
+<%
+  when "aqm"
+  @order.company_id = 5
+%>
+
+<%
+  when "wagen"
+  @order.company_id = 6
+%>
+
+<%
+  when "dahe"
+  @order.company_id = 2
+%>
+
+<% else %>
+
+<% end %>
+<!--{ :include_blank => true,:selected=>6 }-->
+<p><label for="order_company_id">所属公司</label><br/>
+    <%= select 'order', 'company_id',
+                Company.find(:all).collect{ |p| [p.companyname, p.id] },
+                { :include_blank => true} %>
+</p>
+<br/>
+<!--[form:product]-->
+<p><label for="order_depart" >部门</label><br />
+<%= text_field 'order', 'depart', :id => 'text' %></p>
+<br/>
+<p><label for="order_poth">招聘岗位</label><br />
+<%= text_field 'order', 'poth', :id => 'text' %></p>
+<br/>
+<p><label for="order_num">招聘人数</label><br />
+<%= text_field 'order', 'num', :id => 'text'  %></p>
+<br/>
+<p><label for="order_workadd">工作地点</label><br />
+<%= text_field 'order', 'workadd', :id => 'text'  %></p>
+<br/>
+<p><label for="order_overdate">截止时间</label><br />
+<%= text_field 'order', 'overdate', :id => 'text',:onclick=> "SelectDate(this,'yyyy-MM-dd')",:size=>"10"  %></p>
+<br/>
+<p><label for="order_info">招聘要求</label><br />
+<%= text_area 'order', 'info', :id => 'textarea'  %></p>
+

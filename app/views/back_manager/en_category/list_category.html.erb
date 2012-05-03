@@ -1,0 +1,91 @@
+
+<div id="category">
+<br/>
+<h3><%=@title%></h3>
+
+<br/>
+<table id="table" cellpadding="0" cellspacing="0">
+  <tr id="tabletr">
+    <td width="350">栏目名</td>
+    <td width="70">排列序号</td>
+    <td width="100">所属公司</td>
+    <td width="180" colspan="3">操作栏</td>
+  </tr>
+  
+  <% for category in @all_categorys %> 
+  <tr>
+    <% 
+      if category.categoryid.to_s.length == 3  then
+    %>
+        <% if @companyid == 1 and category.company_id == 1 %>
+            <td align="left"><%=category.categoryname%>&nbsp;</td>
+        <% else %>
+            <td align="left"><%=category.categoryname%>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;</td>
+        <% end %>
+    <% end %>
+
+    <% 
+      if category.categoryid.to_s.length == 6  then
+    %>
+    <td align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;<%=category.categoryname%>&nbsp;</td>
+    <% end %>
+    <% 
+        if category.categoryid.to_s.length == 9  then
+    %>
+    <td align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;<%=category.categoryname%>&nbsp;</td>
+    <% end %>
+    <% 
+        if category.categoryid.to_s.length == 12 then
+    %>
+    <td align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;<%=category.categoryname%>&nbsp;</td>
+    <% end %>
+
+    <% 
+      if category.categoryid.to_s.length == 3  then
+    %>
+    <td align="left"><%=category.categoryorder%>&nbsp;</td>
+    <% end %>
+    <% 
+      if category.categoryid.to_s.length == 6  then
+    %>
+    <td align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;<%=category.categoryorder%>&nbsp;</td>
+    <% end %>
+    <% 
+      if category.categoryid.to_s.length == 9  then
+    %>
+    <td align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;<%=category.categoryorder%>&nbsp;</td>
+    <% end %>
+    <% 
+      if category.categoryid.to_s.length == 12  then
+    %>
+    <td align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;<%=category.categoryorder%>&nbsp;</td>
+    <% end %>
+    <td align="left"><%=category.en_company.companyname%></td>
+ 
+
+    <td align="left"><%= link_to '添加下级', :action => 'add_category', :categoryid => category.categoryid,:company_id => @companyid %></td>
+    <td align="left"><%= link_to "修改",{ # link_to options
+                           :controller => 'en_category', 
+                           :action => 'edit_category',
+                           :id => category,
+                          :company_id => @companyid}%>
+
+    </td>
+    <td align="left"><%= link_to "删除", { # link_to options
+                           :controller => 'en_category', 
+                           :action => 'delete_category',
+                           :id => category,
+                         :company_id => @companyid},
+                         { # html options
+                           :method  => :post,
+                           :confirm => "确定要删除 #{category.categoryname}?"
+                         } %>
+    </td>
+  </tr>
+  <% end %>
+</table>  
+</div>
+<script language="javascript"><!--
+//senfe("表格名称","奇数行背景","偶数行背景","鼠标经过背景","点击后背景");
+senfe("table","#FFFFFF","#FFFFFF","#A6C4E1","#FFFFFF");
+--></script>

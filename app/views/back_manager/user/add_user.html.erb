@@ -1,0 +1,29 @@
+<div id="user">
+
+  <%= error_messages_for 'user' %>
+
+  <fieldset>
+    <legend>新增用户</legend>
+
+    <% form_for :user do |form| %>
+      <p>
+        <label for="user_name">用户名:</label><br/>
+        <%= form.text_field :name, :size => 40 , :id => 'text' %>
+      </p>
+
+      <p>
+        <label for="user_password">密码:</label><br/>
+        <%= form.password_field :password, :size => 40, :id => 'text' %>
+      </p>
+
+      <p>
+        <label for="user_password_confirmation">确认密码:</label><br/>
+        <%= form.password_field :password_confirmation, :size => 40, :id => 'text' %>
+      </p>
+      <br/>
+      <p align="center"><%= submit_tag "添加", :id => "submit" %></p>
+      <br/>
+      <p>&nbsp;</p>
+    <% end %>  
+  </fieldset>
+</div>

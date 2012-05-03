@@ -1,0 +1,245 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+
+<%= stylesheet_link_tag 'wagen' %>
+
+<title><%=@pagetitle%></title>
+</head>
+
+<body id="layouts" onload="setTop();">
+<center>
+<div id="all">
+<% if @pagetype =="ch" %>
+<%= render :partial => "/wagen/wagen_title" %>        
+<div class="clear"></div>  
+<%= render :partial => "/wagen/wagen_sub_menu" %>
+<% else %>
+<%= render :partial => "/wagen/wagen_title_en" %>        
+<div class="clear"></div>  
+<%= render :partial => "/wagen/wagen_sub_menu_en" %>
+<% end %>
+
+<div class="clear"></div>
+
+<div id="flashall">
+  <div id="leftbar"><img src="/images/wagen/001_r4_c5.jpg" alt="product" border="0" height="56" width="16" /></div>
+  <div id="img"><img src="<%=@imgurl%>" width="748" height=56" /></div>
+  <div id="rightbar"><img src="/images/wagen/001_r4_c5.jpg" alt="product" border="0" height="56" width="16" /></div>
+</div>
+
+<div class="clear"></div>
+  <div id="middle">
+    <%= yield  %>
+  </div>
+<div class="clear"></div>
+<div id="divheight"></div>
+
+
+</div>
+<div class="clear"></div>
+<%= render :partial => "/wagen/wagen_footer" %>
+</center>
+<script language="JavaScript" type="text/JavaScript">
+
+var clickPID='menutop2',clickCID='';
+
+//取得网页元素
+function getElementsByName(tag,eltname)
+{ 
+  var elts=document.getElementsByTagName(tag); 
+  var count=0; 
+  var elements=[]; 
+  for(var i=0;i<elts.length;i++){ 
+     if(elts[i].getAttribute("name")==eltname){ 
+        elements[count++]=elts[i]; 
+     } 
+  } 
+  return elements; 
+}
+
+//初始化父菜单
+function init1()
+{
+    var cElements,pElements;
+    
+    pElements = getElementsByName("td","paremenu"); 
+    cElements = getElementsByName("tr","childmenu"); 
+    
+    //收起所有菜单
+    for (i=0;i<cElements.length ;i++ ) 
+    { 
+        cElements[i].style.display = "none"; 
+    }
+    
+    //全部恢复颜色
+    for (i=0;i<pElements.length ;i++ ) 
+    { 
+        pElements[i].style.color='#000000';
+        pElements[i].style.backgroundImage='url(/images/memu_r9_c1.jpg)';
+    }
+}
+//初始化子菜单
+function init2()
+{
+    var ciElements;
+    
+    ciElements = getElementsByName("td","childmenuitem"); 
+     
+    //全部恢复颜色
+    for (i=0;i<ciElements.length ;i++ ) 
+    { 
+        ciElements[i].style.color='#000000';
+        ciElements[i].style.backgroundImage='url(/images/memu_r3_c1.jpg)';
+    }
+}
+
+//改变颜色
+function change(strID,changesrc)
+{
+    document.getElementById(strID).style.backgroundImage='url('+changesrc + ')'; 
+    document.getElementById(strID).style.color='#FFFFFF';
+}
+
+//恢复颜色
+function recover(strID)
+{
+    if(strID.length ==8)
+    {
+        if(clickPID == strID)
+        {
+            document.getElementById(strID).style.backgroundImage = 'url(/images/cy01.jpg)'; 
+            document.getElementById(strID).style.color='#FFFFFF'; 
+        }
+        else
+        {
+            document.getElementById(strID).style.backgroundImage = 'url(/images/memu_r9_c1.jpg)'; 
+            document.getElementById(strID).style.color='#000000';
+        }
+    }
+    else if (strID.length > 3 && strID.length <= 6)
+    {
+        if(clickPID == strID)
+        {
+            document.getElementById(strID).style.backgroundImage = 'url(/images/cy02.jpg)'; 
+            document.getElementById(strID).style.color='#FFFFFF'; 
+        }
+        else
+        {
+            document.getElementById(strID).style.backgroundImage = 'url(/images/memu_r9_c1.jpg)'; 
+            document.getElementById(strID).style.color='#000000';
+        }
+    }
+    else if(strID.length > 6)
+    {
+        if(clickCID == strID)
+        {
+            document.getElementById(strID).style.backgroundImage = 'url(/images/cy03.jpg)';
+            document.getElementById(strID).style.color='#FFFFFF';            
+        }
+        else
+        {
+            document.getElementById(strID).style.backgroundImage = 'url(/images/memu_r3_c1.jpg)'; 
+            document.getElementById(strID).style.color='#000000';
+        }
+    }
+
+}
+
+//主菜单单击事件
+function show1(childID,pareID,url)
+{    
+    init1();
+    init2();
+    
+    //主菜单变色
+    document.getElementById("menutop2").style.color='#000000';
+    document.getElementById("menutop2").style.backgroundImage='url(/images/memu_r9_c1.jpg)';
+    
+    //展开菜单并更换颜色
+    clickPID = pareID;
+    clickCID = '';
+    document.getElementById(pareID).style.color='#FFFFFF';
+    if (pareID.length ==8)
+    {
+     document.getElementById(pareID).style.backgroundImage='url(/images/cy01.jpg)';       
+    }
+    else
+    {
+    document.getElementById(pareID).style.backgroundImage='url(/images/cy02.jpg)';          
+    }
+    document.getElementById("frame1").src = url;
+    if ( childID.length > 3)
+    {
+        document.getElementById(childID).style.display = "";
+    }   
+}
+
+//子菜单单击事件
+function show2(selfID,url)
+{
+    init2();
+    
+    //点中菜单变色，并转到链接
+    clickCID = selfID;
+    document.getElementById(selfID).style.color='#FFFFFF';
+    document.getElementById(selfID).style.backgroundImage='url(/images/cy03.jpg)';
+    document.getElementById("frame1").src = url;
+    
+}
+
+//定位菜单项
+function gotomenu(menuid,url)
+{    
+    //主菜单变色
+    document.getElementById("menutop2").style.color='#000000';
+    document.getElementById("menutop2").style.backgroundImage='url(/images/memu_r9_c1.jpg)';
+    
+    if (menuid.length > 3 && menuid.length <= 6)
+    {
+        //展开菜单并更换颜色
+        document.getElementById("frame1").src = url;
+        document.getElementById(menuid).style.color='#FFFFFF';
+        document.getElementById(menuid).style.backgroundImage='url(/images/cy02.jpg)';
+        document.getElementById("child"+menuid).style.display = "";
+        clickPID = menuid;
+        clickCID = '';
+    }
+    else if(menuid.length > 6)
+    {
+        document.getElementById(menuid.substring(0,6)).style.color='#FFFFFF';
+        document.getElementById(menuid.substring(0,6)).style.backgroundImage='url(/images/cy03.jpg)';
+        document.getElementById("child"+menuid.substring(0,6)).style.display = "";
+        document.getElementById(menuid).style.color='#FFFFFF';
+        document.getElementById(menuid).style.backgroundImage='url(/images/memu_r5_c1.jpg)';
+        clickPID = menuid.substring(0,6);
+        clickCID = menuid; 
+    }
+    else
+    {
+        document.getElementById("menutop2").style.color='#FFFFFF';
+        document.getElementById("menutop2").style.backgroundImage='url(/images/cy01.jpg)';
+    }   
+    
+} 
+gotomenu("<%= @menuid%>","<%= @menu %>")
+</script>
+<script language="JavaScript" type="text/JavaScript">
+function setTop()
+{
+    document.getElementById("all").style.height = frame1.document.body.scrollHeight;
+    if(frame1.document.body.scrollHeight > 600)
+    {
+        document.getElementById("footer").style.top = 50;
+    }
+    else
+    {
+        document.getElementById("all").style.height = 550;
+        document.getElementById("footer").style.top = 300;
+    }
+}
+</script>
+</body>
+</html>

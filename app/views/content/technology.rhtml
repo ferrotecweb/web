@@ -1,0 +1,87 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"> 
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title><%=@title%></title>
+<%= stylesheet_link_tag 'content' %>
+</head>
+
+<body onload="parent.document.getElementById('frame1').style.height=this.document.body.scrollHeight">
+  <% for technology in @technology %>
+  <div id="yylybanner"><%=technology.categoryname%></div>
+
+  <div id="cpjj">
+  <span>  
+  <% if technology.summarypic != "" and technology.summarypic != nil %>
+  <% @category = technology %>
+  <%=image_tag url_for_file_column(:category,:summarypic),:height => '137', 
+    :width => '264',:style=> 'float:right;padding-left:15px;' %>
+  <% end %>
+  <pre ><p id="productdetail"><%=technology.summary%></p></pre>
+  </span> 
+  </div>
+
+  <% end %>
+  
+  <% if @menutype.to_i != 5 and @menutype.to_i != 6   %>
+  <% if @technologydetail.size > 0 %>
+  <div id="cpdl3"></div>
+  <% end %>
+ 
+  <% for technologydetail in @technologydetail  %>
+
+  <div id="cpjjdetail">
+  <div id="cpjjdetailimg1">
+    <% if technologydetail.summarypic != "" and technologydetail.summarypic != nil %>
+    <% @categorylist = technologydetail %>
+    <% if technologydetail.company_id == 4 %>
+    <a href="<%=technologydetail.url%>" style="cursor:pointer" target="_blank">
+    <%=image_tag url_for_file_column(:categorylist,:summarypic),:height => '101', 
+      :width => '163',:border => 0,:style=>'cursor:pointer' %>
+    </a>    
+    <% else %>
+    <a onclick="showmenu('<%=technologydetail.categoryid%>','<%=technologydetail.url%>')" style="cursor:pointer">
+    <%=image_tag url_for_file_column(:categorylist,:summarypic),:height => '101', 
+      :width => '163',:border => 0,:style=>'cursor:pointer' %>
+    </a>
+    <% end %>
+    <% end %>
+  </div>
+  <div id="cpjjdetailcontent1">
+  <span id="titledetail"><%=technologydetail.categoryname%></span><br />
+  <p id="cpjjsummary1"><%=truncate(technologydetail.summary,120)%></p>
+  </div> 
+  </div>  
+  <% end %>
+``<% end %>
+
+<script language="JavaScript" type="text/JavaScript">
+//主菜单单击事件
+function showmenu(paremenuID,url)
+{ 
+    //主菜单变色
+    parent.document.getElementById("menutop2").style.color='#000000';
+    parent.document.getElementById("menutop2").style.backgroundImage='url(/images/memu_r9_c1.jpg)';
+   
+    if (paremenuID.length > 6)
+    {
+        parent.init2(); 
+        //菜单变色
+        parent.document.getElementById(paremenuID).style.backgroundImage='url(/images/memu_r5_c1.jpg)';
+        parent.clickCID = paremenuID;    
+    }
+    else
+    {
+        //展开菜单并更换颜色
+        parent.document.getElementById(paremenuID).style.backgroundImage='url(/images/memu_r2_c1.jpg)';
+        parent.document.getElementById("child"+paremenuID).style.display = "";
+        parent.clickPID = paremenuID;
+    }
+    
+    //转到链接
+    parent.document.getElementById(paremenuID).style.color='#FFFFFF';
+    parent.document.getElementById("frame1").src = url;
+}
+</script>
+</body>
+</html>

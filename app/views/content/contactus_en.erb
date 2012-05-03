@@ -1,0 +1,84 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"> 
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>Contact us</title>
+<%= stylesheet_link_tag 'content' %>
+
+<script>
+<!--
+function setTab(m,n){
+ var tli=document.getElementById("menu"+m).getElementsByTagName("li");
+ var mli=document.getElementById("main"+m).getElementsByTagName("ul");
+ for(i=0;i<tli.length;i++){
+  tli[i].className=i==n?"hover":"";
+  mli[i].style.display=i==n?"block":"none";
+ }
+parent.document.getElementById("frame1").style.height = this.document.body.scrollHeight;
+parent.setTop();
+}
+//-->
+</script>
+</head>
+
+<body onload="setTab(1,0)">
+  <div id="yylybanner">Contact us</div>
+  <div id="tabs0">
+   <ul id="menu1">
+    <li onclick="setTab(1,0)" class="hover" onmousemove="this.style['color']='#ff0000'" onmouseout="this.style['color']='#000000'"  >Hangzhou</li>
+    <li onclick="setTab(1,1)" class="hover" onmousemove="this.style['color']='#ff0000'" onmouseout="this.style['color']='#000000'"  style="font-size:12px">Shanghai</li>
+    <!--<li onClick='window.parent.location.href("http://www.ferrotec.com.cn/hanhong/en_about/001031")' class="hover" onmousemove="this.style['color']='#ff0000'" onmouseout="this.style['color']='#000000'"  style="font-size:12px">Hanhong</li>-->
+    <li onClick='setTab(1,2)' class="hover" onmousemove="this.style['color']='#ff0000'" onmouseout="this.style['color']='#000000'"  style="font-size:12px">Hanhong</li>
+    <li onclick="setTab(1,3)" class="hover" onmousemove="this.style['color']='#ff0000'" onmouseout="this.style['color']='#000000'"  style="font-size:12px">AQM</li>
+    <li onclick="setTab(1,4)" class="hover" onmousemove="this.style['color']='#ff0000'" onmouseout="this.style['color']='#000000'"  style="font-size:12px">Wagen</li>
+   </ul>
+   <div id="main1">
+    <ul id="block">
+      <li>
+        <% for dahe in @dahe %>
+        <div id="jszn"><%=dahe.content%></div>
+        <% end %>
+      </li>
+    </ul>
+    
+    <ul id="block">
+      <li>
+        <% for shenhe in @shenhe %>
+        <div id="jszn"><%=shenhe.content%></div>
+        <% end %>
+      </li>
+    </ul>
+    
+    <ul id="block">
+      <li>
+        <% for hanhong in @hanhong %>
+        <div id="jszn"><%=hanhong.summarydetail%></div>
+        <% end %>
+      </li>
+    </ul>
+    
+    <ul id="block">
+      <li>
+        <% for aqm in @aqm %>
+        <div id="jszn"><%=aqm.content%></div>
+        <% end %>
+      </li>
+    </ul>
+    
+    <ul id="block">
+      <li>
+
+        <% for wagen in @wagen %>
+        <div id="jszn"><%=wagen.content%></div>
+        <% end %>
+
+      </li>
+    </ul>
+   </div>
+  </div>
+  <br />
+  <br />
+  <br />
+  
+</body>
+</html>

@@ -1,0 +1,230 @@
+
+<div class="menu">
+     <ul>          
+     <li class="left"><a>&nbsp;</a></li>  
+      <!--公司介绍-->
+      <% if $company_id == 1 %>
+      <li><a class="hide" href="/companyintro/index_en?id=001&&company=<%=$company_id %>">Ferrotec(CN)</a>
+      <!--[if lte IE 6]>
+      <a href="/companyintro/index_en?id=001&&company=<%=$company_id %>" title="" width="125">Ferrotec(CN)
+      <table width="125"><tr><td width="125">
+      <![endif]-->
+      <% else %>
+      <li><a class="hide" href="/companyintro/index_en?id=001&&company=<%=$company_id %>">Company</a>
+      <!--[if lte IE 6]>
+      <a href="/companyintro/index_en?id=001&&company=<%=$company_id %>" title="" width="125">Company
+      <table width="125"><tr><td width="125">
+      <![endif]-->
+      <% end %>
+      <ul>
+      <% 
+      @count = 0
+      for menu1 in @menu1 
+      @count = @count + 1  
+      %>
+        <% if @menu1.size == @count %>
+            <% 
+            @url = company_link(EnCompany,menu1.categoryid,menu1.company_id)
+            if @url != nil
+            %>
+            <li style="border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #666666; ">
+            <a href="<%=@url%>" title="" ><%=h menu1.categoryname%>
+            </a>
+            </li>
+            <% else %>
+            <li style="border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #666666; ">
+            <a href="/companyintro/index_en?id=<%=menu1.categoryid%>" title="" ><%=h menu1.categoryname%>
+            </a>
+            </li>
+            <% end %>
+        <% else %>
+            <% 
+            @url = company_link(EnCompany,menu1.categoryid,menu1.company_id)
+            if @url != nil
+            %>
+          <li><a href="<%=@url %>" title=""><%=h menu1.categoryname%></a></li>
+          <% else %>
+          <li><a href="/companyintro/index_en?id=<%=menu1.categoryid%>" title=""><%=h menu1.categoryname%></a></li>
+          <% end %>
+        <% end  %>
+      <% end %>
+      </ul>
+      <!--[if lte IE 6]>
+      </td></tr></table>
+      </a>
+      <![endif]-->
+      </li >
+      <!--主要产品-->
+      <li class="aa"><a class="hide" href="/mostlyproduct/index_en?id=002&&company=<%=$company_id %>" title="">Products</a>
+      <!--[if lte IE 6]>
+      <a href="/mostlyproduct/index_en?id=002&&company=<%=$company_id %>" title="">Products
+      <table><tr><td>
+      <![endif]-->
+      <ul  class="bb">
+      <% 
+      @count = 0
+      for menu2 in @menu2
+      @count = @count + 1                 
+      %>
+      <% if @menu2.size == @count %>
+        <% if menu2.company_id.to_i == 4 %>
+        <li style="border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #666666; ">
+          <a href="/hanhong/en_product?id=<%=menu2.categoryid%>"><%=h menu2.categoryname %>
+          </a>
+        </li>
+        <% else %>
+        <li style="border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #666666; ">
+          <a href="/mostlyproduct/index_en?id=<%=menu2.categoryid%>"><%=h menu2.categoryname %>
+          </a>
+        </li>
+        <% end %>
+      <% else %>
+        <% if menu2.company_id.to_i == 4 %>
+        <li><a href="/hanhong/en_product?id=<%=menu2.categoryid%>"><%=h menu2.categoryname %></a></li>
+        <% else %>
+        <li><a href="/mostlyproduct/index_en?id=<%=menu2.categoryid%>"><%=h menu2.categoryname %></a></li>
+        <% end %>
+      <% end %>
+      <% end %>	
+      </ul>
+      <!--[if lte IE 6]>
+      </td></tr></table>
+      </a>
+      <![endif]-->
+      </li>
+      <!--市场应用-->
+      <li><a class="hide" href="/marketapply/index_en?id=003&&company=<%=$company_id %>" title="">Markets</a>
+      <!--[if lte IE 6]>
+      <a  href="/marketapply/index_en?id=003&&company=<%=$company_id %>" title="">Markets
+      <table><tr><td>
+      <![endif]-->
+      <ul>
+      <% 
+      @count = 0
+      for menu3 in @menu3 
+      @count = @count + 1  
+      %>
+      <% if @menu3.size == @count %>
+        <li style="border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #666666; ">
+          <a href="/marketapply/index_en?id=<%=menu3.categoryid%>"><%=h menu3.categoryname %>
+          </a>
+        </li>
+        
+      <% else %>
+        <li><a href="/marketapply/index_en?id=<%=menu3.categoryid%>"><%=h menu3.categoryname %></a></li>
+      <% end %>              
+      <% end %>	
+      </ul>
+      <!--[if lte IE 6]>
+      </td></tr></table>
+      </a>
+      <![endif]-->
+      </li>
+      <!--技术专区-->
+      <li><a class="hide" href="/technology/index_en?id=004&&company=<%=$company_id %>">Technology</a>
+      <!--[if lte IE 6]>
+      <a  href="/technology/index_en?id=004&&company=<%=$company_id %>">Technology
+      <table><tr><td>
+      <![endif]-->
+      <ul>
+      <%
+      @count = 0
+      for menu4 in @menu4 
+      @count = @count + 1 
+      %>
+      <% if @menu4.size == @count %>
+        <% if menu4.company_id.to_i == 4 %>
+        <li style="border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #666666; ">
+          <a href="/hanhong/en_technology?id=<%=menu4.categoryid%>"><%=h menu4.categoryname %>
+          </a>
+        </li>  
+        <% else %>
+        <li style="border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #666666; ">
+          <a href="/technology/index_en?id=<%=menu4.categoryid%>"><%=h menu4.categoryname %>
+          </a>
+        </li>  
+        <% end %>
+       <% else %> 
+        <% if menu4.company_id.to_i == 4 %>
+        <li><a href="/hanhong/en_technology?id=<%=menu4.categoryid%>"><%=h menu4.categoryname %></a></li> 
+        <% else %>
+        <li><a href="/technology/index_en?id=<%=menu4.categoryid%>"><%=h menu4.categoryname %></a></li>     
+        <% end %>
+      <% end %>             
+      <% end %>	
+      </ul>
+      <!--[if lte IE 6]>
+      </td></tr></table>
+      </a>
+      <![endif]-->
+      </li>
+      <!--新闻中心-->
+      <li><a class="hide" href="/newscenter/index_en?id=005&&company=<%=$company_id %>">News</a>
+      <!--[if lte IE 6]>
+      <a  href="/newscenter/index_en?id=005&&company=<%=$company_id %>">News
+      <table><tr><td>
+      <![endif]-->
+      <ul>
+      <%
+      @count = 0 
+      for menu5 in @menu5 
+      @count = @count + 1 
+      %>
+      <% if @menu5.size == @count %>
+        <li style="border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #666666; ">
+          <a href="/newscenter/index_en?id=<%=menu5.categoryid%>"><%=h menu5.categoryname %>
+          </a>
+        </li>
+      <% else %>
+        <li><a href="/newscenter/index_en?id=<%=menu5.categoryid%>"><%=h menu5.categoryname %></a></li>
+      <% end %>                
+      <% end %>	
+      </ul>
+      <!--[if lte IE 6]>
+      </td></tr></table>
+      </a>
+      <![endif]-->
+      </li>
+      <!--服务专区-->
+      <li><a class="hide" href="#">Support</a>
+      <!--[if lte IE 6]>
+      <a  href="#">Support
+      <table><tr><td>
+      <![endif]-->
+          <ul>
+          <% 
+          @count = 0
+          for menu6 in @menu6 
+          @count = @count + 1 
+          %>
+          <% if @menu6.size == @count %>
+            <% if menu6.company_id.to_i == 4 %>
+            <li style="border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #666666; ">
+              <a href="/hanhong/en_service?id=<%=menu6.categoryid%>"><%=h menu6.categoryname %>
+              </a>
+            </li>
+            <% else %>
+            <li style="border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #666666; ">
+              <a href="/serverarea/index_en?id=<%=menu6.categoryid%>"><%=h menu6.categoryname %>
+              </a>
+            </li>
+            <% end %>
+          <% else %>
+            <% if menu6.company_id.to_i == 4 %>
+            <li><a href="/hanhong/en_service?id=<%=menu6.categoryid%>"><%=h menu6.categoryname %></a></li>
+            <% else %>
+            <li><a href="/serverarea/index_en?id=<%=menu6.categoryid%>"><%=h menu6.categoryname %></a></li>
+            <% end %>
+          <% end %>                
+          <% end %>    
+          </ul>
+      <!--[if lte IE 6]>
+      </td></tr></table>
+      </a>
+      <![endif]-->
+
+      <li class="right"><a>&nbsp;</a></li>
+      </ul>
+      <!-- clear the floats if required -->
+      <div class="clear"> </div>
+</div>

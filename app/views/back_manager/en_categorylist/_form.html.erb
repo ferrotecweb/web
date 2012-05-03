@@ -1,0 +1,51 @@
+
+<%= error_messages_for 'categorylist' %>
+<br/>
+<% 
+    if @flag == 1 then 
+%>
+<p><label for="categorylist_categoryid">所属栏目</label><br/>
+    <%= select 'categorylist', 'categoryid', 
+                EnCategory.find_by_sql("select cy.categoryid,en_categories.company_id,case when length(cy.categoryid) = 9 then concat('----',cy.categoryname) else  cy.categoryname  end  as categoryname from
+(select case when length(categoryid) = 3 then categoryname else  concat('----',categoryname)  end  as categoryname,categoryid,id,company_id  
+from en_categories) cy,en_categories where cy.id = en_categories.id and (en_categories.company_id ='" + @companyid + "' or length(en_categories.categoryid) = 3) and cy.company_id ='" + @companyid + "'  order by cy.categoryid").collect{ |p| [p.categoryname, p.categoryid] },
+                { :include_blank => true } %>
+
+</p>
+<% end %>
+<br/>
+<p><label for="categorylist_title">标题名称</label><br/>
+<%= text_field 'categorylist', 'title', :id => 'text'  %>
+
+<label for="categorylist_istechnologyarticle">&nbsp;&nbsp;技术中心内容区分</label>
+<% 
+    if @flag == 1 then 
+%>
+<%=radio_button("categorylist","istechnologyarticle","1",{:checked => true})%>技术动态
+<%=radio_button("categorylist","istechnologyarticle","0")%>技术文章
+<% else %>
+    <% if @categorylist.istechnologyarticle.blank?  %>
+    <%=radio_button("categorylist","istechnologyarticle","1")%>技术动态
+    <%=radio_button("categorylist","istechnologyarticle","0",{:checked => true})%>技术文章
+    <% else %>
+    <%=radio_button("categorylist","istechnologyarticle","1",{:checked => true})%>技术动态
+    <%=radio_button("categorylist","istechnologyarticle","0")%>技术文章
+    <% end %>
+<% end %>
+</p>
+<br/>
+<p><label for="categorylist_summary">图文简介</label><br/>
+<%= text_area 'categorylist', 'summary', :id => 'textarea'  %></p>
+<br/>
+<p><label for="categorylist_summarypic">图片路径</label><br/>
+<%= file_column_field 'categorylist', 'summarypic',:id => 'image'  %></p>
+<br/>
+<p><label for="categorylist_downloadfile">上传文件</label><strong><font color="red">(注：上传的文件名不能包含汉字)</font></strong><br/>
+<%=file_field 'categorylist','downloadfile',:id => 'image'%>   </p>
+<br/>
+<p><label for="categorylist_content">详细内容</label><br/>
+<%= fckeditor_textarea('categorylist', 'content',:toolbarSet => 'Simple', :width => '550px', :height => '300px') %>
+</p>  
+<br/>
+<p><label for="order_overdate">发布时间</label><br />
+<%= text_field 'categorylist', 'issuedate', :id => 'text',:onclick=> "SelectDate(this,'yyyy-MM-dd')",:size=>"10"  %></p>

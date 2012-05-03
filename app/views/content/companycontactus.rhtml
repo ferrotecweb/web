@@ -1,0 +1,16 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"> 
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>联系我们</title>
+<%= stylesheet_link_tag 'content' %>
+</head>
+
+<body>
+  <% for companycontactus in @companycontactus %>
+   <div id="yylybanner"><%=companycontactus.categoryname%></div>
+  <div id="jszn"><%=companycontactus.content%></div>
+  <% end %>
+
+</body>
+</html>

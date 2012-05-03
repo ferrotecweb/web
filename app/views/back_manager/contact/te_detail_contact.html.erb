@@ -1,0 +1,89 @@
+<div id="contactdetail">
+<br/>
+<h2>明细留言</h2>
+<br/>
+<table id="table" cellpadding="0" cellspacing="0" width="700">
+  <tr>
+    <td width="160px" align="right">公司:</td>
+    <td width="300px" ><%=@contact.company%>&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="right">姓名:</td>
+    <td><%=@contact.person%>&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="right">E_Mail:</td>
+    <td><%=@contact.email%>&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td align="right">联系电话:</td>
+    <td><%=@contact.phone%>&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td id="spical" align="right">内容描述:</td>
+    <td id="spical"><%=@contact.description%>&nbsp;</td>
+  </tr>
+  
+   <tr>
+    <td align="right">期望数量:</td>
+    <td><%=@contact.quantity%>&nbsp;</td>
+  </tr> 
+  
+ <tr>
+    <td align="right">到货日期:</td>
+    <td><%=@contact.getdate%>&nbsp;</td>
+  </tr> 
+  
+  <tr>
+    <td align="right">是否使用:</td>
+    <% if @contact.isused == 0 %>
+    <td>否&nbsp;</td>
+    <% else %>
+    <td>是&nbsp;</td>
+    <% end %>
+  </tr>
+  <tr>
+    <td align="right">使用型号:</td>
+    <td><%=@contact.asked%>&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="right">TEC 尺寸(宽mm×长mm):</td>
+    <td><%=@contact.tecsize%>&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="right">TEC Thot:(℃):</td>
+    <td><%=@contact.tecthot%>&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="right">TEC Tcold:(℃):</td>
+    <td><%=@contact.tectcold%>&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="right">TEC Cooling Load:</td>
+    <td><%=@contact.teccoolingload%>&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="right">TEC 电源要求:</td>
+    <td><%=@contact.tecasked%>&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="right">创建日期:</td>
+    <td><%=@contact.created_at%>&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="2" align="center"><%= link_to "删除", { # link_to options
+                           :controller => 'contact', 
+                           :action => 'delete_contact',
+                           :id => @contact},
+                         { # html options
+                           :method  => :post,
+                           :confirm => "确定要删除当前留言?"
+                         } %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to '返回', :action => 'list_contact' %></td>
+  </tr>
+</table>
+
+
+</ul
+</div>

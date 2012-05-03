@@ -1,0 +1,36 @@
+<br/>
+<h3>用户信息</h3>
+<br/>
+<div id="users">
+
+<table id="table" cellpadding="0" cellspacing="0">
+  <tr id="tabletr">
+    <td width="200">用户名</td>
+    <td width="200">权限</td>
+    <td width="100" colspan="2">操作栏</td>
+  </tr>
+  <% for user in @all_users %>
+  <tr>
+    <td><%= h(user.name) %></td>
+    <td>&nbsp;</td>
+    <td align="center"><%= link_to "修改",{ # link_to options
+                           :controller => 'user', 
+                           :action => 'edit_user',
+                           :id => user} %>
+                         
+   </td>
+
+    <td align="center"><%= link_to "删除", { # link_to options
+                             :controller => 'user', 
+                             :action => 'delete_user',
+                             :id => user},
+                           { # html options
+                             :method  => :post,
+                             :confirm => "确定删除 #{user.name}?"
+                           } %>
+                         
+     </td>
+  </tr>
+  <% end %>
+</table>
+</div>

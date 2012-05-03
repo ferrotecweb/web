@@ -1,0 +1,26 @@
+<div id="user">
+
+  <%= error_messages_for 'user' %>
+
+  <fieldset>
+    <legend>修改密码</legend>
+
+    <% form_tag :action => 'update_user', :id => @user do %>
+      <p>
+        <label for="user_name">用户名:</label><br/>
+        <%= text_field 'user','name',:readonly => true,:size => 40,:id => 'text' %>
+      </p>
+      <p>
+        <label for="user_oldpassword">原密码:</label><br/>
+        <%= password_field 'oldpassword',nil,:size => 40,:id => 'text' %>
+      </p>
+      
+      <p>
+        <label for="user_password">新密码:</label><br/>
+        <%= password_field 'user','password', :size => 40,:id => 'text' %>
+      </p>
+      
+      <p align="center"><%= submit_tag "保存", :id => "submit" %></p>
+    <% end %>  
+  </fieldset>
+</div>

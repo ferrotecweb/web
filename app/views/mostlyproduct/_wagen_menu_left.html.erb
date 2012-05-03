@@ -1,0 +1,60 @@
+
+<div id = "leftmenu">
+  <table width="200" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td id="menutop1" height="8" width="200"><img src="/images/memu_r1_c1.jpg" width="200" height="8"></td>
+  </tr>
+  <tr style="cursor:pointer">
+    <!--<td id="menutop2" height="20" width="200" align="left" background="/images/memu_r2_c1.jpg" style="color:#FFFFFF;font-weight:bold;" onMouseOver="change('menutop2','/images/memu_r6_c1.jpg');" onmouseout="recover('menutop2');" onclick="show1('001','menutop2','/content/producttype?id=001')">&nbsp;&nbsp;&nbsp;产品中心</td>-->
+    <% 
+    @urllink = url_link(@menuid.slice(0,3),$company_id)   
+    if @urllink != nil  and @urllink != "" 
+    %>
+    <td id="menutop2" height="20" width="200" align="left" background="/images/cy01.jpg" style="color:#FFFFFF;font-weight:bold;" onMouseOver="change('menutop2','/images/memu_r6_c1.jpg');" onmouseout="recover('menutop2');" onclick="show1('<%=@menuid.slice(0,3)%>','menutop2','<%=@urllink%>')">&nbsp;&nbsp;&nbsp;<%=@menutitle%></td>
+    <% else %>
+    <td id="menutop2" height="20" width="200" align="left" background="/images/cy01.jpg" style="color:#FFFFFF;font-weight:bold;" onMouseOver="change('menutop2','/images/memu_r6_c1.jpg');" onmouseout="recover('menutop2');">&nbsp;&nbsp;&nbsp;<%=@menutitle%></td>
+    <% end %>
+  </tr>
+  
+  <% if @leftmenu.size > 0 %>
+  <% 
+  for leftmenu in @leftmenu
+  %>
+
+  <% 
+  @url = company_link(leftmenu.categoryid,leftmenu.company_id)
+  if @url != nil
+  %>
+  <tr align="left" style="cursor:pointer">
+    <a href="<%=@url%>"><td name="paremenu" id="<%=leftmenu.categoryid.slice(0,3) + leftmenu.company_id.to_s%>" width="200" height="20" background="/images/memu_r9_c1.jpg" onMouseOver="change('<%=leftmenu.categoryid.slice(0,3) + leftmenu.company_id.to_s%>','/images/memu_r6_c1.jpg');" onmouseout="recover('<%=leftmenu.categoryid.slice(0,3) + leftmenu.company_id.to_s%>');">
+      &nbsp;&nbsp;&nbsp;<%=leftmenu.categoryname%>
+    </td></a>
+  </tr>
+  <% else %>
+  <tr align="left" style="cursor:pointer">
+    <td name="paremenu" id="<%=leftmenu.categoryid%>" width="200" height="20" background="/images/memu_r9_c1.jpg" onMouseOver="change('<%=leftmenu.categoryid%>','/images/memu_r6_c1.jpg');" onmouseout="recover('<%=leftmenu.categoryid%>');" onclick="show1('child<%=leftmenu.categoryid%>','<%=leftmenu.categoryid%>','<%=leftmenu.url%>')">
+    &nbsp;&nbsp;&nbsp;<%=leftmenu.categoryname%>
+    </td>
+  </tr>
+  <% end %>
+  <tr name="childmenu" id="child<%=leftmenu.categoryid%>" style="display:none">
+    <td>
+      <table width="200" cellpadding="0" cellspacing="0" border="0">
+        <% for leftmenudetail in Category.find(:all,:conditions => "substring(categoryid,1,6) = '" + leftmenu.categoryid + "' and length(categoryid) = 9",:order => "categoryorder") %>
+          <tr align="left" style="cursor:pointer">
+          <td name="childmenuitem" id="<%=leftmenudetail.categoryid%>" width="200" height="20" background="/images/memu_r3_c1.jpg" onMouseOver="change('<%=leftmenudetail.categoryid%>','/images/memu_r7_c1.jpg');" onmouseout="recover('<%=leftmenudetail.categoryid%>');" onclick="show2('<%=leftmenudetail.categoryid%>','<%=leftmenudetail.url%>')">
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%=leftmenudetail.categoryname%>
+          </td>
+         </tr>  
+        <% end %>
+      </table>
+     </td>
+   </tr>
+  <% end  %>
+ <% end %>
+
+  <tr>
+  <td id ="menubuttom2" width="200"><img src="/images/memu_r11_c1.jpg" width="200" height="7"></td>
+  </tr>
+</table>
+</div>

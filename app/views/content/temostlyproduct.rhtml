@@ -1,0 +1,122 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"> 
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<script language="JavaScript" type="text/JavaScript"><!--
+if(parent.location.href.indexOf("content/temostlyproduct?id=002005") > 0)
+{
+   window.location.href='http://www.ferrotec.com.cn/mostlyproduct/index?id=002005';
+}
+--></script>
+<title></title>
+<%= stylesheet_link_tag 'content' %>
+
+
+</head>
+
+<body onload="parent.document.getElementById('frame1').style.height=this.document.body.scrollHeight">
+  <% for mostlyproduct in @mostlyproduct %>
+  <div id="yylybanner">
+    <% 
+    case mostlyproduct.company_id.to_s 
+    when "2"
+    %>
+    <a href="http://www.ferrotec.com.cn/mostlyproduct/index?id=<%=mostlyproduct.categoryid%>" target="_parent"><%=mostlyproduct.categoryname%></a>
+    <% when "3" %>
+    <a href="http://www.ferrotec.sh.cn/mostlyproduct/index?id=<%=mostlyproduct.categoryid%>" target="_parent"><%=mostlyproduct.categoryname%></a>
+    <% when "5" %>
+    <a href="http://www.aqmhz.com/mostlyproduct/index?id=<%=mostlyproduct.categoryid%>" target="_parent"><%=mostlyproduct.categoryname%></a>
+    <% when "6" %>
+    <a href="http://www.wagen.cc/mostlyproduct/index?id=<%=mostlyproduct.categoryid%>" target="_parent"><%=mostlyproduct.categoryname%></a>
+    <% end %>
+  </div>
+
+  <div id="cpjj">
+  <span>  
+  <% if mostlyproduct.summarypic != "" and mostlyproduct.summarypic != nil %>
+  <% @category = mostlyproduct %>
+  <%=image_tag url_for_file_column(:category,:summarypic),:height => '137', 
+    :width => '264',:style=> 'float:right;padding-left:15px;' %>
+  <% end %>
+  <pre><%=mostlyproduct.summary%></pre>
+  </span> 
+  </div>
+  
+
+  <% if @mostlyproductdetail.size > 0 %>
+  <div id="cpdl3"></div>
+  <% end %>
+ 
+  <% for mostlyproductdetail in @mostlyproductdetail  %>
+
+  <div id="cpjjdetail">
+  <div id="cpjjdetailimg">
+    <% if mostlyproductdetail.picturename != "" and mostlyproductdetail.picturename != nil %>
+    <% @categorylist = mostlyproductdetail %>
+    <a onclick="showmenu('<%=mostlyproductdetail.categoryid%>','<%=mostlyproductdetail.url%>')" style="cursor:pointer">
+    <%=image_tag url_for_file_column(:categorylist,:picturename),:height => '88', 
+      :width => '104',:border => 0,:style=>'cursor:pointer' %>
+    <% end %>
+    </a>
+  </div>
+  <div id="cpjjdetailcontent">
+  <span id="titledetail"><%=mostlyproductdetail.categoryname%></span><br />
+  <p id="cpjjsummary"><%=truncate(mostlyproductdetail.summary,120)%></p>
+  </div> 
+  </div>  
+  
+
+  
+  <% end %>
+
+  <% if mostlyproduct.categoryid == "002005005" or mostlyproduct.categoryid == "002005" %>
+  <div id="cpdl3"></div>
+  
+  <div id ="pp"><p>其他相关信息:</p></div>
+  
+  <div id="cpjjdetail2">
+  <div id="cpjjdetailimg2">
+    <a onClick='window.parent.location.href("/technology/index?id=004003001")' onmousemove="this.style['color']='#ff0000'" onmouseout="this.style['color']='#3B6F9F'" style="cursor:pointer" >
+  <img src="/images/jszn.jpg" alt="product" border="0" height="102" width="166" />
+    </a>
+  </div>
+  <div id="cpjjdetailcontent2">
+    <p id="cpjjsummary">您想了解热电技术、帕贴耳制冷以及赛贝克效应方面的信息么？您想评估一下您的热电制冷系统方面的技术需求么？<a onClick='window.parent.location.href("/technology/index?id=004003001")' onmousemove="this.style['color']='#ff0000'" onmouseout="this.style['color']='#3B6F9F'" style="cursor:pointer" ><span>更多&raquo;</span></a></p>
+  </div>  
+  </div>
+
+  <% end %>
+<% end %>
+<script language="JavaScript" type="text/JavaScript">
+//主菜单单击事件
+function showmenu(paremenuID,url)
+{ 
+    //主菜单变色
+    parent.document.getElementById("menutop2").style.color='#000000';
+    parent.document.getElementById("menutop2").style.backgroundImage='url(/images/memu_r9_c1.jpg)';
+   
+    if (paremenuID.length > 6)
+    {
+        parent.init2(); 
+        //菜单变色
+        parent.document.getElementById(paremenuID).style.backgroundImage='url(/images/memu_r5_c1.jpg)';
+        parent.clickCID = paremenuID;    
+    }
+    else
+    {
+        //展开菜单并更换颜色
+        parent.document.getElementById(paremenuID).style.backgroundImage='url(/images/memu_r2_c1.jpg)';
+        parent.document.getElementById("child"+paremenuID).style.display = "";
+        parent.clickPID = paremenuID;
+    }
+    
+    //转到链接
+    parent.document.getElementById(paremenuID).style.color='#FFFFFF';
+    parent.document.getElementById("frame1").src = url;
+}
+</script>
+<br />
+<br />
+
+</body>
+</html>

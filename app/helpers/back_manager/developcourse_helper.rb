@@ -1,0 +1,2 @@
+module BackManager::DevelopcourseHelper
+end

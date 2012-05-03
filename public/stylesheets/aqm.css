@@ -1,0 +1,331 @@
+body {
+margin:0 auto; 
+text-align: center; 
+}
+img{
+display:block;
+margin:0; 
+padding:0;
+}
+#all {
+    background-color: #ffffff;
+    height: 600px;
+    
+    position:relative;
+    margin:0 auto;
+    width:780px;
+
+}
+
+#top {
+ min-height:60px;
+ height: 72px;
+ width: 780px;
+
+}
+
+#middle {
+    text-align: center;
+    width: 780px;
+    padding-top: 24px;
+    height:auto;
+}
+ 
+#menuall {
+margin:0; 
+padding:0;
+width:780px;
+height:51px; 
+min-height:51px;
+    /*
+    width: 780px !important;
+    border:1px solid red; 
+    */
+
+}
+#submenuall {
+margin:0; 
+padding:0;
+width:780px;
+height:52px; 
+min-height:52px;
+    /*
+    width: 780px !important;
+    border:1px solid red; 
+    */
+}
+#menucenter{
+float:left;
+margin:0; 
+padding:0;
+}
+
+
+#flash{
+float:left;  
+}
+#leftbar { 
+ width:131px;
+ float:left;  
+ clear:left; 
+} 
+ 
+#rightbar { 
+ width:137px; 
+ float:right;  
+ clear:right; 
+ }
+#sub_leftbar { 
+ width:114px;
+ float:left;  
+ clear:left; 
+} 
+ 
+#sub_rightbar { 
+ width:134px; 
+ float:right;  
+ clear:right; 
+ }
+#en_leftbar { 
+ width:127px;
+ float:left;  
+ clear:left; 
+} 
+ 
+#en_sub_rightbar { 
+ width:118px; 
+ float:right;  
+ clear:right; 
+ }
+ 
+#en_sub_leftbar { 
+ width:112px;
+ float:left;  
+ clear:left; 
+} 
+ 
+#en_rightbar { 
+ width:118px; 
+ float:right;  
+ clear:right; 
+ }
+ 
+#flashall{
+margin:0; 
+padding:0;
+width:780px;
+}
+ 
+#footer {
+padding:0;
+margin:0;
+
+width:780px;
+height:50px; 
+float:center;
+background: #C8E9F2;
+vertical-align: middle;
+padding-top:10px;
+}
+#footerimg{
+        height: 9px;
+    width: 780px;
+    padding-top:20px;
+}
+#en_footer {
+padding:0;
+margin:0; 
+padding-top:20px;
+width:780px;
+height:50px; 
+float:center;
+background: #C8E9F2;
+vertical-align: middle;    
+} 
+
+#firstmiddle{
+margin:0; 
+padding:0;
+width:780px;
+float:center;
+}
+
+#newscenter {
+font-family: Arial, Helvetica, sans-serif;
+font-size: 11px;
+height: 291px;
+width: 303px;
+float: left;
+text-align: left;
+background:url(/images/aqm/backimg.jpg);
+}
+
+#newsdetail{
+padding-top:3px;
+padding-left:25px;
+}
+#img{
+margin:0;
+padding:0;
+width:250px;
+
+float:left;
+
+
+}
+#summary{
+
+   height:239px;
+   float:right;
+   clear:right;
+   line-height:2em;
+   padding-left:5px;
+   padding-right:15px;
+
+   width: 190px !important;
+   width: 200px;
+
+}
+#clear{
+ clear:both;
+}
+#datetime{
+color:#26A8E6;
+font-size:14px;
+font-weight:bold;
+}
+
+#more{
+width:180px;
+text-align:right;
+font-size:14px;
+font-weight:bold;
+}
+
+#more1{
+width:230px;
+padding-top:12px;
+text-align:right;
+font-size:14px;
+font-weight:bold;
+}
+
+#newstitle{
+color:#000000;
+font-size:12px;
+}
+
+#indexline {
+height: 291px;
+width: 14px;
+float: left;
+}
+
+#product {
+font-family: Arial, Helvetica, sans-serif;
+font-size: 11px;
+height: 291px;
+width: 463px;
+float: left;
+text-align: left;
+background:url(/images/aqm/backimg.jpg);
+}
+
+#firstmiddle #title {
+    text-align: left;
+    height: 50px;
+    font-size: 18px;
+    font-weight:bold;
+    padding-left:25px;
+    padding-top:20px;
+    background: #C8E9F2;
+}
+
+.box1{ 
+    min-height:60px;
+    width: 203px;
+    height: 70px;
+    float: left;
+    padding-top:10px;
+    padding-left:14px;
+}
+.box3{ min-height:60px;
+    height: 70px;
+    width: 160px;
+    float: left;
+}
+.box2{  
+    min-height:60px;
+    height: 70x;
+    width: 400px;
+    float: left;
+    padding-top:20px;
+} 
+.botton{
+   border:none;
+    background:url(/images/wagen/button.jpg) left top no-repeat;
+    width:59px; 
+    height:20px; 
+    display:block;
+    cursor:pointer; 
+}
+.en_botton{
+   border:none;
+    background:url(/images/wagen/en_button.jpg) left top no-repeat;
+    width:59px; 
+    height:20px; 
+    display:block;
+    cursor:pointer; 
+}
+a:hover {
+    color: #FF0000;
+    font-size: 12px;
+}
+a{
+    text-decoration:none;
+    color:#333333;
+    font-size: 12px;
+}
+
+#leftmenu{
+    width:180px;
+    padding-left:0px;
+    float: left;
+    font-size:12px;  
+}
+.clear{
+ clear:both; 
+}
+#productcontent{ 
+    width:550px;
+    padding-left:20px;
+    height: auto;
+    float:right;
+} 
+#cpjj{
+position:relative; 
+top:0; 
+left:0; 
+float:left; 
+width:260px; 
+height:80px; 
+padding-left:20px;
+}
+#cpjj #p1{
+font-size:12px; 
+line-height:1.5; 
+ height:auto;
+ }
+ #en_more1{
+width:230px;
+text-align:right;
+font-size:14px;
+font-weight:bold;
+}
+#en_more2{
+width:180px;
+text-align:right;
+font-size:14px;
+font-weight:bold;
+padding-top:6px;
+}

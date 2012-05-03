@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <meta name="google-site-verification" content="8JqaKKKZP49xrKrsEVLDsnB5kZI4SwGhVR1XL5LI5eQ" />
+    <%= stylesheet_link_tag 'notie' %>
+    <%= stylesheet_link_tag 'ferrotec' %>
+    <%= stylesheet_link_tag 'jituan' %>
+    <!--[if lte IE 6]>
+    <%= stylesheet_link_tag 'useie' %>
+    <![endif]-->
+    <title><%=@title%></title>
+    <meta name="description" content="杭州大和热磁电子有限公司成立于1992年1月31日，
+          是由日本磁性流体技术株式会社（Ferrotec Corporation）在华投资的全资子公司。主要产品
+          和技术有：致冷器,半导体制冷技术和热电半导体致冷技术等" />
+    <meta name="keywords" content="致冷器,半导体制冷,热电半导体致冷" />
+    <style type="text/css">
+      .menu ul li.left a {background-image: url(/images/president.gif);_height:560px;width:136px;background-repeat:no-repeat;}
+      .menu ul li.left a {background-image: url(/images/sleft1.jpg);_height:25px;width:16px;background-repeat:no-repeat;}
+      .menu ul li.left a{border:0px solid black;}
+      .menu ul li.right a{background-image: url(/images/president.gif);_height:560px;width:138px;_width:136px;background-repeat:no-repeat;}
+      .menu ul li.right a{background-image: url(/images/sright4.jpg);_height:25px;width:19px;_width:17px;background-repeat:no-repeat;}
+      .menu ul li.right a{border:0px solid black;}
+    </style>
+  </head>
+  <body>
+    <script language="JavaScript" type="text/JavaScript">
+lastScrollY=0;
+function heartBeat(){
+var diffY;
+if (document.documentElement && document.documentElement.scrollTop)
+    diffY = document.documentElement.scrollTop;
+else if (document.body)
+    diffY = document.body.scrollTop
+else
+    {/*Netscape stuff*/}
+
+//alert(diffY);
+percent=.1*(diffY-lastScrollY);
+if(percent>0)percent=Math.ceil(percent);
+else percent=Math.floor(percent);
+document.getElementById("lovexin12").style.top=parseInt(document.getElementById("lovexin12").style.top)+percent+"px";
+document.getElementById("lovexin14").style.top=parseInt(document.getElementById("lovexin12").style.top)+percent+"px";
+lastScrollY=lastScrollY+percent;
+//alert(lastScrollY);
+}
+suspendcode12="<div id=\"lovexin12\" style='left:2px;position:absolute;top:70px;z-index:10;'><img src='/images/sale1.gif' height='198' width='140' border='0'></div>"
+suspendcode14="<div id=\"lovexin14\" style='right:2px;position:absolute;top:70px;z-index:10;'><img src='/images/sale1.gif' height='198' width='140' border='0'></div>"
+document.write(suspendcode12);
+document.write(suspendcode14);
+window.setInterval("heartBeat()",1);
+</script>
+    <div id="all">
+      <%=yield%>
+      <br clear="all" />
+    </div>
+    <div id="aboutfooter">
+      <!--<p><img src="/images/bottomlline.jpg" width="780" height="5" alt="" /></p>-->
+      <p>2001-2009 COPYRIGHT FERROTEC(CN)CORPORATION ALL RIGHTS RESERVED</p>
+      <p>
+        <%
+        case $company_id.to_s
+        when "3"
+        %>
+          <a href="http://www.miibeian.gov.cn/">沪ICP备05012227号</a>
+        <% else %>
+          <a href="http://www.miibeian.gov.cn/">浙ICP备05003418号</a>
+          <script language="javaScript" src="http://zjnet.zjaic.gov.cn/hazqybswj/3301972003000202.js"></script>
+        <% end %>
+        <!-- GoStats JavaScript Based Code --><script type="text/javascript" src="http://gostats.cn/js/counter.js"></script><script type="text/javascript">_gos='c2.gostats.cn';_goa=635802;_got=4;_goi=1;_goz=0;_gol='流量统计源码';_GoStatsRun();</script><noscript><a target="_blank" title="流量统计源码" href="http://gostats.cn"><img alt="流量统计源码" src="http://c2.gostats.cn/bin/count/a_635802/t_4/i_1/counter.png" style="border-width:0" /></a></noscript><!-- End GoStats JavaScript Based Code -->
+    </p>
+    <p></p>
+  </div>
+</body>
+</html>

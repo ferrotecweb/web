@@ -1,0 +1,14 @@
+
+<div id="main">
+ <fieldset>
+    <legend>编辑栏目</legend>
+<% form_tag({:action=>'update_category',:id=>@category,:company_id =>@companyid}, {:multipart=>true}) do%>
+
+  <%= render :partial => 'form',:object => @category %>
+  <br/>
+  <%= submit_tag '保存' %>
+<% end %>
+<br/>
+<%= link_to '返回', :action => 'list_category' %>
+ </fieldset>
+</div>

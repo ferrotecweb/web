@@ -1,0 +1,13 @@
+<div id="main">
+ <fieldset>
+    <legend>编辑公司信息</legend>
+
+    <% form_tag({:action=>'update_company',:id=>@company}, {:multipart=>true}) do%>
+      <%= render :partial => 'form',:object => @company %>
+      <br/>
+      <%= submit_tag '保存' %>
+      <br/>
+    <% end %>
+    <%= link_to '返回', :action => 'list_company' %>
+ </fieldset>
+</div>

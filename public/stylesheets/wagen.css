@@ -1,0 +1,455 @@
+body {
+    margin:0 auto; 
+    text-align: center; 
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+}
+img{
+    display:block;
+    margin:0; 
+    padding:0;
+}
+/*#all {
+background-color: #333333;
+height: 600px;
+width: 780px;
+position:relative;
+margin:0 auto;
+border: 1px solid red;
+}
+*/
+#all {
+    background-color: #ffffff;
+    height: 600px;
+    width:780px;
+    position:relative;
+    margin:0 auto;
+    
+}
+
+#top {
+    min-height:60px;
+    height: 70px;
+    width: 780px;
+    background-color:#D0EBFE;
+    
+}
+
+#all #middle {
+    width: 780px;
+    text-align: center;
+    padding-top: 24px;  
+    height:auto;
+    background-color: #FFFFFF;
+    /*
+    width: 780px !important;
+    border:1px solid red; 
+    */
+    
+    
+}
+
+#menuall {
+    margin:0; 
+    padding:0;
+    width:780px;
+    height:48px; 
+    min-height:48px;
+}
+
+#menucenter{
+    float:left;
+    margin:0; 
+    padding:0;
+}
+/*
+#menucenter img{
+float:left;
+margin:0; 
+padding:0;
+}
+*/
+
+#img{
+    float:left; 
+    margin:0; 
+    padding:0;
+}
+
+#flash{
+    float:left;  
+}
+
+#leftbar { 
+    float:left;  
+    clear:left; 
+} 
+
+#rightbar { 
+    float:right;  
+    clear:right; 
+    
+}
+
+#flashall{
+    margin:0; 
+    padding:0;
+    width:780px;
+}
+
+#footer {
+    
+    padding:0;        
+    padding-top:10px;
+    /*
+    position:relative;
+    margin-top:-150px;
+    clear:both;
+    */
+    margin: auto;
+    width:780px;
+    height:50px; 
+    float:center;
+    background: #E3E3E3;
+    vertical-align: middle;  
+    
+}
+#en_footer {
+    margin:0;
+    padding:0;        
+    padding-top:20px;
+    width:780px;
+    height:50px; 
+    float:center;
+    background: #E3E3E3;
+    vertical-align: middle;  
+    
+} 
+#firstmiddle{
+    margin:0; 
+    width:780px;
+    float:center;
+}
+#newscenter1 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    height: 414px;
+    width: 308px;
+    float: left;
+    text-align: left;
+    background: #F4F4F4;
+}
+
+#newscenter {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    height: 412px;
+    width: 308px;
+    float: left;
+    text-align: left;
+    background: #F4F4F4;
+}
+
+#newsdetail{
+    padding-left:25px;
+}
+
+#datetime{
+    color:#6AB000;
+    font-size:14px;
+    font-weight:bold;
+}
+
+#newstitle{
+    color:#26A8E6;
+    font-size:14px;
+    
+}
+#indexline1 {
+    height: 414px;
+    width: 18px;
+    float: left;
+}
+#indexline {
+    height: 321px;
+    width: 18px;
+    float: left;
+}
+
+#product {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    height: 321px;
+    width: 308px;
+    float: left;
+    text-align: left;
+    background: #F4F4F4;
+}
+#introduce{
+    margin:0; 
+    padding:0;
+    width: 430px;
+    font-size:12px; 
+    line-height:1.5; 
+    padding-left:24px;
+    height:auto;
+    text-align: left;
+    background: #F4F4F4;
+}
+#firstmiddle #title {
+    text-align: left;
+    height: 40px;
+    font-size: 18px;
+    font-weight:bold;
+    padding-left:25px;
+    padding-top:20px;
+}
+
+.box1{ 
+    min-height:60px;
+    width: 203px;
+    height: 60px;
+    float: left;
+    padding-top:10px;
+    padding-left:14px;
+    
+}
+.box3{ min-height:60px;
+    height: 60px;
+    width: 140px;
+    float: left;
+    
+}
+.box2{  
+    min-height:60px;
+    height: 60px;
+    width: 400px;
+    float: left;
+    padding-top:10px;
+    
+} 
+.box4{ min-height:60px;
+    height: 60px;
+    width: 20px;
+    float: left;
+}
+.botton{
+    border:none;background:url(/images/wagen/button.jpg) left top no-repeat;
+    width:59px; 
+    height:20px; 
+    display:block;
+    cursor:pointer; 
+}
+.en_botton{
+    border:none;background:url(/images/wagen/en_button.jpg) left top no-repeat;
+    width:59px; 
+    height:20px; 
+    display:block;
+    cursor:pointer; 
+}
+a:hover {
+    color: #FF0000;
+    font-size: 12px;
+}
+a{
+    text-decoration:none;
+    color:#333333;
+    font-size: 12px;
+}
+
+#productcontent{ 
+    width:550px;
+    padding-left:20px;
+    height: auto;
+    float:right;
+} 
+#leftmenu{
+    width:180px;
+    padding-left:16px;
+    float: left;
+    font-size:12px;  
+}
+
+#menu{
+    width:180px;
+    height:auto;
+    text-align: center;
+    list-style:none;
+    margin:0;
+    padding:0;
+    float: left;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    
+}
+#menuA{
+    margin:0;
+    padding:0;
+    height:20px;
+    text-align: left;	
+    padding-top: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    font-weight:bold;
+    padding-left:50px;
+    color:#010101;
+}
+#menuB{
+    margin:0;
+    padding:0;
+    width:180px;
+    text-align: center;
+}
+
+#menuC{
+    margin:0;
+    padding:0;
+    text-align: left; 
+    padding-left:50px;
+    padding-top:20px;
+    /*border: 1px solid red;*/
+}
+
+#div6{
+    margin: 0px 0px 10px 0px; 
+    color:#0199CB;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight:bold; 
+    height:20px; 
+    
+}
+#div9{
+    color:#616161;
+    margin: 0px 0px 10px 0px; 
+    height:10px;  
+    
+}
+
+#menu a{
+    color:#616161;
+}
+
+#menu a:link  { 
+    text-decoration:underline;
+    
+} 
+#menu a:visited  {
+    text-decoration:underline;
+    font-weight: normal;    
+} 
+#menu a:hover { 
+    color: red;
+    text-decoration:underline;
+    font-weight:normal; 
+} 
+#divline {
+    height: 321px;
+    width: 13px;
+    float: left;
+    padding-top:20px;
+    
+}
+#wagenproductcontent{ 
+    margin:0;
+    padding:0;
+    padding-top:0px;
+    padding-left:0px;
+    padding-right:16px;
+    height: auto;
+    float:right;
+    clear:right;
+    width:540px;
+    /*border: 1px solid red;*/
+} 
+#divheight{
+    width:780px;
+    height: 30px;
+    background-color: #FFFFFF;
+}
+.clear{
+    clear:both; 
+}
+
+#en_more1{
+    width:290px;
+    padding-top:18px;
+    text-align:right;
+    font-size:14px;
+    font-weight:bold;
+}
+
+#more{
+    width:420px;
+    text-align:right;
+    font-size:14px;
+    font-weight:bold;
+}
+
+#more1{
+    width:230px;
+    padding-top:10px;
+    text-align:right;
+    font-size:14px;
+    font-weight:bold;
+}
+
+
+#img{
+    margin:0;
+    padding:0;
+    float:left;
+    width:453px;
+}
+#img1{
+    margin:0;
+    width:453px;
+    
+}
+#img2{
+    margin:0;
+    padding:0;
+    width:34px;
+    float:left; 
+    clear:left; 
+    overflow:hidden;
+    
+}
+#img3{
+    padding:0;
+    margin:0;
+    float:left; 
+    width:257px;
+    
+}
+#img4{
+    padding:0;
+    margin:0;
+    width:162px;
+    float:right;
+    clear:right;
+    overflow:hidden;
+    
+}
+#p1{
+    padding:0;
+    margin:0;
+    width:257px;
+    height:32px;
+    background-image: url(/images/wagen/001_r7_c6_r1_c1.jpg);
+    font-size:15px;
+    font-family: Arial, Helvetica, sans-serif;
+    color:#FFFFFF;
+    font-weight: bold; 
+}
+#p2{
+    padding:0;
+    margin:0;
+    width:257px;
+    height:92px;
+    background-image: url(/images/wagen/001_r7_c6_r2_c2.jpg);
+    font-size:12px;
+    font-family: Arial, Helvetica, sans-serif;
+    color:#FFFFFF;
+    line-height: 18px;
+}

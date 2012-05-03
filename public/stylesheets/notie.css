@@ -1,0 +1,164 @@
+/* common styling */
+/* set up the overall width of the menu div, the font and the margins */
+.menu {
+	font-family: arial, sans-serif;
+	width:783px;
+	margin:0;
+    padding:0;
+	/*margin:1px;*/
+}
+/* remove the bullets and set the margin and padding to zero for the unordered list */
+.menu ul {
+padding:0;
+margin:0;
+list-style-type: none;
+}
+/* float the list so that the items are in a line and their position relative so that the drop down list will appear in the right place underneath each list item */
+.menu ul li {
+float:left;
+position:relative;
+}
+/* style the links to be 104px wide by 30px high with a top and right border 1px solid white. Set the background color and the font size. */
+.menu ul li a, .menu ul li a:visited {
+display:block;
+text-align:center;
+text-decoration:none;
+width:123px;
+height:24px;
+color:#FFFFFF;
+border:0px solid #fff;
+border-width:0px 0px 0 0;
+background-image: url(/images/middle1.jpg);
+line-height:24px;
+font-size:12px;
+}
+/* make the dropdown ul invisible */
+.menu ul li ul {
+display: none;
+}
+/* specific to non IE browsers */
+/* set the background and foreground color of the main menu li on hover */
+.menu ul li:hover a {
+color:#fff;
+background:#b3ab79;
+background-image: url(/images/middle3.jpg);
+}
+/* make the sub menu ul visible and position it beneath the main menu list item */
+.menu ul li:hover ul {
+display:block;
+position:absolute;
+top:24px;
+left:0;
+width:125px;
+}
+/* style the background and foreground color of the submenu links */
+.menu ul li:hover ul li a {
+display:block;
+/*background:#faeec7; */
+background:#FFFFFF;
+border-left-style: solid;
+border-left-width: 1px;
+border-left-color: #000000;
+border-right-style: solid;
+border-right-width: 1px;
+border-right-color: #000000;
+height:18px;
+line-height:18px;
+text-align:left;
+padding-left:4px;
+color:#000;
+}
+/* style the background and forground colors of the links on hover */
+.menu ul li:hover ul li a:hover {
+/* background:#dfc184; */
+border-bottom-style: solid;
+border-bottom-width: 1px;
+border-bottom-color: #666666;
+border-top-style: solid;
+border-top-width: 1px;
+border-top-color: #666666;
+background:#CCCCCC;
+color:#000;
+}
+.menu ul li.left a{
+	width:16px;
+ 	height:24px;
+	background-image: url(/images/left.jpg);
+}
+.menu ul li.right a{
+	width:19px;
+	_width:17px;
+	height:24px;
+	background-image: url(/images/right2.jpg);
+    background-repeat: no-repeat;
+}
+.menu ul li.aa a{
+background-image: url(/images/middle2.jpg);
+width:130px;
+}
+
+.menu ul li.aa a:hover {
+background-image: url(/images/middle3.jpg);
+color:#000;
+}
+.menu ul li.aa a:hover ul.bb a{
+width:130px;
+text-align:left;
+padding-left:4px;
+/*text-align:left;*/
+}
+
+.box1{
+    min-height:60px;
+    width: 203px;
+    height: 60px;
+    float: left;
+    padding-top:10px;
+}
+.box3{ min-height:60px;
+    height: 60px;
+    width: 160px;
+    float: left;
+}
+.box2{
+    min-height:60px;
+    height: 60px;
+    width: 410px;
+    float: left;
+    padding-top:10px;
+        /*border: 1px solid red;*/
+}
+
+.box4{
+ min-height:60px;
+    width: 203px;
+    height: 60px;
+    float: left;
+    padding-top:10px;
+}
+.box5{ min-height:60px;
+    height: 60px;
+    width: 160px;
+    float: left;
+}
+.box6{
+    min-height:60px;
+    height: 60px;
+    width: 410px;
+    float: left;
+    padding-top:10px;
+        /*border: 1px solid red;*/
+}
+
+.clear{
+ clear:both;
+}
+
+#fh1,#fh2{
+        margin:0;
+    padding:0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    font-weight:800;
+    display : inline;
+}

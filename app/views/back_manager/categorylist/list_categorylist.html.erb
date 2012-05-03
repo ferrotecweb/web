@@ -1,0 +1,69 @@
+
+<div id="categorylist">
+<br/>
+<h3><%=@title%></h3>
+<br/>
+<div id="categorylist1">
+<table id="table1" bgcolor="#FFFFFF" width="540"   cellspacing="0" cellpadding="0" height="35" align=left>
+<tr> 
+    <%=  form_tag({:action => "query_categorylist"},{:method => "get"}) %>
+    <td width="280"><%= hidden_field("categorylist","company_id",:value => "#{@companyid}") %></td>
+    <td width="50"><label for="categorylist_categoryid">所属栏目</label></td>
+
+    <td width="140">   <%= select 'categorylist', 'categoryid', 
+                Category.find_by_sql("select cy.categoryid,categories.company_id,case when length(cy.categoryid) = 9 then concat('----',cy.categoryname) else  cy.categoryname  end  as categoryname from
+(select case when length(categoryid) = 3 then categoryname else  concat('----',categoryname)  end  as categoryname,categoryid,id,company_id  
+from categories) cy,categories where cy.id = categories.id and (categories.company_id ='" + @companyid + "' or length(categories.categoryid) = 3) and cy.company_id ='" + @companyid + "'  order by cy.categoryid").collect{ |p| [p.categoryname, p.categoryid] },
+                { :include_blank => true } %>
+    </td>
+
+    <td width="40">
+    <%=  submit_tag '查询' %>
+    </td>
+</tr>
+</table>
+</div>
+<table id="table" cellpadding="0" cellspacing="0">
+  <tr id="tabletr">
+    <td width="320">标题</td>
+    <td width="260">所属栏目</td>
+    <!--<td>图片</td>-->
+    <td colspan="2" width="120" align="center"><%= link_to '添加新标题', :action => 'add_categorylist',:company_id => @companyid %></td>
+  </tr>
+  <% for categorylist in @all_categorylists %> 
+  <tr>
+    <td><%=h(truncate(categorylist.title,40))%>&nbsp;</td>
+    <td><%=categorylist.category.categoryname%>&nbsp;</td>
+    <td align="center"><%= link_to "修改",{ # link_to options
+                           :controller => 'categorylist', 
+                           :action => 'edit_categorylist',
+                           :id => categorylist,
+                         :company_id => @companyid} %>
+    </td>
+    <td align="center"><%= link_to "删除", { # link_to options
+                           :controller => 'categorylist', 
+                           :action => 'delete_categorylist',
+                           :id => categorylist,
+                         :company_id => @companyid},
+                         { # html options
+                           :method  => :post,
+                           :confirm => "确定要删除 #{categorylist.title}?"
+                         } %>
+
+     </td>
+  </tr>
+  <% end %>
+</table>
+</div>
+<script language="javascript"><!--
+//senfe("表格名称","奇数行背景","偶数行背景","鼠标经过背景","点击后背景");
+senfe("table","#FFFFFF","#FFFFFF","#A6C4E1","#FFFFFF");
+--></script>
+<div id="fy">
+<%= will_paginate @all_categorylists,
+:inner_window => 1,
+:outer_window => 1,
+:prev_label => '上一页',
+:next_label => '下一页'
+%>
+</div>

@@ -1,0 +1,82 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"> 
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title><%=@title%></title>
+<%= stylesheet_link_tag 'content' %>
+</head>
+
+<body id="body" onload="parent.document.getElementById('frame1').style.height=this.document.body.scrollHeight">
+<!--主要产品父页-->
+ <div id="yylybanner"><%=@title%></div>
+ <% for mostlyproduct in @mostlyproduct %>
+ <div  style="text-align:justify;text-justify:distribute-all-lines;text-align-last:justify">
+   <pre><p id="productdetail"><%=mostlyproduct.summary%></p></pre>
+ </div>
+
+ <% if @mostlyproductdetail.size > 0 %>
+  <div id="cpdl3"></div>
+  <% end %>
+ <div id="cpdl2">
+   <% for mostlyproductdetail in @mostlyproductdetail %>  
+     <% if mostlyproductdetail.picturename != "" and mostlyproductdetail.picturename != nil %>
+        <% @categorylist = mostlyproductdetail %>
+        <% if mostlyproductdetail.company_id == 4 %>
+        <span id="imageheight">
+        <a href="<%=mostlyproductdetail.url%>" target="_blank">
+        <%=image_tag url_for_file_column(:categorylist,:picturename),:height => '97', 
+          :width => '160',:border => 0,:class=>'image' %>
+        </a>
+        </span>
+        <% else %>  
+        <span id="imageheight">
+        <a onclick="showmenu('<%=mostlyproductdetail.categoryid%>','<%=mostlyproductdetail.url%>')" style="cursor:pointer">
+        <%=image_tag url_for_file_column(:categorylist,:picturename),:height => '97', 
+          :width => '160',:border => 0,:class=>'image' %>
+        </a>
+        </span>
+        <% end %>
+    <% end %>
+   <% end %>
+ </div>
+
+<% end %>
+
+
+<script language="JavaScript" type="text/JavaScript">
+//主菜单单击事件
+function showmenu(paremenuID,url)
+{ 
+
+    parent.init1();
+    //主菜单变色
+    parent.document.getElementById("menutop2").style.color='#000000';
+    parent.document.getElementById("menutop2").style.backgroundImage='url(/images/memu_r9_c1.jpg)';
+
+
+    if (paremenuID.length > 6)
+    {
+        parent.init2(); 
+        //菜单变色
+        parent.document.getElementById(paremenuID).style.backgroundImage='url(/images/memu_r5_c1.jpg)';
+        parent.clickCID = paremenuID;    
+    }
+    else
+    {    
+        //展开菜单并更换颜色
+        parent.document.getElementById(paremenuID).style.backgroundImage='url(/images/memu_r2_c1.jpg)';
+        parent.document.getElementById("child"+paremenuID).style.display = "";
+        parent.clickPID = paremenuID;
+    }
+    
+    //转到链接
+    parent.document.getElementById(paremenuID).style.color='#FFFFFF';
+    parent.document.getElementById("frame1").src = url;
+}
+
+</script>
+  <br />
+  <br />
+
+</body>
+</html>

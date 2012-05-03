@@ -1,0 +1,29 @@
+<div class="col2">
+    <div class="Ptitle">
+      <h1><%=@title%></h1>
+    </div>
+    <div class="contentTxt">
+      <div><img src="/images/hanhong/en_download_top.gif" alt="" /></div>
+        <ul class="nlist" id="msg_errors" runat="server" enableviewstate="false">
+          <% for categorylist in @categorylist  %>
+          <li>
+            <% if !categorylist.issuedate.blank? %>
+            <span class="nDate"><%=h(categorylist.issuedate.strftime("%Y-%m-%d")) %></span>
+            <a href="/download/<%=categorylist.downloadfile %>" target="_blank"><%=categorylist.title %></a><%=(Time.now.strftime("%j").to_i - categorylist.issuedate.strftime("%j").to_i) > 3 ? "" : "<img src=\"/images/hanhong/new.gif\" width=\"22\" height=\"14\" />"%>
+            <% else %>
+            <a href="/download/<%=categorylist.downloadfile %>" target="_blank"><%=categorylist.title %></a>
+            <% end %>
+          </li>
+          <% end %>
+        </ul>
+      <div class="pageDir">
+     <%= will_paginate @categorylist,
+      :inner_window => 1,
+      :outer_window => 1,
+      :prev_label => 'Previous',
+      :next_label => 'Next'
+      %>
+      </div>
+  </div>
+</div>
+<div class="clear"></div>

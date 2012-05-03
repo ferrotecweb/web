@@ -1,0 +1,32 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"> 
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title></title>
+<%= stylesheet_link_tag 'content' %>
+</head>
+
+<body id="marketapplydetailbody" onload="parent.document.getElementById('frame1').style.height=this.document.body.scrollHeight">
+<!--市场应用明细-->
+ <div id="yylybanner"><%=@title%></div>
+  <% for marketapplydetail in @marketapplydetail %>
+    <div id="cpjj">
+    <span>
+      <pre ><p id="productdetail"><%=marketapplydetail.summary%></p></pre>
+    </span> 
+    </div>
+
+
+    <%if marketapplydetail.summarydetail != "" and marketapplydetail.summarydetail != nil %>
+    <div id="cpdl3"></div>
+    <br />
+    <div id="technologydetail"><%=marketapplydetail.summarydetail%></div>
+    <% end %>
+  <% end %>
+
+ <div id="marketapplydetail3">
+   <a href="#"><p><%=@title%>行业咨讯</p></a>
+   <!--<a href="#"><p><%=@title%>行业展会一览表</p></a>-->
+ </div>
+</body>
+</html>

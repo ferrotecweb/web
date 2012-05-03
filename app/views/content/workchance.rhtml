@@ -1,0 +1,80 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"> 
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title></title>
+<%= stylesheet_link_tag 'content' %>
+</head>
+
+<body>
+<div id="yylybanner">人才招聘</div>
+<!--工作机会-->
+<% for company in @company %>
+<div id="work1">
+  <p>公司人才观理念</p>
+  <p><pre><%=company.linian%></pre></p>
+</div>
+
+<div class="clear"></div>
+<div id="bottomimg"></div>
+<div id="work2">
+  <table width="500" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="63"><img src="/images/note_r1_c1.gif" width="63" height="25"></td>
+        <td width="100"><a href="mailto:'<%=company.email%>'"><%=company.email%></a></td>
+        <td width="51"><img src="/images/note_r1_c3.gif" width="51" height="25"></td>
+        <td width="200"><%=company.fax%></td>
+      </tr>
+      <tr>
+        <td colspan="4"><span id="work2font2" style="font:normal" >有意者请将中英文简历、学历证明、身份证复印件及近期免冠照片一张email给我们，也可寄至<span id="work2font1" style="font:bold" >：<%=company.address%>, 邮政编码 <%=company.zipcode%></span><br /><span id="work2font2" style="font:normal">面试时请携带上述证件的原件。</span></span>
+        </td>
+      </tr>
+    </table>
+</div>
+<% end %>
+<div class="clear"></div>
+<div id="bottomimg"></div>
+<div id="work3">
+  <table id="work3table" width="540" border="0" cellspacing="0" cellpadding="0">
+    <tr id="work3tabletr">
+      <td>部门</td>
+      <td>招聘岗位</td>
+      <td>工作地点</td>
+      <td>发布时间</td>
+      <td>截止时间</td>
+      <td align="center">查看信息</td>
+    </tr>
+    <% for gzjh in @gzjh %>
+    <tr>
+    <td ><%= h(gzjh.depart) %>&nbsp;</td>
+    <td ><%= h(gzjh.poth) %>&nbsp;</td>
+    <td ><%= h(gzjh.workadd) %>&nbsp;</td>
+    <td ><%= h(gzjh.created_at.strftime("%Y-%m-%d")) %>&nbsp;</td>
+    <% if gzjh.overdate != "" and gzjh.overdate != nil  %>
+    <td ><%= h(gzjh.overdate.strftime("%Y-%m-%d")) %>&nbsp;</td>
+    <% else %>
+    <td >&nbsp;</td>
+    <% end %>
+    <td align="center">
+      <a style="cursor:pointer" onClick='window.open("/content/workinfo?id=<%=gzjh.id%>","","scrollbars=yes,width=500,height=300,top=(window.screen.availHeight-30-400)/2"),left= (window.screen.availWidth-10-600)/2'>查看信息
+      </a>   
+    </td>
+    </tr>
+    <% end %>
+
+  </table>
+</div>
+<div id="workfy">
+<%= will_paginate @gzjh,
+:inner_window => 1,
+:outer_window => 1,
+:prev_label => '上一页',
+:next_label => '下一页'
+%>
+</div>
+<br />
+<br />
+<br />
+<br />
+</body>
+</html>

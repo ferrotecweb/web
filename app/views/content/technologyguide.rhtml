@@ -1,0 +1,34 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"> 
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>技术指南</title>
+<%= stylesheet_link_tag 'content' %>
+</head>
+
+<body onload="parent.document.getElementById('frame1').style.height=this.document.body.scrollHeight">
+  <% for technologyguide in @technologyguide %>
+  <div id="yylybanner"><%=technologyguide.categoryname%></div>
+  <%  if technologyguide.summary != nil and technologyguide.summary != "" %>
+  <div id="jszn"><pre><p id="productdetail"><%=technologyguide.summary%></p></pre>
+  <p>
+    <img src="/images/index/line_r2_c1.jpg" alt="product" border="0" height="5" width="600" />
+  </p>
+  </div>
+  <% end %>
+
+  <div id="jszn"><%=technologyguide.summarydetail%>
+
+  <%  if technologyguide.content != nil and technologyguide.content != "" %>
+  <p>
+    <img src="/images/index/line_r2_c1.jpg" alt="product" border="0" height="5" width="600" />
+  </p>
+  <% end %>
+  </div>
+  <div id="jszn"><%=technologyguide.content%></div>
+  <% end %>
+
+
+
+</body>
+</html>

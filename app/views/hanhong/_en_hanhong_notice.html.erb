@@ -1,0 +1,8 @@
+<% for categorylist in EnCategorylist.hanhongnewnotice %>
+<li>
+  <% if !categorylist.issuedate.blank? %>
+  <span class="Newsdate"><%=categorylist.issuedate.strftime("%y-%m-%d")%></span><br />
+  <% end %>
+  <a href="/hanhong/en_news_show?id=<%=categorylist.id %>"><%=categorylist.title%></a>
+</li>
+<% end %>

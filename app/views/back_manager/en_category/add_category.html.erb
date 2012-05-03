@@ -1,0 +1,12 @@
+<div id="main">
+ <fieldset>
+    <legend>添加下级栏目(英文)</legend>
+<% form_tag({:action=>'add_category',:company_id =>@companyid}, {:multipart=>true}) do%> 
+  <%= render :partial => 'form',:object => @category %>
+  <br/>
+  <%= submit_tag "添加" %>
+<% end %>
+<br/>
+<%= link_to '返回', :action => 'list_category' %>
+ </fieldset>
+</div>

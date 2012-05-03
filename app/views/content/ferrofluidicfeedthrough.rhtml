@@ -1,0 +1,169 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"> 
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+  <title>标准磁流体密封装置</title>
+  <%= stylesheet_link_tag 'content' %>
+</head>
+  
+<body onload="parent.document.getElementById('frame1').style.height=this.document.body.scrollHeight">
+    
+<div id="yylybanner">标准磁流体密封装置</div>
+
+<div id ="div0">
+  <p>点击图片，选择您需要的密封类型。当鼠标移动到每张图片上，您会看到对应产品的文字说明。</p>
+</div>
+
+<div id="vf1">
+  <span>  
+    <img src="/images/1.jpg" onClick="jQuery('shaftType','1');jQuery('mount','1');jQuery('temperature','0');" title="实心轴、螺纹安装" height ="100" width ="100"  />
+  </span>
+
+  <span>  
+    <img src="/images/2.jpg" onClick="jQuery('shaftType','1');jQuery('mount','1');jQuery('temperature','1');" title="实心轴，螺纹安装，水冷" height ="100" width ="100"  />
+  </span>
+
+  <span>  
+    <img src="/images/3.jpg" onClick="jQuery('shaftType','1');jQuery('mount','2');jQuery('temperature','0');" title="螺母安装" height ="100" width ="100"  />
+  </span>
+
+  <span>  
+    <img src="/images/4.jpg" onClick="jQuery('shaftType','1');jQuery('temperature','0');" title="实心轴，法兰安装" height ="100" width ="100"  />
+  </span>
+  <p></p>
+  <span>  
+    <img src="/images/5.jpg" onClick="jQuery('shaftType','2');jQuery('mount','1');jQuery('temperature','0');" title="空心轴，套筒式安装" height ="100" width ="100"  />
+  </span> 
+
+  <span>  
+    <img src="/images/6.jpg" onClick="jQuery('shaftType','2');jQuery('temperature','0');" title="空心轴，法兰安装" height ="100" width ="100"  />
+  </span> 
+
+  <span>  
+    <img src="/images/7.jpg" onClick="jQuery('shaftType','2');jQuery('temperature','1');" title="标准空心轴， 法兰安装，水冷" height ="100" width ="100"  />
+  </span> 
+
+  <span>  
+    <img src="/images/8.jpg" onClick="jQuery('shaftType','all');jQuery('mount','all');jQuery('temperature','all');jQuery('environment','all');jQuery('shaftDim','all');" title="选择所有产品" height ="100" width ="100"  />
+  </span> 
+</div>
+
+<div id ="vf3">
+<% form_tag :action => 'querysetparam' do %> 
+ 
+<input type=hidden name=id value=feedthrough> 
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody>
+<tr>
+<td class="formText" width="50%">轴型:</td>
+<td class="formText" width="50%">轴尺寸:</td>
+</tr>
+
+<tr>
+<td class="formText">
+  <select name="shaftType" class="formElement" id="shaftType"> 
+  <option value="all">选择轴型….</option>
+  <option value="Solid">实心轴</option>
+  <option value="Hollow">空心轴</option>
+  <option value="all">实心轴和空心轴s</option>
+  </select> &nbsp;
+</td>
+<td class="formText">
+  <select name="shaftDim" class="formElement" id="shaftDim"> 
+  <option value="all-in" selected="selected">选择轴尺寸….</option>
+  <option value="0.1875-in">直径3/16英寸</option>
+  <option value="0.25-in">直径1/4英寸</option>
+  <option value="0.375-in">直径3/8英寸</option>
+  <option value="0.5-in">直径1/2英寸</option>
+  <option value="0.75-in">直径3/4英寸</option>
+  <option value="1-in">直径1英寸</option>
+  <option value="1.5-in">直径1  1/2英寸</option>
+  <option value="2-in">直径2英寸</option>
+  <option value="3-in">直径3英寸</option>
+  <option value="all-in">以上均为英制</option>
+  <option value="all-in">---------</option> 
+  <option value="4-mm">直径4毫米</option>
+  <option value="5-mm">直径54毫米r</option>
+  <option value="6-mm">直径6毫米</option>
+  <option value="10-mm">直径10毫米</option>
+  <option value="12-mm">直径12毫米</option>
+  <option value="20-mm">直径20毫米</option>
+  <option value="25-mm">直径25毫米</option>
+  <option value="30-mm">直径30毫米</option>
+  <option value="40-mm">直径40毫米</option>
+  <option value="50-mm">直径50毫米</option>
+  <option value="75-mm">直径75毫米</option>
+  <option value="all-mm">以上均为公制</option>
+  <option value="all-all">所有产品</option>
+  </select> &nbsp;
+  </td>
+</tr>
+
+<tr>
+<td class="formText">接口:</td>
+<td class="formText">环境:</td>
+</tr>
+
+<tr>
+<td class="formText">
+  <select name="mount" id="mount" class="formElement"> 
+  <option value="all">选择安装类型...</option>
+  <option value="Cartridge">套筒式安装</option>
+  <option value="Other">法兰安装</option>
+  <option value="Nose">螺纹安装</option>
+  <option value="Nut">螺母安装</option>
+  <option value="all">所有安装选项</option>
+  </select>
+</td>
+<td class="formText">
+  <select name="environment" class="formElement" id="environment"> 
+  <option value="Standard">标准状态</option>
+  <option value="Reactive Gas">活性气体</option>
+  <option value="all">所有产品</option>
+  </select>
+</td>
+</tr>
+
+<tr>
+<td class="formText">温度:</td>
+<td class="formText">&nbsp;</td>
+</tr>
+
+<tr>
+<td class="formText">
+<select name="temperature" id="temperature" class="formElement"> 
+<option value="0" selected="selected">标准状态</option>
+<option value="1">高温</option>
+<option value="all">所有产品</option>
+</select>
+</td>
+<td class="formText"><br type="_moz" /></td>
+</tr>
+<tr>
+<td colspan="2" class="formText">
+<div align="center">
+  <%= submit_tag "提交" %>
+  <!--<input name="submit" value="Submit" type="submit" />-->
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<% end %>
+</div>
+<script language="JavaScript" type="text/JavaScript"> 
+    function jQuery(objSelect, objIndex) 
+    {               
+        var from = document.getElementById(objSelect);   
+        if (objIndex == "all")
+            {
+            from[from.options.length-1].selected = true
+            }
+         else{
+          from[objIndex].selected  = true    
+         }
+                   
+    }  
+  </script>   
+  </body>
+</html>

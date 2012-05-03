@@ -1,0 +1,57 @@
+<div id="order">
+<br/>
+<h3>招聘信息一览</h3>
+<br/>
+<!--cellpadding="0" cellspacing="0"-->
+<table id="table" cellpadding="0" cellspacing="0" >
+  <tr id="tabletr">
+  <td width="70px" >所属公司</td>
+  <td width="100px" >部门</td>
+  <td width="120px">招聘岗位</td>
+  <td width="50px" >招聘人数</td>
+  <td width="60px" >工作地点</td> 
+  <td width="60px" >发布时间</td>
+  <td width="60px" >截止时间</td>
+  <td colspan="2" width="120" align="center"><%= link_to "发布新岗位", :controller => 'order', :action => 'add_order' %></td>
+  </tr>
+  <% for order in @all_orders %>
+  <tr>
+    <td ><%= h(order.company.companyname) %>&nbsp;</td>
+    <td ><%= h(order.depart) %>&nbsp;</td>
+    <td ><%= h(order.poth) %>&nbsp;</td>
+    <td ><%= h(order.num) %>位&nbsp;</td>
+    <td ><%= h(order.workadd) %>&nbsp;</td>
+    <td ><%= h(order.created_at.strftime("%Y-%m-%d")) %>&nbsp;</td>
+    <% if order.overdate != "" and order.overdate != nil  %>
+    <td ><%= h(order.overdate.strftime("%Y-%m-%d")) %>&nbsp;</td>
+    <% else %>
+    <td >&nbsp;</td>
+    <% end %>
+    <td align="center"><%= link_to "编辑", { # link_to options
+                           :controller => 'order', 
+                           :action => 'edit_order',
+                           :id => order} %>
+
+  </td>
+  <td align="center"><%= link_to "删除", { # link_to options
+                           :controller => 'order', 
+                           :action => 'delete_order',
+                           :id => order},
+                         { # html options
+                           :method  => :post,
+                           :confirm => "确定要删除?"
+                         } %>
+
+  </td>  
+  </tr>
+  <% end %>
+</table>
+</div>
+<div id="fy">
+<%= will_paginate @all_orders,
+:inner_window => 1,
+:outer_window => 1,
+:prev_label => '上一页',
+:next_label => '下一页'
+%>
+</div>

@@ -1,0 +1,42 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"> 
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title></title>
+<%= stylesheet_link_tag 'content' %>
+</head>
+
+<body onload="parent.document.getElementById('frame1').style.height=this.document.body.scrollHeight">
+  <% for technologyguidedetail in @technologyguidedetail %>
+  <div id="yylybanner"><%=@title%></div>
+  <% for category in @category %>
+    <div id="jszn1"><pre><p id="productdetail"><%=category.summary%></p></pre></div>
+  <% end%>
+
+  <div id="cpdl4"></div>
+  
+  <div id="divte">
+  <% 
+  @count = 0
+  for technologyguide in @technologyguide 
+  @count = @count + 1
+  %>
+    <p id="ftcp">
+    <a href="/content/technologyguidedetail?id=<%=technologyguide.id%>" onmousemove="this.style['color']='#ff0000'" onmouseout="this.style['color']='#000000'" style="cursor:pointer;color:#000000">
+    <span id="span4"><%=@count.to_s + ".0"%></span>
+    <span id="span5"><%=technologyguide.title%></span>
+    </a>
+    </p>
+  <% end%>
+  </div>
+  
+  <div id="cpdl4"></div>
+  <div id="jszn"><%=technologyguidedetail.content%></div>
+  <% end %>
+
+
+  
+
+
+</body>
+</html>

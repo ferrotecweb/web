@@ -1,0 +1,14 @@
+﻿&tnum=2&
+
+&title1=NEWS&
+
+&fst=1&
+
+&t1_con1=测试　09-06-24&&t1_con2=上海汉虹精密机械有限公司网站开通　09-06-19&&t1_con3=上海汉虹精密机械有限公司网站开通　09-06-17&
+
+&tURL1_con1=141&&tURL1_con2=140&&tURL1_con3=138&
+
+&tURL1_conTarget1=""&
+&tURL1_conTarget2=""&
+&tURL1_conTarget3=""&
+

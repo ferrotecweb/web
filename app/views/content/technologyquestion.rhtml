@@ -1,0 +1,24 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"> 
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>技术指南</title>
+<%= stylesheet_link_tag 'content' %>
+</head>
+
+<body>
+  <% for technologyquestion in @technologyquestion %>
+  <div id="yylybanner"><%=technologyquestion.title%></div>
+  <div id="jszn"><pre><p id="productdetail"><%=technologyquestion.summary%></p></pre>
+  <p>
+    <img src="/images/index/line_r2_c1.jpg" alt="product" border="0" height="5" width="600" />
+  </p>
+  </div>
+  
+  <div id="jszn"><%=technologyguide.content%></div>
+  <% end %>
+
+
+
+</body>
+</html>

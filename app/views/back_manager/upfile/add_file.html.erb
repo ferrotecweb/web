@@ -1,0 +1,20 @@
+
+
+<div id="upfile">
+ <fieldset>
+    <legend>文件上传</legend>
+<% form_tag({:action=>'add_file'}, {:multipart=>true}) do%> 
+  <%= render :partial => 'form',:object => @file %>
+  <br/>
+  <p>
+  <%= submit_tag "上传" %>
+  </p>
+<% end %>
+<br/>
+<br/>
+<br/>
+<p>
+<%= link_to '返回', :action => 'list_file' %>
+</p>
+ </fieldset>
+</div>

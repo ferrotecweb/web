@@ -1,0 +1,147 @@
+body {
+    margin:0 auto; 
+    text-align: center; 
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+}
+#all #firstmiddlejituan {
+text-align: center;
+height: 290px;
+*height: 360px!important;
+*height: 290px;
+width: 800px;
+padding-top: 10px;
+
+}
+
+
+#blueHeadjituan {
+font-family: Arial, Helvetica, sans-serif;
+font-weight:bold;
+font-size: 14px;
+color: #3B6F9F;
+padding-left: 0%;
+line-height:2.5em;
+/*vertical-align: middle;*/
+}
+#all #newscenterjituan {
+font-family: Arial, Helvetica, sans-serif;
+font-size: 11px;
+height: 260px;
+width: 400px;
+float: left;
+text-align: left;
+border-right-width: 1px;
+border-right-color: #CCCCCC;
+border-right-style: solid;
+
+}
+#all #companyjituan {
+font-family: Arial, Helvetica, sans-serif;
+font-size: 11px;
+height: 290px;
+width: 150px;
+float: left;
+text-align: left;
+
+
+}
+#all #productinfojituan {
+text-align: left;
+height: 120px;
+width: 230px;
+float: left;
+text-indent: 3px;
+
+
+}
+#companyjituan a:link{
+    color:#3B6F9F;
+    text-decoration:none;
+}
+
+#companyjituan  a:visited {
+    color: #3B6F9F;
+    text-decoration:none;
+}
+#companyjituan  a:hover {
+    color: #FF0000;
+    cursor:pointer;
+}
+
+
+#all #linkaddressjituan {
+padding-top:0;
+text-align: left;
+height: 40px;
+width: 780px;
+}
+#all #addressjituan {
+padding-left:242px;
+
+}
+
+
+#companyjituan #blueHeadjituan {
+padding-left: 10%;
+}
+
+#companyjituan p {
+height: 20px;
+padding-top: 6%;
+padding-left: 10%;
+color: #3B6F9F;
+}
+
+#marquees{
+margin: 0px;
+padding: 0px;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 12px;     
+color:white;
+float:left;
+clear:left;
+text-align:left; 
+vertical-align:middle;
+
+}
+
+#marquees #js{
+   display:bolck;
+margin: 0px;
+padding: 0px;
+height:20px;
+line-height:16px; 
+text-indent: 16px; 
+/*border: 1px solid red;*/
+       
+}
+ #span1{
+    margin: 0px;
+    padding: 0px;
+    float:left;
+    clear:left;
+    height:20px;
+    width:55px !important;
+    width:50px;
+}
+ #span2{
+    margin: 0px;
+    padding: 0px; 
+    float:right;
+    clear:right;
+    width:130px;
+    height:20px;  
+}
+
+#detailjituan{
+    padding-top:4px;
+    vertical-align: middle;
+    height:20px !important;
+    height:10px;
+
+}
+
+
+
+

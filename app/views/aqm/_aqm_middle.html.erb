@@ -1,0 +1,42 @@
+<div id="firstmiddle">
+  <div id="product">
+    <div id="title">产品简介</div>
+    <div id="clear"></div>
+    <div id="img"><img src="/images/aqm/index_r5_c2.jpg" alt="AQM" width="250" height="239" border="0" /></div>
+
+
+    <div id="summary">
+      <br/>
+      <span id="datetime">石英材料</span>
+      <!--
+      <p><span id="newstitle">石英事业部投资超过4000万人民币，拥有从日本和美国引进的各种先进设备，10000级净空化学洗净室，以及用于超真空装置用石英零件洗净的...</span></p>
+      -->
+      <% for company in @company %>
+        <p id="newstitle"><%=h(truncate(company.summary,70))%></p>
+      <% end %>
+      <p id="more"><a href="/companyintro/index?id=001&&company=5"><u>更多..</u></a></p>
+    </div>
+  </div>
+
+  <div id="indexline"><img src="/images/aqm/index_r5_c9.jpg" alt="line" border="0" height="291" width="14" /></div>
+
+  <div id="newscenter">
+    <div id="title">新闻中心</div>
+    <% for new in @news %>
+    <a onmousemove="this.style['color']='#ff0000'" onmouseout="this.style['color']='#3B6F9F'" style="cursor:pointer;color:#3B6F9F" onClick='window.open("/content/newsdetail?id=<%=new.id%>","","scrollbars=yes,width=600,height=360,top=200")'>
+    <p id="newsdetail">
+    <% if !new.issuedate.blank? %>
+      <span id="datetime">
+
+    <%=h(new.issuedate.strftime("%Y-%m"))%>
+    </span>
+    <% else %>
+    <span id="datetime"></span>
+    <% end %>
+    <br />
+    <span id="newstitle"><U><%=h truncate(new.title,30)%></U></span></p>
+    </a>
+    <% end %>  
+    <p id="more1"><a href="/newscenter/index?id=005&&company=5"><u>更多..</u></a></p>
+  </div>
+ </div>

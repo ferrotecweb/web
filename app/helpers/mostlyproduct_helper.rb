@@ -1,0 +1,2 @@
+module MostlyproductHelper
+end

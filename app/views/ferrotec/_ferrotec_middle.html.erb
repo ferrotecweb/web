@@ -1,0 +1,132 @@
+<div id="firstmiddlejituan">
+  
+  <div id="newscenterjituan">
+    <span id="blueHeadjituan">新闻中心</span><br />
+    <% for new in @news %>
+    <a onmousemove="this.style['color']='#ff0000'" onmouseout="this.style['color']='#3B6F9F'" style="cursor:pointer;color:#3B6F9F" onClick='window.open("/content/newsdetail?id=<%=new.id%>","","scrollbars=yes,width=600,height=360,top=200,resizable=yes")'>
+    <p id="detailjituan"><%=h(new.issuedate.strftime("%Y-%m"))%>&nbsp;&nbsp;<%=truncate(new.title,30)%></p>
+    </a>
+    <p>
+    <img src="/images/index/line_r2_c1.jpg" alt="product" border="0" height="5" width="400" />
+    </p>
+    <% end %>  
+    <p id="newsmore">
+    <a href="/newscenter/index?id=005&&company=1" onmousemove="this.style['color']='#ff0000'" onmouseout="this.style['color']='#3B6F9F'" style="cursor:pointer;color:#3B6F9F">More&nbsp;&raquo;</a>
+    </p>
+  </div>
+
+  <div id="companyjituan">
+    <span id="blueHeadjituan">集团成员</span><br />
+    <p><img src="/images/index/point.jpg" alt="product" border="0" height="8" width="8" />
+    <%= link_to "杭州大和热磁", :controller => 'dahe', :action => 'index' %>
+    </p>
+    <p><img src="/images/index/point.jpg" alt="product" border="0" height="8" width="8" />
+    <%= link_to "上海申和热磁", :controller => 'shenhe', :action => 'index' %>
+    </p>
+    <p><img src="/images/index/point.jpg" alt="product" border="0" height="8" width="8" />
+    <a href='http://www.hanhongchina.com'>上海汉虹精机</a>
+    </p>
+    <p><img src="/images/index/point.jpg" alt="product" border="0" height="8" width="8" />
+    <%= link_to "杭州先进石英", :controller => 'aqm', :action => 'index' %>     
+    </p>
+    <p><img src="/images/index/point.jpg" alt="product" border="0" height="8" width="8" />
+    <%= link_to "杭州和源精工", :controller => 'wagen', :action => 'index' %>     
+    </p>
+  </div>
+  
+  <div id="productinfojituan">
+    <span id="blueHeadjituan">全球据点</span><br />
+    <div id ="groupjituan">
+      <img src="/images/index/group.jpg" alt="product" border="0" height="75" width="223" usemap="#Map" />
+      <map name="Map">
+        <area shape="rect" coords="4,5,57,23" href="/companyintro/index?id=001007">
+        <area shape="rect" coords="5,26,56,44" href="#">
+        <area shape="rect" coords="5,50,57,69" href="#">
+      </map>
+    </div>
+    <br />
+    
+   <table width="223" height="97" border="0" cellpadding="0" cellspacing="0">
+        <tr>
+          <td colspan="3"><img src="/images/index/index_r12_c7.jpg" alt="product" border="0" height="32" width="223" /></td>
+        </tr>
+        <tr>
+          <td width="17"><img src="/images/index/index_r13_c7.jpg" alt="product" border="0" height="98" width="17" /></td>
+          <td width="189" bgcolor="#7E96B2">
+            <div id="marquees">
+              <% for technology in @technology %>
+                <a onmousemove="this.style['color']='#ff0000'" onmouseout="this.style['color']='#FFFFFF'" style="cursor:pointer;color:#FFFFFF" onClick='window.open("/content/newsdetail?id=<%=technology.id%>","","scrollbars=yes,width=600,height=360,top=200,resizable=yes")'>
+                <span id="span1">【<%=companyname(technology.categoryid)%>】</span><span id="span2"><%=truncate(technology.title,12)%></span>
+                </a>
+                <% end  %>
+            </div>
+          </td>
+          <td width="17"><img src="/images/index/index_r13_c12.jpg" alt="product" border="0" height="98" width="17" /></td>
+        </tr>
+        <tr>
+          <td colspan="3"><img src="/images/index/index_r14_c7.jpg" alt="product" border="0" height="14" width="223" /></td>
+        </tr>
+    </table>
+    </div>
+    
+  </div>
+  
+  <div id="linkaddressjituan">
+    <div style="float:left">
+    <img src="/images/index/link.jpg" alt="product" border="0" height="28" width="82" />
+    <a href="http://www.bioer.com.cn" target="_blank"><img src="/images/index/bioer.jpg" alt="product" border="0" height="35" width="36" /></a>
+    <a href="http://www.youhaoyijian.com" target="_blank"><img src="/images/index/youhao.jpg" alt="product" border="0" height="35" width="43" /></a>
+    <a href="http://www.chinesevacuum.com" target="_blank"><img src="/images/index/logo1.jpg" alt="product" border="0" height="26" width="71" /></a>
+    <a href="http://www.csiaic.com" target="_blank"><img src="/images/index/logo2.jpg" alt="product" border="0" height="26" width="59" /></a>
+    <a href="http://dahe.cneln.net" target="_blank"><img src="/images/hztbc.jpg" alt="时代光华联接" border="0" height="20" width="79" /></a>
+    <br />
+    <a href="http://www.epia.org"    target="_blank">欧洲光伏协会</a> | 
+    <a href="http://www.hzpva.org"   target="_blank">杭州太阳能光伏产业协会</a> | 
+    <a href="http://www.jspv.org.cn" target="_blank">江苏省光伏产业协会</a>
+<!--
+    <a href="http://www.epia.org"    target="_blank"><img src="/images/ozgf.jpg" alt="欧洲光伏协会"           border="0" height="28" width="113" /></a>
+    <a href="http://www.hzpva.org"   target="_blank"><img src="/images/hzgf.jpg" alt="杭州太阳能光伏产业协会" border="0" height="28" width="147" /></a>
+    <a href="http://www.jspv.org.cn" target="_blank"><img src="/images/jsgf.jpg" alt="江苏省光伏产业协会"     border="0" height="28" width="147" /></a>
+-->
+    </div>
+    <a href="/companyintro/index?id=001008" style="float:right" >
+    <img  src="/images/index/index_r16_c7.jpg" alt="product" border="0" height="40" width="224" />
+    </a>
+  </div>
+  
+   <script language="JavaScript">
+      marqueesHeight=80;
+      stopscroll=false;
+
+      document.getElementById("marquees").style.width=186 + 'px';
+      document.getElementById("marquees").style.height=marqueesHeight + 'px';
+      document.getElementById("marquees").style.overflowX="visible";
+      document.getElementById("marquees").style.overflowY="hidden";
+      //document.getElementById("marquees").noWrap=true;
+      document.getElementById("marquees").onmouseover=new Function("stopscroll=true");
+      document.getElementById("marquees").onmouseout=new Function("stopscroll=false");
+
+      document.write('<div id="templayer" style="position:absolute;z-index:1;left:500px;top:100px;visibility:hidden;"></div>');
+
+      preTop=0; currentTop=0; 
+
+      function init(){
+        document.getElementById("templayer").innerHTML="";
+        while(document.getElementById("templayer").offsetHeight<marqueesHeight){
+              document.getElementById("templayer").innerHTML+=document.getElementById("marquees").innerHTML;
+        }
+        document.getElementById("marquees").innerHTML=document.getElementById("templayer").innerHTML+document.getElementById("templayer").innerHTML;          
+        setInterval("scrollUp()",100);
+      }
+      document.body.onload=init;
+
+      function scrollUp(){
+        if(stopscroll==true) return;
+        preTop=document.getElementById("marquees").scrollTop;
+        document.getElementById("marquees").scrollTop+=1;
+        if(preTop==document.getElementById("marquees").scrollTop){
+              document.getElementById("marquees").scrollTop=document.getElementById("templayer").offsetHeight-marqueesHeight + 'px';
+              document.getElementById("marquees").scrollTop+=1;
+        }
+      }
+   </script>

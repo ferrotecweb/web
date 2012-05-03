@@ -1,0 +1,43 @@
+
+<%= error_messages_for 'company' %>
+<br/>
+<!--[form:product]-->
+<p><label for="company_companyname" >公司简称</label><br />
+<%= text_field 'company', 'companyname', :id => 'text' %></p>
+<br/>
+<p><label for="company_fullname">公司全称</label><br />
+<%= text_field 'company', 'fullname', :id => 'text' %></p>
+<br/>
+<p><label for="company_address">公司地址</label><br />
+<%= text_field 'company', 'address', :id => 'text'  %></p>
+<br/>
+<p><label for="company_telephone">公司电话</label><br />
+<%= text_field 'company', 'telephone', :id => 'text'  %></p>
+<br/>
+<p><label for="company_fax">公司传真</label><br />
+<%= text_field 'company', 'fax', :id => 'text'  %></p>
+<br/>
+<p><label for="company_zipcode">邮编</label><br />
+<%= text_field 'company', 'zipcode', :id => 'text'  %></p>
+<br/>
+<p><label for="company_linkman">联系人</label><br />
+<%= text_field 'company', 'linkman', :id => 'text'  %></p>
+<br/>
+<p><label for="company_email">E_Mail</label><br />
+<%= text_field 'company', 'email', :id => 'text'  %></p>
+<br/>
+<p><label for="company_bus">公交路线</label><br />
+<%= text_field 'company', 'bus', :id => 'text'  %></p>
+<br/>
+<p><label for="company_www">公司网址</label><br />
+<%= text_field 'company', 'www', :id => 'text'  %></p>
+<br/>
+<p><label for="company_summarypic">公司图片</label><br/>
+<%= file_column_field 'company', 'summarypic',:id => 'image'  %></p>
+<br/>
+<p><label for="company_summary">公司介绍</label><br />
+<%= text_area 'company', 'summary', :id => 'textarea'  %></p>
+<br />
+<p><label for="company_linian">公司理念</label><br />
+<%= text_area 'company', 'linian', :id => 'textarea'  %></p>
+

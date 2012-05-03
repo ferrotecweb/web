@@ -1,0 +1,525 @@
+div.sdmenu {
+width: 150px;
+font-family: Arial, sans-serif;
+font-size: 12px;
+padding-bottom: 10px;
+background: url(/images/menu/bottom.gif) no-repeat  right bottom;
+color: #fff;
+
+}
+div.sdmenu div {
+background: url(/images/menu/title.gif) repeat-x;
+overflow: hidden;
+}
+div.sdmenu div:first-child {
+background: url(/images/menu/toptitle.gif) no-repeat;
+}
+div.sdmenu div.collapsed {
+height: 25px;
+}
+div.sdmenu div span {
+display: block;
+padding: 5px 25px;
+font-weight: bold;
+color: white;
+background: url(/images/menu/expanded.gif) no-repeat 10px center;
+cursor: default;
+border-bottom: 1px solid #ddd;
+}
+div.sdmenu div.collapsed span {
+background-image: url(/images/menu/collapsed.gif);
+}
+div.sdmenu div a {
+padding: 5px 10px;
+background: #eee;
+display: block;
+border-bottom: 1px solid #ddd;
+color: #066;
+}
+div.sdmenu div a.current {
+/*background : #ccc;*/
+}
+div.sdmenu div a:hover {
+background : #066 url(/images/menu/linkarrow.gif) no-repeat right center;
+color: #fff;
+text-decoration: none;
+}
+
+/* CSS Document */
+li { 
+list-style-type:none;
+list-style:none;
+}
+ul{ 
+list-style:none; 
+text-align:left; 		
+} 
+#menu{
+width:222px;
+height:600px;
+text-align: center;
+list-style:none;
+margin:0;
+padding:0;
+float: left;
+background-color: #9FC9CE;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 12px;
+}
+
+/*菜单css*/
+div.sdmenu {
+width: 180px;
+font-family: Arial, sans-serif;
+font-size: 12px;
+background: url(/images/menu/bottom.gif) no-repeat  right bottom;
+padding-left: 15px;
+padding-top: 10px;
+padding-bottom: 10px;
+
+color: #fff;
+
+}
+div.sdmenu div {
+background: url(/images/menu/title.gif) repeat-x;
+overflow: hidden;
+}
+div.sdmenu div:first-child {
+background: url(/images/menu/toptitle.gif) no-repeat;
+}
+div.sdmenu div.collapsed {
+height: 25px;
+}
+div.sdmenu div span {
+display: block;
+padding: 5px 25px;
+font-weight: bold;
+color: white;
+background: url(/images/menu/expanded.gif) no-repeat 10px center;
+cursor: default;
+border-bottom: 1px solid #ddd;
+}
+div.sdmenu div.collapsed span {
+background-image: url(/images/menu/collapsed.gif);
+}
+div.sdmenu div a {
+padding: 5px 10px;
+background: #eee;
+display: block;
+border-bottom: 1px solid #ddd;
+color: #066;
+}
+div.sdmenu div a.current {
+/*background : #ccc;*/
+}
+div.sdmenu div a:hover {
+background : #066 url(/images/menu/linkarrow.gif) no-repeat right center;
+color: #fff;
+text-decoration: none;
+}
+
+#menuA{
+margin:0;
+padding:0;
+height:30px;
+text-align: center;	
+padding-top: 20px;
+color:#066;
+
+}
+#menuA a{
+color: #066;
+}
+
+#menuA a:link  { 
+text-decoration:none;
+
+} 
+#menuA a:visited  {
+text-decoration:none;
+font-weight: normal;    
+} 
+#menuA a:hover { 
+color: red;
+text-decoration:none; 
+font-weight:normal; 
+} 
+
+#menuB{
+margin:0;
+padding:0;
+width:180px;
+
+}
+#menu2{
+margin:0;
+padding:0;
+list-style-type: none;
+text-align:left;
+height:auto;
+
+
+}
+
+/*==================一级目录===================*/ 
+#menu2 a { 
+display: block; 
+padding-left:10px;
+cursor:hand; 
+
+/*Width(一定要)，否则下面的Li会变形*/ 
+} 
+
+
+
+#menu2 li { 
+list-style-type:none;
+list-style:none;
+/*background:#CCC; /*一级目录的背景色*/ 
+/*border-bottom:#FFF 1px solid; /*下面的一条白边*/ 
+/*float：left,本不应该设置，但由于在Firefox不能正常显示 
+继承menunav的width,限制宽度，li自动向下延伸*/ 
+padding:0;
+margin: 0px;
+height:24px;
+line-height:24px;
+
+
+} 
+#menu2 li{
+
+background-color: #003366;
+font-weight: bold;
+color: #FFFFFF;
+
+} 
+
+/*==================二级目录===================*/ 
+#menu2 li ul { 
+margin:0;
+padding:0;
+list-style:none; 
+text-align:left; 
+
+} 
+
+#menu2 li ul li{   
+padding-left:0px; 
+height:23px;
+font-weight:normal; 
+background-color: #FFFFFF;  /*二级目录的背景色*/
+
+
+
+} 
+
+#menu2 li ul a{ 
+height:23px;
+
+} 
+
+/*下面是二级目录的链接样式*/ 
+
+#menu2 li ul a:link  { 
+color:#7AB3D2; 
+text-decoration:none; 
+} 
+
+#menu2 li ul a:visited  {
+color:#3399FF;
+text-decoration:none;
+font-weight: normal;    
+} 
+#menu2 li ul a:hover { 
+color:#BBE1F5; 
+text-decoration:none; 
+font-weight:normal; 
+/* 二级onmouseover的字体颜色、背景色*/ 
+} 
+
+/*==============================*/ 
+#menu2 li.sfhover { 
+left: auto; 
+color: #FFFFFF;
+} 
+
+#menu2 li:hover ul { 
+left: auto; 
+} 
+
+#menu2 li.sfhover ul { 
+left: auto; 
+} 
+
+/************************************************************/
+/*category*/
+#category{
+margin:0;
+padding:0;
+padding-left:260px; 
+font-family: Arial, Helvetica, sans-serif;
+font-size: 13px;
+}
+#category td {
+border: 1px solid #73afb7;
+padding: 3px 5px 2px 5px;
+font-size: .9em;
+}
+
+/************************************************************/
+/*category*/
+#categorylist{
+margin:0;
+padding:0;
+padding-left:260px; 
+font-family: Arial, Helvetica, sans-serif;
+font-size: 13px;
+}
+#categorylist td {
+border: 1px solid #73afb7;
+padding: 3px 5px 2px 5px;
+font-size: .8em;
+}
+#categorylist1{
+margin:0;
+padding:0;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 13px;
+width:340px;
+
+}
+/*上传文件*/
+#upfile{
+margin:0;
+padding:0;
+padding-left:60px; 
+font-family: Arial, Helvetica, sans-serif;
+font-size: 12px;
+width:740px;
+
+}
+#upfile p{
+margin:0;
+padding:0;
+width:600px;
+float: left;
+text-align:left;
+height:20px;
+
+}
+#table1{
+float: left;
+text-align:left;
+border: 0px solid red;
+width:720px;
+}
+#table1 td{
+border: 0px solid red;
+}
+/*contact*/
+#contactlist{
+margin:0;
+padding:0;
+padding-left:260px; 
+font-family: Arial, Helvetica, sans-serif;
+font-size: 13px; 
+}
+#contact{
+
+}
+
+#contact td {
+border: 1px solid #73afb7;
+padding: 3px 5px 2px 5px;
+font-size: .8em;
+}
+#fy{
+padding-left:260px; 
+padding-top:10px; 
+padding-right:20px;
+text-align: right;
+height:30px;
+line-height:30px;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 13px;
+}
+
+/*contactdetail*/
+#contactdetail{
+margin:0;
+padding:0;
+padding-left:250px; 
+font-family: Arial, Helvetica, sans-serif;
+font-size: 14px; 
+
+}
+#contactdetail a{
+font-family: Arial, Helvetica, sans-serif;
+font-size: 16px; 
+
+}
+#contactdetail tr{
+padding-left:20px; 
+}
+#contactdetail td{
+height:30px;
+border: 1px solid #73afb7;
+padding: 3px 5px 2px 5px;
+}
+#contactdetail #spical{
+height:100px;
+}
+
+/*order*/
+#order{
+margin:0;
+padding:0;
+padding-left:250px; 
+font-family: Arial, Helvetica, sans-serif;
+font-size: 14px;  
+}
+#main{
+width:700px;
+font-size: 0.8em;
+text-align: left;
+}
+fieldset {
+padding-left:20px; 
+}
+legend{
+color: #dfd;
+background: #141;
+font-family: sans-serif;
+padding: 0.2em 1em;
+
+}
+#main #text{
+width:250px;
+}
+#main #text1{
+width:350px;
+}
+#main #textarea{
+width:550px;
+height:200px;
+}
+#main #textarea1{
+width:550px;
+height:100px;
+}
+#main #select{
+width:100px;
+}
+#main #image{
+width:400px;
+}
+#table{
+float: left;
+text-align:left;
+border:1px solid #73afb7;
+}
+#order td {
+border: 1px solid #73afb7;
+padding: 3px 5px 2px 5px;
+font-size: .8em;
+}
+#tabletr{
+background-color:#9FC9CE;
+}
+/*backmenu*/
+#backmenu{
+margin:0;
+padding:0;
+padding-left:250px; 
+font-family: Arial, Helvetica, sans-serif;
+font-size: 14px;   
+
+}
+#backmenu td {
+border: 1px solid #73afb7;
+padding: 3px 5px 2px 5px;
+font-size: .8em;
+}
+
+/*users*/
+#users{
+margin:0;
+padding:0;
+padding-left:100px; 
+font-family: Arial, Helvetica, sans-serif;
+font-size: 14px; 
+height: 200px; 
+
+}
+#users td {
+border: 1px solid #73afb7;
+padding: 3px 5px 2px 5px;
+font-size: .8em;
+}
+
+
+#users #table{
+float: center; 
+}
+
+/*ohter*/
+#other{
+margin:0;
+padding:0;
+padding-left:250px; 
+font-family: Arial, Helvetica, sans-serif;
+font-size: 14px;   
+
+}
+#other td {
+border: 1px solid #73afb7;
+padding: 3px 5px 2px 5px;
+font-size: .8em;
+}
+/*登陆*//*用户*/
+#login{
+text-align: center; 
+}
+#user{
+width:350px;
+height:150px;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 14px;
+padding-top:50px;
+}
+#user #username{
+width:150px;
+}
+#user #password{
+width:150px;
+}
+#user fieldset {
+background: #efe;
+}
+#user legend {
+color: #dfd;
+background: #141;
+font-family: sans-serif;
+padding: 0.2em 1em;
+}
+
+#user label {
+width: 60px;
+float: left;
+text-align: right;
+margin-right: 30px;
+margin-top: 18px;
+display: block;
+}
+
+#user #submit {
+margin-left: 90px;
+margin-top: 20px;
+width: 50px;
+height: 20px;
+float: left;
+}
+#user #text{
+width: 200px;
+float: left;
+}

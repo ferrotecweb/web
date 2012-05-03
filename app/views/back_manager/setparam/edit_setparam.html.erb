@@ -1,0 +1,15 @@
+<div id="main">
+ <fieldset>
+    <legend>编辑参数信息</legend>
+ 
+    <% form_tag :action => 'update_setparam', :id => @setparam do %>
+      <%= render :partial => 'form',:object => @setparam %>
+      <br/>
+      <%= submit_tag '保存' %>
+      <br/>
+      <br/>
+    <% end %>
+
+    <%= link_to '返回', :action => 'list_setparam' %>
+ </fieldset>
+</div>

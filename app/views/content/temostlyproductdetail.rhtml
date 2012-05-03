@@ -1,0 +1,22 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"> 
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title><%=@title%></title>
+<%= stylesheet_link_tag 'content' %>
+</head>
+
+<body id="body" onload="parent.document.getElementById('frame1').style.height=this.document.body.scrollHeight">
+<!--产品明细-->
+ <div id="yylybanner"><%=@title%></div>
+ <% for mostlyproductdetail in @mostlyproductdetail %>
+ <div id = "te1">
+    <%=mostlyproductdetail.summary%>
+ </div>
+ <div id = "te2">
+    <%=mostlyproductdetail.content%>
+ </div>
+ <% end %>
+
+</body>
+</html>

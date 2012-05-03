@@ -1,0 +1,66 @@
+<div id="firstmiddle">
+  <div id="company">
+    <span id="blueHead">About Us</span><br />
+    <% for companyinfo in @company %>
+    <pre><p id="productdetail"><%=truncate(companyinfo.summary,380)%></p></pre>
+ 
+    <p id="more"><a href="/companyintro/index_en?id=001&&company=<%=@menutype%>">More&nbsp;&raquo;</a></p>
+    <p id="dahe">
+      <% if companyinfo.summarypic != "" and companyinfo.summarypic != nil %>
+      <% @company = companyinfo %>
+      <%=image_tag url_for_file_column(:company,:summarypic),:height => '117',:width => '304' %>
+      <% end %>
+      <br />    
+    </p> 
+    <% end %>
+  </div>
+  
+  <div id="productinfo">
+    <span id="blueHead">Business Products</span><br />
+    <p id="warning">
+      <% for menu2 in @menu2 %>
+        <a href="/mostlyproduct/index_en?id=<%=menu2.categoryid%>">
+        <span id="abc">&raquo;</span>&nbsp;<%=h(menu2.categoryname) %>&nbsp;</a><br />
+      <% end %>
+    </p>
+    <br/>
+    <p> 
+        <% if @menutype.to_i == 2 %>
+          <a href="/mostlyproduct/index_en?id=002005"><img src="http://www.ferrotec.com/images/buttonSlimControllers.jpg" alt="product" border="0" height="65" width="166" /></a>
+        <% else %>
+          <a href="/mostlyproduct/index_en?id=002012"><img src="/images/shenheimg.gif" alt="product" border="0" height="65" width="166" /></a>
+        <% end %>
+    </p>
+  </div>
+  <% if @menutype.to_i == 2 %>
+  <div id="imgshow">
+    <div id="imgshow1"><a href="/mostlyproduct/index_en?id=002010"><img src="/images/index/imgshow1.jpg" border="0" width="222" height="130" /></a></div>
+    <div id="imgshow2"><a href="/mostlyproduct/index_en?id=002007"><img src="/images/index/imgshow2.jpg" border="0" width="222" height="130" /></a></div>
+  </div>
+  <% else %>
+  <div id="news">
+    <p id ="topimg">
+      <span id="blueHead">&nbsp;&nbsp;&nbsp;&nbsp;News & Events</span>
+      <% if @menutype.to_i ==2  %>
+      <span id="news1"><a href="/newscenter/index_en?id=005&&company=2">More&nbsp;&raquo;&nbsp;&nbsp;</a></span>
+      <% else %>
+      <span id="news1"><a href="/newscenter/index_en?id=005&&company=3">More&nbsp;&raquo;&nbsp;&nbsp;</a></span>
+      <% end %>
+    </p>
+     <% for new in @news %>
+    <div id="middleimg">
+      <a href="#" style="cursor:hand" onClick='window.open("","","scrollbars=yes,width=600,height=360,top=200")'>
+        <!--<p><%=new.created_at.strftime("%Y年%m月%d日")%><p>-->
+        <!--<p id="detail"><%=new.title%><p>-->
+        <%=new.title%>
+      </a>
+    </div>
+    <% end %>
+
+
+    <div class="clear"></div>
+    <div><p id="bottomimg">&nbsp;</p></div>
+  </div>
+  <% end %>
+  
+</div>

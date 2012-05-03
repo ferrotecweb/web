@@ -1,0 +1,70 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"> 
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title></title>
+<%= stylesheet_link_tag 'content' %>
+</head>
+
+<body>
+  <div id="yylybanner">Techology Center</div>
+  <div class="clear"></div>
+  <div id="news">
+  <div id="newscenter">【所有技术动态】</div>
+  <div id="newscenter2">
+    <ul id="newscenter3">
+    <% for technology1 in @technology1 %>
+    <li>
+      <a  onmousemove="this.style['color']='#ff0000'" onmouseout="this.style['color']='#3B6F9F'" style="cursor:pointer;color:#3B6F9F" onClick='window.open("/content/newsdetail_en?id=<%=technology1.id%>","","scrollbars=yes,width=600,height=360,top=200")'>
+      
+      <% if !technology1.issuedate.blank? %>
+      <span id="newscenter4"><%= h(technology1.issuedate.strftime("%Y-%m")) %></span>
+      <% else %>
+      <span id="newscenter4"></span>
+      <% end %>
+      <span id="newscenter5"><%=technology1.title%></span>
+      </a>
+    </li> 
+    <% end %>
+    </ul>
+  </div>
+  <div id="fy1">
+    <%= will_paginate @technology1,:param_name=>'wpage',
+    :inner_window => 1,
+    :outer_window => 1,
+    :prev_label => '上一页',
+    :next_label => '下一页'
+    %>
+  </div>
+    <!--线-->
+  <div id="cpdl3"></div>
+  
+  <div id="newscenter10">【所有技术文章】</div>
+  <div id="newscenter2">
+    <ul id="newscenter3">
+    <% for technology0 in @technology0 %>
+    <li>
+      <a  onmousemove="this.style['color']='#ff0000'" onmouseout="this.style['color']='#3B6F9F'" style="cursor:pointer;color:#3B6F9F" onClick='window.open("/content/newsdetail?id=<%=technology0.id%>","","scrollbars=yes,width=600,height=360,top=200")'>
+      <% if !technology0.issuedate.blank? %>
+      <span id="newscenter4"><%= h(technology0.created_at.strftime("%Y-%m")) %></span>
+      <% else %>
+      <span id="newscenter4"></span>
+      <% end %>
+      <span id="newscenter5"><%=technology0.title%></span>
+      </a>
+    </li> 
+    <% end %>
+    </ul>
+  </div>
+  <div id="fy1">
+    <%= will_paginate @technology0,:param_name=>'page',
+    :inner_window => 1,
+    :outer_window => 1,
+    :prev_label => 'Previous',
+    :next_label => 'Next'
+    %>
+  </div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+
+<br/>
+<h3>日志查询</h3>
+
+<br/>
+<div id="categorylist1">
+<table  bgcolor="#FFFFFF" width="540"   cellspacing="0" cellpadding="0" height="35" align=left>
+  <tr>
+    <%= form_tag({:action => "log_query" },{:method => "get"})  %>
+    <td><label>开始日期:</label><%= text_field 'recordlist', 'begindate', 
+                :id => 'text',:onclick=> "SelectDate(this,'yyyy-MM-dd')",:size=>"10",:value=> @begindate   %></td>
+    <td><label>截止日期:</label><%= text_field 'recordlist', 'enddate', 
+                :id => 'text',:onclick=> "SelectDate(this,'yyyy-MM-dd')",:size=>"10",:value=> @enddate   %></td>
+    <td><%= submit_tag '查询' %></td>
+    <td><%= submit_tag '导出Excel' %></td>
+</tr>
+<!--
+<tr><td><%=@hostname%></td><td></td><td></td><td><%=@hostip%></td></tr>
+-->
+</table>
+</div>
+<div id="category">
+<table  id="table"  cellspacing="0" cellpadding="0" height="100%">
+  <tr bgcolor="#CCFFCC">
+    <td width="150">操作对象</td>
+    <td width="150">操作表</td>
+    <td width="150">操作表ID</td>
+    <td width="150">操作时间</td>
+    <td width="150">对应公司</td>
+    </tr>
+  <% for recordlist in @recordlists %>
+    <tr>
+      <td >
+        <% 
+        case recordlist.operatetype.to_i
+        when 0
+          @operate = "新增操作"
+        when 1
+          @operate = "修改操作"
+        when 2
+          @operate = "删除操作"
+        end 
+        %>
+        <%= @operate %>
+      </td>
+      <td ><%= recordlist.tablename %></td>
+      <td ><%= recordlist.categoryid %></td>
+      <td ><%= recordlist.created_at.strftime("%Y-%m-%d") %></td>
+      <td ><%=getcompanyname(recordlist.company_id)%></td>
+    </tr>
+  <% end %>
+</table>
+</div>
+<script language="javascript"><!--
+//senfe("表格名称","奇数行背景","偶数行背景","鼠标经过背景","点击后背景");
+senfe("table","#CCCCCC","#FFFFFF","#A6C4E1","#FFFFFF");
+--></script>

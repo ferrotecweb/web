@@ -1,0 +1,48 @@
+<div id="firstmiddle">
+  <div id="newscenter1">
+    <p id="title">新闻中心</p>
+    
+    <% for new in @news %>
+      <a onmousemove="this.style['color']='#ff0000'" onmouseout="this.style['color']='#3B6F9F'" style="cursor:pointer;color:#3B6F9F" onClick='window.open("/content/newsdetail?id=<%=new.id%>","","scrollbars=yes,width=600,height=360,top=200")'>
+        <p id="newsdetail"><span id="datetime"><%=h(new.issuedate.strftime("%Y-%m"))%></span><br />
+        <span id="newstitle"><U><%=h truncate(new.title,30)%></U></span></p>
+      </a>
+    
+    <% end %>  
+    <p id="more1"><a href="/newscenter/index?id=005&&company=6" onmousemove="this.style['color']='#ff0000'" onmouseout="this.style['color']='#009ACD'" style="cursor:pointer;color:#009ACD"><u>更多..</u></a></p>
+  </div>
+  <div id="indexline1"><img src="/images/wagen/wagen_r2_c2.jpg" alt="line" border="0" height="414" width="18" /></div>
+  <div id="product">
+    <p id="title">公司简介</p>
+    <% for company in @company %>
+      <div id ="introduce"><%=h(truncate(company.summary,60))%></div>
+      <p id="more"><a href="/companyintro/index?id=001&&company=6" onmousemove="this.style['color']='#ff0000'" onmouseout="this.style['color']='#009ACD'" style="cursor:pointer;color:#009ACD"><u>更多..</u></a></p>
+    <% end %>
+    <!--
+    <p><img src="/images/wagen/index_r2_c3.jpg" alt="product" border="0" height="205" width="458" /></p>
+    -->
+    <div id="img1">
+      <img src="/images/wagen/001_r6_c5.jpg" width="453" height="52" />
+    </div>
+    
+    <div id="img">     
+      <div id="img2">
+        <img src="/images/wagen/001_r7_c5.jpg" width="34" height="144" />
+      </div>
+      <div id="img3">       
+        <p id = "p1" >产品简介</p>
+        <p id = "p2" >硬质合金锯片广泛应用于木材加工、家具制造、铝合金、有机玻璃等制造行业。金刚石刀具拥有比硬质合金刀具高数十倍的寿命和耐磨性，适合切削较难切削的材料，有广泛的适用性与应用性，广泛用于木质...</p> 
+        <img src="/images/wagen/001_r8_c6.jpg" width="257" height="20" />
+      </div>
+      <div id="img4">
+        <img src="/images/wagen/001_r7_c8.jpg" width="162" height="144" />
+      </div>     
+    </div>
+    <p id="more"><a href="/mostlyproduct/index?id=002&&company=6" onmousemove="this.style['color']='#ff0000'" onmouseout="this.style['color']='#009ACD'" style="cursor:pointer;color:#009ACD"><u>更多..</u></a></p>
+    <br/>
+  </div>
+</div>
+
+
+
+

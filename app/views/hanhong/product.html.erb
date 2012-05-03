@@ -1,0 +1,44 @@
+<div class="col2">
+  <div class="Ptitle">
+      <h1 id="msg_subject" runat="server" enableviewstate="false"><%=@title%></h1>
+  </div>
+  <div class="contentTxt">
+      <div class="plist" id="msg_errors" runat="server" enableviewstate="false">
+         <% for category in @categories %>
+        <table width="100%" border="0" cellspacing="0" cellpadding="0" >
+          <tr>
+            <td width="40%"><div class="imgbox"><p>
+                  <a href="/hanhong/product_show?id=<%=category.categoryid %>">
+                    <% if !category.picturename.blank? %>
+                    <% @category = category %>
+                    <%=image_tag url_for_file_column(:category,:picturename),:height => '97', :width => '160' %>
+                    <% end %>
+                  </a></p></div></td>
+            <td width="2%">&nbsp;</td>
+            <td width="58%"  valign="top">产品名称：<a href="/hanhong/product_show?id=<%=category.categoryid %>"><%=category.categoryname %></a><br />
+              产品型号：<%=category.productspec %><br />
+              <%=truncate(category.summary,80) %>[<a href="/hanhong/product_show?id=<%=category.categoryid %>">详细</a>]</td>
+          </tr>
+          <tr>
+            <td colspan="3" height="10"></td>
+          </tr>
+          <tr>
+            <td colspan="3" height="1" bgcolor="#CCCCCC"></td>
+          </tr>
+          <tr>
+            <td colspan="3" height="30"></td>
+          </tr>
+        </table>
+        <% end %>
+        </div>
+    </div>
+</div>
+<div class="pageDir">
+<%= will_paginate @categories,
+:inner_window => 1,
+:outer_window => 1,
+:prev_label => '上一页',
+:next_label => '下一页'
+%>
+</div>
+<div class="clear"></div>

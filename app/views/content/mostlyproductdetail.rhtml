@@ -1,0 +1,71 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"> 
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title><%=@title%></title>
+<%= stylesheet_link_tag 'content' %>
+</head>
+
+<body id="body1" onload="parent.document.getElementById('frame1').style.height=this.document.body.scrollHeight">
+<!--产品明细-->
+ <div id="yylybanner"><%=@title%></div>
+ <% for mostlyproduct in @mostlyproduct %>
+ <% if !mostlyproduct.summary.blank? %>
+ <div  style="text-align:justify;text-justify:distribute-all-lines;text-align-last:justify;width:544px;">
+   <pre><p id="productdetail"><%=mostlyproduct.summary%></p></pre>
+ </div>
+ <% end %>
+
+ <% if @mostlyproductdetail.size > 0 %>
+  <div id="cpdl3"></div>
+
+ <div id="cpdl2">
+   <% for mostlyproductdetail in @mostlyproductdetail %>  
+     <% if mostlyproductdetail.summarypic != "" and mostlyproductdetail.summarypic != nil %>
+        <% @categorylist = mostlyproductdetail %>
+        <span id="imageheight">
+        <a href="/content/temostlyproductdetail?id=<%=mostlyproductdetail.id%>" style="cursor:pointer">
+        <%=image_tag url_for_file_column(:categorylist,:summarypic),:height => '100', 
+          :width => '163',:border => 0,:class=>'image' %>
+        </a>
+        </span>
+    <% end %>
+   <% end %>
+ </div>
+ <% end %>
+   <div class="clear"></div>
+  <div id="shuoming">
+    <%=mostlyproduct.summarydetail%>
+  </div>
+  <div class="clear"></div>
+  <!--注意：如果对热电半导体的代码进行修改，下述写法将会有问题-->
+  <% if @menu.slice(0,6) == "002005" %>
+  <div id="cpdl3"></div>
+  
+  <div id ="pp"><p>其他相关信息:</p></div>
+  
+  <div id="cpjjdetail2">
+  <div id="cpjjdetailimg2">
+    <a onClick='window.parent.location.href("/technology/index?id=004003001")' onmousemove="this.style['color']='#ff0000'" onmouseout="this.style['color']='#3B6F9F'" style="cursor:pointer" >
+  <img src="/images/jszn.jpg" alt="product" border="0" height="102" width="166" />
+    </a>
+  </div>
+  <div id="cpjjdetailcontent2">
+    <p id="cpjjsummary">您想了解热电技术、帕贴耳制冷以及赛贝克效应方面的信息么？您想评估一下您的热电制冷系统方面的技术需求么？<a onClick='window.parent.location.href("/technology/index?id=004003001")' onmousemove="this.style['color']='#ff0000'" onmouseout="this.style['color']='#3B6F9F'" style="cursor:pointer" ><span>更多&raquo;</span></a></p>
+  </div>  
+  </div>
+  
+  <div id="cpjjdetail2">
+  <div id="cpjjdetailimg2">
+    <a href="/content/rohs" style="cursor:pointer"><img src="/images/rohs.jpg" alt="product" border="0" height="102" width="168" /></a>
+  </div>
+  <div id="cpjjdetailcontent2">
+    <p id="titledetail"><a href="/content/rohs">RoHS 认证&raquo;</a></p>
+  <p id="cpjjsummary">Ferrotec的热电制冷模块遵从RoHS标准。  <span><a href="/content/rohs">更多&raquo;</a></span></p>
+  </div> 
+  </div> 
+  <% end %>
+<% end %>
+
+</body>
+</html>

@@ -1,0 +1,207 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"> 
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>问询表</title>
+<%= stylesheet_link_tag 'content' %>
+<%= javascript_include_tag 'WebCalendar'%> 
+
+<style type="text/css">
+<!--
+.style1 {color: #999999}
+.style22 {font-size: 12px}
+.style14 {font-size: 12px; color: #003559; }
+.style2 {
+  font-size: 12px; color: #FFFFFF;text-align:center; 
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: #ffffff;
+}
+-->
+</style>
+</head>
+
+<body onload="parent.document.getElementById('frame1').style.height=this.document.body.scrollHeight">
+
+<% if flash[:notice] -%>
+<br/>
+<br/>
+<div id="notice"><%= flash[:notice] %></div>
+<br/>
+<br/>
+<% end -%>
+
+
+<div id="yylybanner"><span>问询表</span></div>
+
+<div id="communion4">
+  <p>请填写以下表格。当您提交的表格我们的销售团队将在两个工作日之内与您联系。</p>
+</div>
+
+
+<% form_tag :action => 'add_vfresolvent',:object => @contact do %>
+<div id="communion3" align="left">
+      <table id="communiontable" width="530" border="0" align="left" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+        <tr>
+        <td colspan="3"  height="30"><span><font style="font-weight:bold">*必填选项</font></span></td>
+        </tr>      
+        <tr valign="baseline">
+          <td width="1"></td>
+          <td width="140" bgcolor="#999999" class="style2"><div align="left">姓名&nbsp;&nbsp;*</div></td>
+          <td height="25"><div align="left">
+              <% @contact.categoryid = @menu %>
+              <%= hidden_field 'contact', 'categoryid'  %>
+              <%= text_field 'contact', 'person' ,:size=> 40  %>
+          </div></td>
+        </tr>
+        
+        <tr valign="baseline">
+          <td width="1"></td>
+          <td width="140" bgcolor="#999999" class="style2"><div align="left">标题&nbsp;&nbsp;*</div></td>
+          <td height="25"><div align="left">
+              <%= text_field 'contact', 'tecasked' ,:size=> 40  %>
+          </div></td>
+        </tr>
+        
+        <tr valign="baseline">
+          <td width="1"></td>
+          <td width="140" bgcolor="#999999" class="style2"><div align="left">公司名称&nbsp;&nbsp;*</div></td>
+          <td width="354" height="25"><div align="left">
+
+              <%= text_field 'contact', 'company' ,:size=> 40  %>
+          </div></td>
+        </tr>
+        
+        <tr valign="baseline">
+          <td width="1"></td>
+          <td width="140" bgcolor="#999999" class="style2"><div align="left" class="style22">电子邮件地址&nbsp;&nbsp;*</div></td>
+          <td height="25"><div align="left" class="style14">
+              <div align="left">
+                <%= text_field 'contact', 'email' ,:size=> 40  %>
+              </div>
+          </div></td>
+        </tr>
+
+        <tr>
+          <td width="1"></td>
+          <td width="140" height="100" align="right" valign="top" nowrap bgcolor="#999999" class="style2">
+          <div align="left" class="style22">邮寄地址&nbsp;&nbsp;*</div>
+          </td>
+          <td valign="baseline" height="25"><div align="left">
+            <%= text_area 'contact', 'addr' ,:cols => 40, :rows => 6  %>
+          </div></td>
+        </tr>
+        
+        <tr valign="baseline">
+          <td width="1"></td>
+          <td width="140" bgcolor="#999999" class="style2"><div align="left" class="style22">城市&nbsp;&nbsp;*</div></td>
+          <td height="25"><div align="left" class="style14">
+              <div align="left">
+                <%= text_field 'contact', 'city' ,:size=> 40  %>
+              </div>
+          </div></td>
+        </tr>
+        
+        <tr>
+          <td width="1"></td>
+          <td width="140" height="20" align="right" nowrap bgcolor="#999999" class="style2">
+            <div align="left" class="style22">州/省&nbsp;&nbsp;*</div>
+          </td>
+          <td valign="baseline" height="25"><div align="left">
+            <%= text_field 'contact', 'area' ,:size=> 40  %>
+          </div></td>
+        </tr>
+        
+        <tr valign="baseline">
+          <td width="1"></td>
+          <td width="140" bgcolor="#999999" class="style2"><div align="left" class="style22">邮编</div></td>
+          <td height="25"><div align="left" class="style14">
+              <div align="left">
+                <%= text_field 'contact', 'zipcode' ,:size=> 40  %>
+              </div>
+          </div></td>
+        </tr>
+        
+        <tr valign="baseline">
+          <td width="1"></td>
+          <td width="140" bgcolor="#999999" class="style2"><div align="left" class="style22">国家&nbsp;&nbsp;*</div></td>
+          <td height="25" height="25"><div align="left" class="style14">
+              <div align="left">
+                <%= text_field 'contact', 'country' ,:size=> 40  %>
+              </div>
+          </div></td>
+        </tr>
+        
+        <tr valign="baseline">
+          <td width="1"></td>
+          <td width="140" bgcolor="#999999" class="style2"><div align="left" class="style22">联系电话&nbsp;&nbsp;*</div></td>
+          <td height="25" height="25"><div align="left" class="style14">
+              <div align="left">
+                <%= text_field 'contact', 'phone' ,:size=> 40  %>
+              </div>
+          </div></td>
+        </tr>
+        
+        <tr valign="baseline">
+          <td width="1"></td>
+          <td width="140" bgcolor="#999999" class="style2"><div align="left" class="style22">传真</div></td>
+          <td height="25"><div align="left" class="style14">
+              <div align="left">
+                <%= text_field 'contact', 'fax' ,:size=> 40  %>
+              </div>
+          </div></td>
+        </tr>
+        
+        <tr valign="baseline">
+          <td width="1"></td>
+          <td width="140" bgcolor="#999999" class="style2"><div align="left" class="style22">您的所需件数:</div></td>
+          <td height="25"><div align="left" class="style14">
+              <div align="left">
+                <%= text_field 'contact', 'quantity' ,:size=> 20  %>
+              </div>
+          </div></td>
+        </tr>
+        
+        <tr valign="baseline">
+          <td width="1"></td>
+          <td width="140" bgcolor="#999999" class="style2"><div align="left" class="style22">交货日期</div></td>
+          <td height="25"><div align="left" class="style14">
+              <div align="left">
+                <%= text_field 'contact', 'getdate', :id => 'text',:onclick=> "SelectDate(this,'yyyy-MM-dd')",:size=>"10"  %>
+              </div>
+          </div></td>
+        </tr>
+        
+        <tr valign="baseline">
+          <td width="1"></td>
+          <td width="140" bgcolor="#999999" class="style2">
+            <p>&nbsp;</p>
+            <p align="left">这一要求是基于现有的Ferrotec产品？如果有，是什么型号?</p>
+          </td>
+          <td height="25"><div align="left" class="style14">
+              <div align="left">
+                <%= text_field 'contact', 'tecsize' ,:size=> 40  %>
+              </div>
+          </div></td>
+        </tr>
+
+        <tr>
+          <td width="1"></td>
+          <td width="140" height="137" align="right" valign="top" nowrap bgcolor="#999999" class="style2">
+          <div align="left" class="style22">请说明您的要求</div>
+          </td>
+          <td valign="baseline"><div align="left">
+            <%= text_area 'contact', 'description' ,:cols => 40, :rows => 13  %>
+          </div></td>
+        </tr>
+      
+    </table>
+</div>
+
+
+<div class ="clear"></div>
+<div align="center" id="buttom"><%= submit_tag "提交" %>&nbsp;&nbsp;&nbsp;&nbsp;<%= submit_tag "重置" %>
+</div>
+<% end %>
+</body>
+</html>
