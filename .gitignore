@@ -28,9 +28,5 @@ pickle-email-*.html
 /public/uploads/*
 /public/images/uploaded_photos/**/*
 /public/download/*
-
-
-
-
-
-
+/config/environment.rb
+config/environment.rb
