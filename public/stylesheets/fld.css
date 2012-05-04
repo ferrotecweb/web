@@ -1,0 +1,177 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+q, blockquote {
+  quotes: none;
+}
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+a img {
+  border: none;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block;
+}
+
+#container {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  width: 780px;
+  margin: 0 auto;
+}
+#container a {
+  color: #000;
+  font-size: 12px;
+  text-decoration: none;
+}
+#container a:hover {
+  color: #FF0000;
+}
+#container #header #header-logo h1 a {
+  width: 190px;
+  height: 75px;
+  display: block;
+  text-indent: -999px;
+  background: url(/images/fld/logo.jpg);
+  float: left;
+}
+#container #header #header-image {
+  clear: both;
+  width: 780px;
+  height: 219px;
+}
+#container #header #header-nav {
+  background: url(/images/fld/menubackground.jpg);
+  font-size: 26pt;
+  font-weight: bold;
+  height: 51px;
+  padding-left: 20px;
+}
+#container #header #header-nav ul li {
+  list-style: none;
+  float: left;
+  display: inline;
+}
+#container #header #header-nav ul li a {
+  border-left: 1px #DDDDDD solid;
+  border-right: 1px #FFF solid;
+  padding: 9px 33px;
+}
+#container #main {
+  overflow: hidden;
+  background-color: #F5F5F5;
+  padding-top: 20px;
+}
+#container #main #intro {
+  width: 259px;
+  background-color: #F5F5F5;
+  margin-bottom: -3000px;
+  padding-bottom: 3000px;
+  border-right: 1px solid #DDD;
+  padding-right: 20px;
+  padding-left: 40px;
+  float: left;
+}
+#container #main #intro h2 {
+  font-size: 12pt;
+  font-weight: bold;
+  padding: 10px;
+}
+#container #main #intro .intro_text {
+  line-height: 16px;
+  padding: 10px;
+}
+#container #main #intro .intro_text a {
+  color: #1F688B;
+}
+#container #main #intro .intro_text a:hover {
+  color: #FF0000;
+}
+#container #main #new {
+  float: right;
+  background-color: #F5F5F5;
+  margin-bottom: -3000px;
+  padding-bottom: 3000px;
+  width: 459px;
+  border-left: 1px solid #FFF;
+}
+#container #main #new h2 {
+  font-size: 12pt;
+  font-weight: bold;
+  color: red;
+  padding: 10px 10px 10px 30px;
+}
+#container #main #new dl {
+  border: 1px #dddddd solid;
+  padding: 0 20px 20px 20px;
+  margin: 0 30px 30px 30px;
+}
+#container #main #new dl dt {
+  color: #1E6988;
+  font-weight: bold;
+  padding: 10px 0;
+}
+#container #main #new dl dd {
+  padding-bottom: 15px;
+  border-bottom: 2px #dddddd dashed;
+}
+#container #main #new dl dd.more {
+  border-bottom: none;
+  float: right;
+}
+#container #main #new dl dd.more a {
+  font-size: 11px;
+}
+#container #footer {
+  clear: both;
+  background: url(/images/fld/footerbackground.jpg);
+  height: 57px;
+  padding-top: 20px;
+}
+#container #footer p {
+  text-align: center;
+  color: #FFF;
+  padding: 2px;
+}
+
