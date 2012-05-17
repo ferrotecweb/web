@@ -76,10 +76,31 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   background: url(/images/fld/logo.jpg);
   float: left;
 }
+#container #header .groupnav {
+  float:right;
+  font-size:12pt;
+  padding:18px;
+}
+#container #header .groupnav ul li{
+  list-style:none;
+  line-height:18px;
+  display:inline;
+  padding: 0 10px;
+  border-right:2px solid black;
+}
+#container #header .groupnav ul li.last{
+  border:none;
+}
+
 #container #header #header-image {
   clear: both;
   width: 780px;
   height: 219px;
+}
+#container #header #header-image-main {
+  clear: both;
+  width: 780px;
+  height: 111px;
 }
 #container #header #header-nav {
   background: url(/images/fld/menubackground.jpg);
@@ -101,7 +122,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 #container #main {
   overflow: hidden;
   background-color: #F5F5F5;
-  padding-top: 20px;
+  padding: 20px 0 20px 0;
 }
 #container #main #intro {
   width: 259px;
@@ -162,6 +183,54 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 #container #main #new dl dd.more a {
   font-size: 11px;
+}
+#container #main #menu {
+  float: left;
+  width: 200px;
+  background: url(/images/fld/menu_top.jpg) no-repeat top;
+  margin-bottom: -3000px;
+  padding-bottom: 3000px;
+}
+#container #main #menu ul {
+  padding-top: 7px;
+}
+#container #main #menu li {
+  height: 20px;
+  background-color: #E4E5E7;
+  border-left: 1px #B3B7Ba solid;
+  border-right: 1px #B3B7Ba solid;
+  border-bottom: 1px #B3B7Ba solid;
+  border-top: 1px #FEFEFE solid;
+  padding: 2px 0 0 10px;
+}
+#container #main #menu li a {
+  line-height: 20px;
+  display:block;
+}
+#container #main #menu li.first {
+  border-top: none;
+}
+#container #main #menu li.selected {
+  background-color :#489cc1;
+}
+#container #main #menu li.selected a{
+  color:#fff;
+}
+#container #main #detail {
+  float: left;
+  width: 550px;
+  padding-left: 30px;
+  margin-bottom: -3000px;
+  padding-bottom: 3000px;
+}
+
+#container #main #detail h2{
+  font-size:14pt;
+  font-weight:bold;
+  padding:10px;
+}
+#container #main #detail .content{
+  padding:10px;
 }
 #container #footer {
   clear: both;

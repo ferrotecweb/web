@@ -1,0 +1,48 @@
+<div id='header'>
+  <div id='header-logo'>
+    <h1><a href="/fld">Ferrotec Logo</a></h1>
+  </div>
+  <div class='groupnav'>
+    <ul>
+      <li><a href="http://www.ferrotec.com.cn">Ferrotec(中国)</a></li>
+      <li><a href="http://www.ferrotec.com.cn/companyintro/ferroteclocations">Ferrotec(全球)</a></li>
+      <li class="last"><a href="#">联系我们</a></li>
+    </ul>
+  </div>
+  <div id='header-image-main'>
+    <%= image_tag "fld/main_flash.jpg" %>
+  </div>
+  <div id='header-nav'>
+    <ul>
+      <% @menus.each do |menu| %>
+        <li><%= link_to menu.categoryname, detail_fld_path(:cont=>"#{menu.categoryid}") %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+<div id='main'>
+  <div id='menu'>
+    <ul>
+      <% 
+        @submenus.each do |submenu| 
+          css_class = "" 
+          if submenu == @submenus[0] 
+            css_class += 'first' 
+          end
+          if submenu.categoryid == @content.categoryid 
+            css_class += ' selected'
+          end
+          puts submenu.categoryid
+          puts @content.categoryid
+      %>
+    <li class="<%= css_class %>"><%= link_to submenu.categoryname, detail_fld_path(:cont=>"#{submenu.categoryid}") %></li>
+      <% end %>
+    </ul>
+  </div>
+  <div id='detail'>
+    <h2><%= @content.categoryname %></h2>
+    <div class="content">
+      <%= @content.summarydetail %>
+    </div>
+  </div>
+</div>

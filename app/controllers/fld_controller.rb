@@ -1,6 +1,29 @@
 class FldController < ApplicationController
-  layout nil
+  layout "fld"
+  before_filter :create_menu
   def index
+    @company = Company.find(7)
+  end
 
+  def detail
+    categoryid = params[:cont]
+    case categoryid.size
+    when 3
+      @submenus = Category.fld_sub_menu(categoryid)
+      @content = Category.first(:conditions=>"substring(categoryid,1,3)='#{categoryid}' and length(categoryid) = 6 and company_id = 7",
+                                :order => " categoryid")
+
+    when 6
+      @submenus = Category.fld_sub_menu(categoryid[0,3])
+      @content = Category.find(categoryid)
+    else
+      return render 'index'
+    end
+  end
+
+private
+
+  def create_menu
+    @menus = Category.fld_main_menu
   end
 end

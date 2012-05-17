@@ -22,43 +22,35 @@ class BackManager::CategoryController < ApplicationController
         @title = "先进石英栏目一览"
       when "6"
         @title = "和源精密栏目一览"
+      when "7"
+        @title = "富乐德栏目一览"
     end
-    #if id == "1" 
-    #  @all_categorys = Category.find(:all,:order => "categoryid")
-    # else
-    #  @all_categorys = Category.find(:all,:conditions => " (company_id = " + @companyid  + " or length(categoryid) = 3)",:order => "categoryid")
-    #end
     if id == "1" 
-      #@all_categorys = Category.find(:all,
-      #  :conditions => "id not in (select id from categories where length(categoryid) = 3 and company_id <> 1)
-      #  and id not in (select id from categories where substring(categoryid,1,3) = '005' and length(categoryid) = 6 and company_id <> 1)
-      #  and id not in (select id from categories where substring(categoryid,1,3) = '003' and length(categoryid) = 6 and company_id <> 1)",
-      #  :order => "categoryid")
-      @all_categorys = Category.find_by_sql("select categories.* from categories,companies where categories.categoryid = companies.categoryid and categories.company_id = companies.id and companies.id <> 1
-union all
-SELECT A.* FROM
-(select categories.* from categories where id not in (select id from categories where length(categoryid) = 3 and company_id <> 1)
-        and id not in (select id from categories where substring(categoryid,1,3) = '005' and length(categoryid) = 6 and company_id <> 1)
-        and id not in (select id from categories where substring(categoryid,1,3) = '003' and length(categoryid) = 6 and company_id <> 1) 
-        and id not in (select id from categories where substring(categoryid,1,3) = '001' and length(categoryid) = 6 and company_id <> 1)
-order by categoryid) as A  order by categoryid,id")
+      @all_categorys = Category.find_by_sql("select categories.* from categories,companies 
+        where categories.categoryid = companies.categoryid and categories.company_id = companies.id and companies.id <> 1
+        union all
+        SELECT A.* FROM
+        (select categories.* from categories where id not in (select id from categories where length(categoryid) = 3 and company_id <> 1)
+                and id not in (select id from categories where substring(categoryid,1,3) = '005' and length(categoryid) = 6 and company_id <> 1)
+                and id not in (select id from categories where substring(categoryid,1,3) = '003' and length(categoryid) = 6 and company_id <> 1) 
+                and id not in (select id from categories where substring(categoryid,1,3) = '001' and length(categoryid) = 6 and company_id <> 1)
+        order by categoryid) as A  order by categoryid,id")
      else
       @all_categorys = Category.find(:all,:conditions => " company_id = " + @companyid  ,:order => "categoryid")
     end
-    
   end
-  
+
   def add_category
     #添加标识
     @flag = 1
     @companyid = params[:company_id]
-    @maxcategoryid = Category.find_by_sql("select max(categoryid) as categoryid from categories 
-where substring(categoryid,1,length('" + params[:categoryid].to_s + "')) = '" + params[:categoryid].to_s +
-        "' and length(categoryid) = length('" + params[:categoryid].to_s + "') + 3")
-    
-    if @maxcategoryid.size > 0  then      
+    categoryid = params[:categoryid].to_s
+    @maxcategoryid = Category.find_by_sql("select max(categoryid) as categoryid from categories
+      where substring(categoryid,1,length('#{categoryid}')) = '#{categoryid}' and 
+            length(categoryid) = length('#{categoryid}') + 3")
+    if @maxcategoryid.size > 0  then
       for maxcategoryid in @maxcategoryid
-        #如何没有下层
+        #如果没有下层
         if maxcategoryid.categoryid  != nil then
           categoryid = maxcategoryid.categoryid.slice(maxcategoryid.categoryid.length-2,2).to_i + 1
           if categoryid.to_s.length == 1  then
@@ -66,10 +58,9 @@ where substring(categoryid,1,length('" + params[:categoryid].to_s + "')) = '" + 
           end
           @getmaxcategoryid = maxcategoryid.categoryid.slice(0,maxcategoryid.categoryid.length-2).to_s + categoryid.to_s
         else
-          @getmaxcategoryid = params[:categoryid] + "001"
+          @getmaxcategoryid = params[:categoryid].to_s + "001"
         end
       end
-    
     end 
 
     @category = Category.new(params[:category])
@@ -90,9 +81,9 @@ where substring(categoryid,1,length('" + params[:categoryid].to_s + "')) = '" + 
         @record.host_ip = request.env["REMOTE_ADDR"]
         @record.host_name = request.env["REMOTE_HOST"]
         @record.save
-      flash[:notice] = "栏目 #{@category.categoryname} 添加成功！"
-      #page<<"alert('添加成功');"   
-      redirect_to :action => 'list_category',:company_id =>@companyid
+        flash[:notice] = "栏目 #{@category.categoryname} 添加成功！"
+        #page<<"alert('添加成功');"   
+        redirect_to :action => 'list_category',:company_id =>@companyid
       else
         @flag = 1
         @getmaxcategoryid = @category.categoryid
@@ -181,27 +172,27 @@ where substring(categoryid,1,length('" + params[:categoryid].to_s + "')) = '" + 
   end
   
   def delete_category
-    @companyid = params[:company_id]
+    companyid = params[:company_id]
+    categoryid = params[:id]
     if request.post?
       @categorylist = Category.find_by_sql("select t.categoryid from categories w,categorylists t
-        where w.categoryid = t.categoryid and w.categoryid='" + params[:id] + "'")
-      
+        where w.categoryid = t.categoryid and w.categoryid='#{categoryid}' and w.company_id = #{companyid}")
+
       if @categorylist.size > 0 then
-        flash[:notice] = '已存在该产品明细信息，不允许删除！'
-        redirect_to(:action => :list_category,:company_id => @companyid)
+        flash[:notice] = '该栏目下已存在内容，不允许删除！'
+        redirect_to(:action => :list_category,:company_id => companyid)
         return
       end
-      categoryid = params[:id]
-     
-      @categoryquery = Category.find_by_sql("select categoryid from categories where 
-substring(categoryid,1,length('" + categoryid +  "')) = '" + categoryid + "' and length(categoryid) = length('" + categoryid +  "') + 3" )
-      
+
+      @categoryquery = Category.find_by_sql("select categoryid from categories where company_id = #{companyid} and  
+        substring(categoryid,1,length('#{categoryid}')) = '#{categoryid}' and length(categoryid) = length('#{categoryid}') + 3" )
+
       if @categoryquery.size > 0 then
-        flash[:notice] = '已存在该产品对的子产品，不允许删除！'
-        redirect_to(:action => :list_category,:company_id => @companyid)
+        flash[:notice] = '该栏目下已存在子栏目，不允许删除！'
+        redirect_to(:action => :list_category,:company_id => companyid)
         return
       end
-      
+
       category = Category.find(params[:id])
       begin
         category.destroy
@@ -213,7 +204,7 @@ substring(categoryid,1,length('" + categoryid +  "')) = '" + categoryid + "' and
         #操作表  0为中文,1为英文
         @record.tabletype = 0
         @record.tablename = "categories"
-        @record.company_id = @companyid
+        @record.company_id = companyid
         @record.host_ip = request.env["REMOTE_ADDR"]
         @record.host_name = request.env["REMOTE_HOST"]
         @record.save
@@ -222,7 +213,7 @@ substring(categoryid,1,length('" + categoryid +  "')) = '" + categoryid + "' and
         flash[:notice] = e.message
       end
     end
-    redirect_to(:action => :list_category,:company_id => @companyid)
+    redirect_to(:action => :list_category,:company_id => companyid)
   end
 
 end

@@ -5,6 +5,8 @@ class CompanyintroController < ApplicationController
   def islayout
     #$company_id = params[:company].to_i
     case $company_id 
+    when 7
+      "fld"
     when 6
       "wagen"
     when 5
@@ -12,22 +14,21 @@ class CompanyintroController < ApplicationController
     else
       "application"
     end
-  end 
+  end
 
-  
   def index
     #companyintro(Category,params[:id],params[:company],"ch")
     navigation_menu(Category,params[:id],params[:company],"ch",1)
-
   end
+
   def index_en
     #companyintro(EnCategory,params[:id],params[:company],"en")
     navigation_menu(EnCategory,params[:id],params[:company],"en",1)
   end
+
   #ferrotec全球
   def ferroteclocations
     $company_id = 1
-       
     navigation_menu(Category,"007",1,"ch",1)
     @menutitle = "Ferrotec(全球)" 
     @firstmenu = "集团介绍"
@@ -37,10 +38,9 @@ class CompanyintroController < ApplicationController
     @logo = "/images/index1.jpg"
     @imgurl = "/images/banner/ferrotecmap.jpg"
     @pagetype = "ch"
-    
   end
-  
-    #ferrotec全球
+
+  #ferrotec全球
   def ferroteclocations_en
     $company_id = 1   
     navigation_menu(EnCategory,"007",1,"en",1)

@@ -15,23 +15,23 @@ class BackManager::CategorylistController < ApplicationController
       end 
 
       if @categorylist.save
-      @record = Recordlist.new()
-      @record.categoryid = @categorylist.id
-      @record.userid = session[:user_id] 
-      #操作 0为添加 1为修改 2为删除
-      @record.operatetype = 0
-      #操作表  0为中文,1为英文
-      @record.tabletype = 0
-      @record.tablename = "categorylists"
-      @record.company_id = @companyid
-      @record.host_ip = request.env["REMOTE_ADDR"]
-      @record.host_name = request.env["REMOTE_HOST"]
-      @record.save
-        
-      #flash.now[:notice] = "栏目 #{@categorylist.categoryname} 添加成功！"
-      #@categorylist = CategoryList.new
-      flash[:notice] = "标题 #{@categorylist.title} 添加成功！"
-      redirect_to :action => 'list_categorylist',:company_id => @companyid
+        @record = Recordlist.new()
+        @record.categoryid = @categorylist.id
+        @record.userid = session[:user_id] 
+        #操作 0为添加 1为修改 2为删除
+        @record.operatetype = 0
+        #操作表  0为中文,1为英文
+        @record.tabletype = 0
+        @record.tablename = "categorylists"
+        @record.company_id = @companyid
+        @record.host_ip = request.env["REMOTE_ADDR"]
+        @record.host_name = request.env["REMOTE_HOST"]
+        @record.save
+          
+        #flash.now[:notice] = "栏目 #{@categorylist.categoryname} 添加成功！"
+        #@categorylist = CategoryList.new
+        flash[:notice] = "标题 #{@categorylist.title} 添加成功！"
+        redirect_to :action => 'list_categorylist',:company_id => @companyid
       else
         render :action => 'add_categorylist',:company_id => @companyid
       end 
@@ -61,6 +61,8 @@ class BackManager::CategorylistController < ApplicationController
         @title = "先进石英内容一览"
       when "6"
         @title = "和源精密内容一览"
+      when "7"
+        @title = "富乐德内容一览"
     end
     
     @all_categorylists = Categorylist.paginate :page => params[:page], 

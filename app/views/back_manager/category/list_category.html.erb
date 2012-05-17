@@ -1,6 +1,7 @@
 <div id="category">
 <br/>
 <h3><%=@title%></h3>
+ <%= link_to '添加下级', :action => 'add_category', :categoryid => '', :company_id => @companyid %>
 
 <br/>
 <table id="table" cellpadding="0" cellspacing="0">
@@ -13,13 +14,11 @@
   
   <% for category in @all_categorys %> 
   <tr>
-    <% 
-      if category.categoryid.to_s.length == 3  then
-    %>
+    <% if category.categoryid.to_s.length == 3  then %>
         <% if @companyid == 1 and category.company_id == 1 %>
             <td align="left"><%=category.categoryname%>&nbsp;</td>
         <% else %>
-            <td align="left"><%=category.categoryname%>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;</td>
+            <td align="left"><%=category.categoryname%>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
         <% end %>
     <% end %>
 

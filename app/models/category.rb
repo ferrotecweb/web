@@ -43,4 +43,17 @@ class Category < ActiveRecord::Base
            :order => " categoryid"
            )
   end
+
+  # return fld menu. it's a categories record list
+  def self.fld_main_menu
+    find( :all, 
+          :conditions=>"company_id = 7 and length(categoryid) = 3",
+          :order => "categoryid")
+  end
+
+  def self.fld_sub_menu(main_menu_id)
+      find(:all,
+           :conditions => "substring(categoryid,1,3)='#{main_menu_id}' and length(categoryid) = 6 and company_id = 7",
+           :order => " categoryid")
+  end
 end
