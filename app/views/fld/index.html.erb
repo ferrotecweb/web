@@ -23,9 +23,9 @@
 <div id='main'>
   <div id='intro'>
     <h2>公司介绍</h2>
-    <img alt="Intro" height="167" src="/images/fld/intro.jpg" width="254" />
+    <a href="/fld/detail?cont=007"><img alt="Intro" height="167" src="/images/fld/intro.jpg" width="254" /></a>
     <div class='intro_text'>
-      <%= link_to @company.summary, '#' %>
+      <%= link_to @company.summary, '/fld/detail?cont=007' %>
     </div>
   </div>
   <div id='new'>
