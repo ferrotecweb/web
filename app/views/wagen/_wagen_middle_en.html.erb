@@ -4,7 +4,7 @@
 
     <% for new in @news %>
     <a onmousemove="this.style['color']='#ff0000'" onmouseout="this.style['color']='#3B6F9F'" style="cursor:pointer;color:#3B6F9F" onClick='window.open("/content/newsdetail_en?id=<%=new.id%>","","scrollbars=yes,width=600,height=360,top=200")'>
-    <p id="newsdetail"><span id="datetime"><%=h(new.created_at.strftime("%Y-%m-%d"))%></span><br />
+    <p id="newsdetail"><span id="datetime"><%=h(new.issuedate.strftime("%Y-%m-%d"))%></span><br />
     <span id="newstitle"><U><%=new.title%></U></span></p>
     </a>
     
