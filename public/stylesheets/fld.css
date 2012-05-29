@@ -90,18 +90,33 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   float: left;
 }
 /* line 23, ../../app/assets/stylesheets/fld.css.scss */
+#container #header #groupnav {
+  float: right;
+  padding-top: 10px;
+}
+/* line 26, ../../app/assets/stylesheets/fld.css.scss */
+#container #header #groupnav ul li {
+  padding: 0 5px;
+  display: inline;
+  border-right: 1px solid black;
+}
+/* line 31, ../../app/assets/stylesheets/fld.css.scss */
+#container #header #groupnav li.last {
+  border: none;
+}
+/* line 36, ../../app/assets/stylesheets/fld.css.scss */
 #container #header #header-image {
   clear: both;
   width: 780px;
   height: 219px;
 }
-/* line 28, ../../app/assets/stylesheets/fld.css.scss */
+/* line 41, ../../app/assets/stylesheets/fld.css.scss */
 #container #header #header-image-main {
   clear: both;
   width: 780px;
   height: 111px;
 }
-/* line 33, ../../app/assets/stylesheets/fld.css.scss */
+/* line 46, ../../app/assets/stylesheets/fld.css.scss */
 #container #header #header-nav {
   background: url(/images/fld/menubackground.jpg);
   font-size: 26pt;
@@ -109,25 +124,25 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   height: 51px;
   padding-left: 20px;
 }
-/* line 40, ../../app/assets/stylesheets/fld.css.scss */
+/* line 53, ../../app/assets/stylesheets/fld.css.scss */
 #container #header #header-nav ul li {
   list-style: none;
   float: left;
   display: inline;
 }
-/* line 45, ../../app/assets/stylesheets/fld.css.scss */
+/* line 58, ../../app/assets/stylesheets/fld.css.scss */
 #container #header #header-nav ul li a {
   border-left: 1px #DDDDDD solid;
   border-right: 1px #FFF solid;
   padding: 9px 33px;
 }
-/* line 54, ../../app/assets/stylesheets/fld.css.scss */
+/* line 67, ../../app/assets/stylesheets/fld.css.scss */
 #container #main {
   overflow: hidden;
   background-color: #F5F5F5;
   padding: 20px 0 20px 0;
 }
-/* line 59, ../../app/assets/stylesheets/fld.css.scss */
+/* line 72, ../../app/assets/stylesheets/fld.css.scss */
 #container #main #intro {
   width: 259px;
   background-color: #F5F5F5;
@@ -138,26 +153,26 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   padding-left: 40px;
   float: left;
 }
-/* line 69, ../../app/assets/stylesheets/fld.css.scss */
+/* line 82, ../../app/assets/stylesheets/fld.css.scss */
 #container #main #intro h2 {
   font-size: 12pt;
   font-weight: bold;
   padding: 10px;
 }
-/* line 75, ../../app/assets/stylesheets/fld.css.scss */
+/* line 88, ../../app/assets/stylesheets/fld.css.scss */
 #container #main #intro .intro_text {
   line-height: 16px;
   padding: 10px;
 }
-/* line 78, ../../app/assets/stylesheets/fld.css.scss */
+/* line 91, ../../app/assets/stylesheets/fld.css.scss */
 #container #main #intro .intro_text a {
   color: #1F688B;
 }
-/* line 79, ../../app/assets/stylesheets/fld.css.scss */
+/* line 92, ../../app/assets/stylesheets/fld.css.scss */
 #container #main #intro .intro_text a:hover {
   color: #FF0000;
 }
-/* line 82, ../../app/assets/stylesheets/fld.css.scss */
+/* line 95, ../../app/assets/stylesheets/fld.css.scss */
 #container #main #new {
   float: right;
   background-color: #F5F5F5;
@@ -166,40 +181,40 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   width: 459px;
   border-left: 1px solid #FFF;
 }
-/* line 90, ../../app/assets/stylesheets/fld.css.scss */
+/* line 103, ../../app/assets/stylesheets/fld.css.scss */
 #container #main #new h2 {
   font-size: 12pt;
   font-weight: bold;
   color: red;
   padding: 10px 10px 10px 30px;
 }
-/* line 98, ../../app/assets/stylesheets/fld.css.scss */
+/* line 111, ../../app/assets/stylesheets/fld.css.scss */
 #container #main #new dl {
   border: 1px #dddddd solid;
   padding: 0 20px 20px 20px;
   margin: 0 30px 30px 30px;
 }
-/* line 103, ../../app/assets/stylesheets/fld.css.scss */
+/* line 116, ../../app/assets/stylesheets/fld.css.scss */
 #container #main #new dl dt {
   color: #1E6988;
   font-weight: bold;
   padding: 10px 0;
 }
-/* line 109, ../../app/assets/stylesheets/fld.css.scss */
+/* line 122, ../../app/assets/stylesheets/fld.css.scss */
 #container #main #new dl dd {
   padding-bottom: 15px;
   border-bottom: 2px #dddddd dashed;
 }
-/* line 114, ../../app/assets/stylesheets/fld.css.scss */
+/* line 127, ../../app/assets/stylesheets/fld.css.scss */
 #container #main #new dl dd.more {
   border-bottom: none;
   float: right;
 }
-/* line 119, ../../app/assets/stylesheets/fld.css.scss */
+/* line 132, ../../app/assets/stylesheets/fld.css.scss */
 #container #main #new dl dd.more a {
   font-size: 11px;
 }
-/* line 125, ../../app/assets/stylesheets/fld.css.scss */
+/* line 138, ../../app/assets/stylesheets/fld.css.scss */
 #container #main #menu {
   float: left;
   width: 200px;
@@ -208,11 +223,11 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   margin-bottom: -3000px;
   padding-bottom: 3000px;
 }
-/* line 133, ../../app/assets/stylesheets/fld.css.scss */
+/* line 146, ../../app/assets/stylesheets/fld.css.scss */
 #container #main #menu ul {
   padding-top: 7px;
 }
-/* line 137, ../../app/assets/stylesheets/fld.css.scss */
+/* line 150, ../../app/assets/stylesheets/fld.css.scss */
 #container #main #menu li {
   height: 20px;
   background-color: #E4E5E7;
@@ -222,20 +237,27 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   border-top: 1px #FEFEFE solid;
   padding: 2px 0 0 10px;
 }
-/* line 146, ../../app/assets/stylesheets/fld.css.scss */
+/* line 159, ../../app/assets/stylesheets/fld.css.scss */
 #container #main #menu li a {
   line-height: 20px;
   display: inline;
 }
-/* line 151, ../../app/assets/stylesheets/fld.css.scss */
+/* line 164, ../../app/assets/stylesheets/fld.css.scss */
 #container #main #menu li.first {
   border-top: none;
 }
-/* line 154, ../../app/assets/stylesheets/fld.css.scss */
+/* line 167, ../../app/assets/stylesheets/fld.css.scss */
 #container #main #menu li.selected {
   background-color: #489cc1;
 }
-/* line 158, ../../app/assets/stylesheets/fld.css.scss */
+/* line 170, ../../app/assets/stylesheets/fld.css.scss */
+#container #main #menu span.menubottom {
+  background: url(/images/fld/menu_bottom.jpg) no-repeat top;
+  width: 200px;
+  height: 7px;
+  display: block;
+}
+/* line 177, ../../app/assets/stylesheets/fld.css.scss */
 #container #main #detail {
   float: right;
   width: 550px;
@@ -245,26 +267,60 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   padding-left: 20px;
   padding-right: 10px;
 }
-/* line 167, ../../app/assets/stylesheets/fld.css.scss */
+/* line 186, ../../app/assets/stylesheets/fld.css.scss */
 #container #main #detail h2 {
   font-size: 14pt;
   font-weight: bold;
   padding: 10px;
 }
-/* line 173, ../../app/assets/stylesheets/fld.css.scss */
+/* line 192, ../../app/assets/stylesheets/fld.css.scss */
 #container #main #detail p {
   line-height: 16px;
   text-indent: 2em;
   padding-bottom: 5px;
 }
-/* line 181, ../../app/assets/stylesheets/fld.css.scss */
+/* line 198, ../../app/assets/stylesheets/fld.css.scss */
+#container #main #detail .content {
+  padding-left: 10px;
+}
+/* line 200, ../../app/assets/stylesheets/fld.css.scss */
+#container #main #detail .content ul li a {
+  color: #3B6F9F;
+  line-height: 30px;
+}
+/* line 202, ../../app/assets/stylesheets/fld.css.scss */
+#container #main #detail .content .pagination {
+  float: right;
+}
+/* line 204, ../../app/assets/stylesheets/fld.css.scss */
+#container #main #detail .content .pagination a, #container #main #detail .content .pagination span {
+  display: block;
+  float: left;
+  margin-right: 1px;
+  padding: 0.2em 0.5em;
+  border: 1px solid #9AAFE5;
+}
+/* line 211, ../../app/assets/stylesheets/fld.css.scss */
+#container #main #detail .content .pagination span.disabled {
+  border: 1px solid #DDD;
+  color: #999;
+}
+/* line 215, ../../app/assets/stylesheets/fld.css.scss */
+#container #main #detail .content .pagination span.current {
+  background: none repeat scroll 0 0 #2E6AB1;
+  border: 1px solid #2E6AB1;
+  color: white;
+  font-style: normal;
+  font-weight: bold;
+}
+/* line 227, ../../app/assets/stylesheets/fld.css.scss */
 #container #footer {
   clear: both;
   background: url(/images/fld/footerbackground.jpg);
   height: 57px;
   padding-top: 20px;
 }
-/* line 187, ../../app/assets/stylesheets/fld.css.scss */
+/* line 233, ../../app/assets/stylesheets/fld.css.scss */
 #container #footer p {
   text-align: center;
   color: #FFF;

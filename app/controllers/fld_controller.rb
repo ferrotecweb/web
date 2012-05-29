@@ -3,6 +3,7 @@ class FldController < ApplicationController
   before_filter :create_menu
   def index
     @company = Company.find(7)
+    @news = Categorylist.all(:conditions=>"categoryid = '011001'", :limit=>5)
   end
 
   def detail
@@ -12,6 +13,8 @@ class FldController < ApplicationController
     # 这时，需要显示的内容为该菜单下的第一个子栏目的内容
     # 如果为6，说明就是要显示该栏目的内容
     # 除此之外，都不正确，就直接返回主页
+    
+
     case categoryid.size
     when 3
       @submenus = Category.fld_sub_menu(categoryid)
@@ -22,8 +25,34 @@ class FldController < ApplicationController
       @submenus = Category.fld_sub_menu(categoryid[0,3])
       @content = Category.find(categoryid)
     else
+      @company = Company.find(7)
+      @news = Categorylist.all(:conditions=>"categoryid = '011001'")
       return render 'index'
     end
+
+    # 011 为富乐德的新闻栏目，新闻栏目需要Categorylist的内容，故分开处理
+    if categoryid[0,3] == '011'
+      if categoryid.size == 6
+#        @news = Categorylist.all(:conditions => "categoryid = '#{categoryid}'")
+#      else
+#        @news = Categorylist.all(:conditions=>"categoryid = '011001'")
+        @news = Categorylist.paginate(:page => params[:page],
+                                      :per_page => 10,
+                                      :conditions => "categoryid ='#{categoryid}'")
+      else
+        @news = Categorylist.paginate(:page => params[:page],
+                                      :per_page => 10,
+                                      :conditions => "categoryid ='011001'")
+      end
+      return render 'newslist'
+    end
+
+  end
+
+  def news
+    id = params[:id]
+    @new = Categorylist.find(id)
+    render :layout => false
   end
 
 private

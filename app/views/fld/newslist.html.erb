@@ -43,7 +43,16 @@
   <div id='detail'>
     <h2><%= @content.categoryname %></h2>
     <div class="content">
-      <%= @content.summarydetail %>
+      <ul>
+        <% @news.each do |new| %>
+          <li><a href="#" onclick="window.open('/fld/news?id=<%= new.id %>','','scrollbars=yes,width=600,height=360,height=360,top=200,resizable=yes')">[<%= new.created_at.strftime("%Y-%m") %>] <%= new.title %></a></li>
+        <% end %>
+      </ul>
+      <%= will_paginate @news,
+      :prev_label => '←上一页',
+      :next_label => '下一页→'
+      %>
     </div>
   </div>
 </div>
+

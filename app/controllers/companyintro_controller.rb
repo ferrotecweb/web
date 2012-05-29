@@ -5,8 +5,6 @@ class CompanyintroController < ApplicationController
   def islayout
     #$company_id = params[:company].to_i
     case $company_id 
-    when 7
-      "fld"
     when 6
       "wagen"
     when 5

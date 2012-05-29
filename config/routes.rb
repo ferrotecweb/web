@@ -42,7 +42,7 @@ ActionController::Routing::Routes.draw do |map|
   map.signin 'login', :controller => '/back_manager/user', :action => 'login'  
   # See how all your routes lay out with "rake routes"
 
-  map.resources :fld, :collection => {:detail => :get }
+  map.resources :fld, :collection => {:detail => :get, :news =>:get }
 #
   map.resources :agents
   map.resources :sessions
