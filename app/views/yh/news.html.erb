@@ -1,0 +1,17 @@
+<html>
+  <head>
+    <title><%= @new.title %>-富乐德新闻</title>
+    <style type="text/css">
+      body { padding:20px; }
+      h1 { font-size: 16px; color: #177C9D; border-bottom: 1px #CCC solid; padding-bottom:10px;}
+      small { font-size: 14px; color:#000; font-weight:bold; padding-left:20px; }
+      p {text-indent :2em; line-height:200%; }
+    </style>
+  </head>
+  <body>
+    <h1><%= @new.title %><small>[<%= @new.created_at.strftime("%Y-%m") %>]</small></h1>
+    <div>
+      <%= @new.content %>
+    </div>
+  </body>
+</html>

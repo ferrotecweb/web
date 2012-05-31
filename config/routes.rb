@@ -43,6 +43,7 @@ ActionController::Routing::Routes.draw do |map|
   # See how all your routes lay out with "rake routes"
 
   map.resources :fld, :collection => {:detail => :get, :news =>:get }
+  map.resources :yh, :collection => {:detail => :get, :news =>:get }
 #
   map.resources :agents
   map.resources :sessions

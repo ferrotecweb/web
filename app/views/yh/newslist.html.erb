@@ -1,0 +1,58 @@
+<div id='header'>
+  <div id='header-logo'>
+    <h1><a href="/yh">Ferrotec Logo</a></h1>
+  </div>
+  <div id='groupnav'>
+    <ul>
+      <li><a href="/">Ferrotec(中国)</a></li>
+      <li><a href="#">Ferrotec(全球)</a></li>
+      <li class="last"><a href="/yh/detail?cont=013006">联系我们</a></li>
+    </ul>
+  </div>
+  <div id='header-image-main'>
+    <a href="/yh/detail?cont=014"><%= image_tag "yh/main_flash.jpg" %></a>
+  </div>
+  <div id='header-nav'>
+    <ul>
+      <% @menus.each do |menu| %>
+        <li><%= link_to menu.categoryname, detail_yh_path(:cont=>"#{menu.categoryid}") %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+<div id='main'>
+  <div id='menu'>
+    <ul>
+      <% 
+        @submenus.each do |submenu| 
+          css_class = "" 
+          if submenu == @submenus[0] 
+            css_class += 'first' 
+          end
+          if submenu.categoryid == @content.categoryid 
+            css_class += ' selected'
+          end
+          puts submenu.categoryid
+          puts @content.categoryid
+      %>
+    <li class="<%= css_class %>"><%= link_to submenu.categoryname, detail_yh_path(:cont=>"#{submenu.categoryid}") %></li>
+      <% end %>
+    </ul>
+    <span class="menubottom">&nbsp;</span>
+  </div>
+  <div id='detail'>
+    <h2><%= @content.categoryname %></h2>
+    <div class="content">
+      <ul>
+        <% @news.each do |new| %>
+          <li><a href="#" onclick="window.open('/yh/news?id=<%= new.id %>','','scrollbars=yes,width=600,height=360,height=360,top=200,resizable=yes')">[<%= new.created_at.strftime("%Y-%m") %>] <%= new.title %></a></li>
+        <% end %>
+      </ul>
+      <%= will_paginate @news,
+      :prev_label => '←上一页',
+      :next_label => '下一页→'
+      %>
+    </div>
+  </div>
+</div>
+

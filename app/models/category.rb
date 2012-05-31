@@ -56,4 +56,17 @@ class Category < ActiveRecord::Base
            :conditions => "substring(categoryid,1,3)='#{main_menu_id}' and length(categoryid) = 6 and company_id = 7",
            :order => " categoryid")
   end
+
+  # return yh menu. it's a categories record list
+  def self.yh_main_menu
+    find( :all, 
+          :conditions=>"company_id = 9 and length(categoryid) = 3",
+          :order => "categoryid")
+  end
+
+  def self.yh_sub_menu(main_menu_id)
+      find(:all,
+           :conditions => "substring(categoryid,1,3)='#{main_menu_id}' and length(categoryid) = 6 and company_id = 9",
+           :order => " categoryid")
+  end
 end
