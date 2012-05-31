@@ -24,6 +24,8 @@ class BackManager::CategoryController < ApplicationController
         @title = "和源精密栏目一览"
       when "7"
         @title = "富乐德栏目一览"
+      when "9"
+        @title = "银和栏目一览"
     end
     if id == "1" 
       @all_categorys = Category.find_by_sql("select categories.* from categories,companies 
