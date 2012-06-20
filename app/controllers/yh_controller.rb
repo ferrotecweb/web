@@ -3,7 +3,7 @@ class YhController < ApplicationController
   before_filter :create_menu
   def index
     @company = Company.find(9)
-    @news = Categorylist.all(:conditions=>"categoryid = '017001'", :limit=>5)
+    @news = Categorylist.all(:conditions=>"categoryid = '017001'", :limit=>5, :order=>"id desc")
   end
 
   def detail
