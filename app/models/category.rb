@@ -69,4 +69,17 @@ class Category < ActiveRecord::Base
            :conditions => "substring(categoryid,1,3)='#{main_menu_id}' and length(categoryid) = 6 and company_id = 9",
            :order => " categoryid")
   end
+
+  # return xj menu. it's a categories record list
+  def self.jx_main_menu
+    find( :all, 
+          :conditions=>"company_id = 10 and length(categoryid) = 3",
+          :order => "categoryid")
+  end
+
+  def self.jx_sub_menu(main_menu_id)
+      find(:all,
+           :conditions => "substring(categoryid,1,3)='#{main_menu_id}' and length(categoryid) = 6 and company_id = 10",
+           :order => " categoryid")
+  end
 end

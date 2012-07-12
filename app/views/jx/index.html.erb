@@ -1,0 +1,46 @@
+<div id='header'>
+  <div id='header-logo'>
+    <h1><a href="/jx">杭州晶鑫科技技术有限公司</a></h1>
+  </div>
+  <div id='groupnav'>
+    <ul>
+      <li><a href="/">Ferrotec(中国)</a></li>
+      <li><a href="#">Ferrotec(全球)</a></li>
+      <li class="last"><a href="/xj/detail?cont=010006">联系我们</a></li>
+    </ul>
+  </div>
+  <div id='header-image'>
+    <a href="/jx/detail?cont=020"><img alt="Flash" src="/images/jx/flash.jpg" /></a>
+  </div>
+  <div id='header-nav'>
+    <ul>
+      <% @menus.each do |menu| %>
+        <li><%= link_to menu.categoryname, detail_jx_path(:cont=>"#{menu.categoryid}") %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+<div id='main'>
+  <div id='intro'>
+    <h2>公司介绍</h2>
+    <a href="/jx/detail?cont=010"><img alt="Intro" height="167" src="/images/jx/intro.jpg" width="254" /></a>
+    <div class='intro_text'>
+      <%= link_to @company.summary, '/jx/detail?cont=010' %>
+    </div>
+  </div>
+  <div id='new'>
+    <h2>新闻中心</h2>
+    <dl>
+      <% @news.each do |new| %>
+        <dt><%= new.created_at.strftime("%Y-%m") %></dt>
+        <dd>
+        <a href="#" onclick="window.open('/jx/news?id=<%= new.id %>','','scrollbars=yes,width=600,height=360,height=360,top=200,resizable=yes')"><%= new.title %></a>
+          </dd>
+      <% end %>
+      <dt></dt>
+      <dd class='more'>
+        <a href="jx/detail?cont=023">更多&gt;&gt;</a>
+      </dd>
+    </dl>
+  </div>
+</div>

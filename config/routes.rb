@@ -44,6 +44,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :fld, :collection => {:detail => :get, :news =>:get }
   map.resources :yh, :collection => {:detail => :get, :news =>:get }
+  map.resources :jx, :collection => {:detail => :get, :news =>:get }
 #
   map.resources :agents
   map.resources :sessions
