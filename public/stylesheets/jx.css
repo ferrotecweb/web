@@ -80,6 +80,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 #container a:hover {
   color: #FF0000;
 }
+
 /* line 14, ../../app/assets/stylesheets/jx.css.scss */
 #container #header #header-logo h1 a {
   width: 190px;
@@ -109,6 +110,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   clear: both;
   width: 780px;
   height: 219px;
+  padding-top:10px;
 }
 /* line 41, ../../app/assets/stylesheets/jx.css.scss */
 #container #header #header-image-main {
@@ -137,7 +139,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   border-left: 1px #DDDDDD solid;
   border-right: 1px #FFF solid; 
   */
-  padding: 9px 36px;
+  padding: 6px 36px;
+  _padding: 6px 34px;
 }
 
 /* line 67, ../../app/assets/stylesheets/jx.css.scss */
