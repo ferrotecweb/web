@@ -117,6 +117,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   clear: both;
   width: 780px;
   height: 111px;
+  padding-top:10px;
 }
 /* line 46, ../../app/assets/stylesheets/jx.css.scss */
 #container #header #header-nav {
