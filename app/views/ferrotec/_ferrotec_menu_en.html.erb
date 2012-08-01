@@ -28,8 +28,11 @@
             if @url != nil
             %>
             <li style="border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #666666; ">
-            <a href="<%=@url%>" title="" ><%=h menu1.categoryname%>
-            </a>
+              <% if menu1.categoryname.lower.include? 'hanhong' %>
+                <a href="en.hanhongchina.com" title="" ><%=h menu1.categoryname%></a>
+              <% else %>
+                <a href="<%=@url%>" title="" ><%=h menu1.categoryname%></a>
+              <% end %>
             </li>
             <% else %>
             <li style="border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #666666; ">
