@@ -43,8 +43,8 @@
             if @url != nil
             %>
           <li>
-            <% if menu1.categoryname.lower.include? 'hanhong' %>
-              <a href="en.hanhongchina.com" title=""><%=h menu1.categoryname%></a>
+            <% if menu1.categoryname.downcase.include? 'hanhong' %>
+              <a href="http://en.hanhongchina.com" title=""><%=h menu1.categoryname%></a>
             <% else %>
               <a href="<%=@url %>" title=""><%=h menu1.categoryname%></a>
             <% end %>
