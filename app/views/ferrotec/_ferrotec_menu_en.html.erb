@@ -44,7 +44,13 @@
             %>
           <li><a href="<%=@url %>" title=""><%=h menu1.categoryname%></a></li>
           <% else %>
-          <li><a href="/companyintro/index_en?id=<%=menu1.categoryid%>" title=""><%=h menu1.categoryname%></a></li>
+            <li>
+            <% if menu1.categoryname == "Ferrotec HanHong" %>
+              <a href="http://en.hanhongchina.com"><%=h menu1.categoryname%></a>
+            <% else %>
+              <a href="/companyintro/index_en?id=<%=menu1.categoryid%>" title=""><%=h menu1.categoryname%></a>
+            <% end %>
+            </li>
           <% end %>
         <% end  %>
       <% end %>
