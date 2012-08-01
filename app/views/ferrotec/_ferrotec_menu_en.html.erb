@@ -28,11 +28,8 @@
             if @url != nil
             %>
             <li style="border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #666666; ">
-              <% if menu1.categoryname.lower.include? 'hanhong' %>
-                <a href="en.hanhongchina.com" title="" ><%=h menu1.categoryname%></a>
-              <% else %>
-                <a href="<%=@url%>" title="" ><%=h menu1.categoryname%></a>
-              <% end %>
+            <a href="<%=@url%>" title="" ><%=h menu1.categoryname%>
+            </a>
             </li>
             <% else %>
             <li style="border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #666666; ">
@@ -45,9 +42,15 @@
             @url = company_link(EnCompany,menu1.categoryid,menu1.company_id)
             if @url != nil
             %>
-          <li>111<a href="<%=@url %>" title=""><%=h menu1.categoryname%></a></li>
+          <li>
+            <% if menu1.categroyname.lower.include? 'hanhong' %>
+              <a href="en.hanhongchina.com" title=""><%=h menu1.categoryname%></a>
+            <% else %>
+              <a href="<%=@url %>" title=""><%=h menu1.categoryname%></a>
+            <% end %>
+          </li>
           <% else %>
-            <li>222
+            <li>
               <a href="/companyintro/index_en?id=<%=menu1.categoryid%>" title=""><%=h menu1.categoryname%></a>
             </li>
           <% end %>
