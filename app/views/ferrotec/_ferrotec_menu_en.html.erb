@@ -46,7 +46,7 @@
           <% else %>
             <li>
             <% if menu1.categoryname == "Ferrotec HanHong" %>
-              <a href="http://en.hanhongchina.com"><%=h menu1.categoryname%></a>
+              <b>~<%= menu1.categoryname %>~</b><a href="http://en.hanhongchina.com"><%=h menu1.categoryname%></a>
             <% else %>
               <a href="/companyintro/index_en?id=<%=menu1.categoryid%>" title=""><%=h menu1.categoryname%></a>
             <% end %>
