@@ -27,7 +27,7 @@
             @url = company_link(EnCompany,menu1.categoryid,menu1.company_id)
             if @url != nil
             %>
-            <li style="border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #666666; ">11111
+            <li style="border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #666666; ">
               <% if menu1.categoryname.lower.include? 'hanhong' %>
                 <a href="en.hanhongchina.com" title="" ><%=h menu1.categoryname%></a>
               <% else %>
@@ -35,7 +35,7 @@
               <% end %>
             </li>
             <% else %>
-            <li style="border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #666666; ">22222
+            <li style="border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #666666; ">
             <a href="/companyintro/index_en?id=<%=menu1.categoryid%>" title="" ><%=h menu1.categoryname%>
             </a>
             </li>
@@ -45,9 +45,9 @@
             @url = company_link(EnCompany,menu1.categoryid,menu1.company_id)
             if @url != nil
             %>
-          <li><a href="<%=@url %>" title=""><%=h menu1.categoryname%>3333333333333</a></li>
+          <li>111<a href="<%=@url %>" title=""><%=h menu1.categoryname%></a></li>
           <% else %>
-            <li>44444444444
+            <li>222
               <a href="/companyintro/index_en?id=<%=menu1.categoryid%>" title=""><%=h menu1.categoryname%></a>
             </li>
           <% end %>
