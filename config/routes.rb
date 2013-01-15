@@ -39,6 +39,8 @@ ActionController::Routing::Routes.draw do |map|
   map.signin 'aqm', :controller => 'aqm', :action => 'index'
   map.signin 'wagen', :controller => 'wagen', :action => 'index'
   map.signin 'fld',   :controller => 'fld',   :action => 'index'
+  map.signin 'jx',   :controller => 'jx',   :action => 'index'
+  map.signin 'yh',   :controller => 'yh',   :action => 'index'
   map.signin 'login', :controller => '/back_manager/user', :action => 'login'  
   # See how all your routes lay out with "rake routes"
 
